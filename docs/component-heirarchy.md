@@ -22,7 +22,7 @@
  - CommentIndex
  - CurrentPlayingTrack
 
- **CommentIndex***
+**CommentIndex**
   - NewCommentForm
   - CommentItem
     + Commentdetail
