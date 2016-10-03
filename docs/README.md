@@ -83,7 +83,7 @@ the API.
 
 ### Phase 6: - Pagination / infinite scroll for Tracks Index
 
-**objective:** Add infinite scroll to TracksIndex and CommentsIndex
+**objective:** Add infinite scroll to TracksIndex
 
 - [ ] Paginate Tracks Index API to send 10 results at a time
 - [ ] Append next set of results when user scrolls and is near bottom
