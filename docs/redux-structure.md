@@ -50,7 +50,7 @@ Redux structure, you'll need to do the same.
   0. invoked from API callbacks on success for actions that generate POST requests
   0. the `ErrorReducer` removes `errors` for a given `form` in the application's state.
 
-## Track Cycles
+## Tracks Cycles
 
 ### Tracks API Request Actions
 
@@ -99,6 +99,6 @@ Redux structure, you'll need to do the same.
   0. invoked from an API callback
   0. the `TrackReducer` updates `tracks[id]` in the application's state.
 
-* `removeNote`
+* `removeTrack`
   0. invoked from an API callback
   0. the `TrackReducer` removes `tracks[id]` from the application's state.
