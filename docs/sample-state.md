@@ -1,3 +1,4 @@
+```js
 {
   currentUser: {
     id: 1,
@@ -29,4 +30,5 @@
     trackLength: 195,
     currentSecond: 84,
   }
-  },
+  }
+  ```
