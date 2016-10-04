@@ -1,31 +1,28 @@
-## Component Heirarchy
+## Component Hierarchy
 
 **AuthFormContainer**
  - AuthForm
 
 **HomeContainer**
  - HeaderNavigation
- - TracksIndex
  - CurrentPlayingTrack
 
 
 **ProfileContainer**
- - HeaderNavigation
  - AuthorInformation
  - AllUserTracks
   + TracksIndex
- - CurrentPlayingTrack
 
 **TrackContainer**
- - HeaderNavigation
  - TracksIndex
  - CommentIndex
- - CurrentPlayingTrack
+
+**LatestTrackContainer**
+ - TracksIndex
 
 **CommentIndex**
   - NewCommentForm
   - CommentItem
-    + Commentdetail
 
  **TrackIndex**
  - TrackDetailItem
@@ -36,10 +33,8 @@
     + TrackDetail
     + SubmitButton
 
-**CommentDetails**
+**CommentItem**
  - AuthorInformation
-  * AuthorUsername
-  * AuthorPicture
  - CommentBody
 
 **EditProfile**
@@ -55,7 +50,10 @@
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
-| "/home/:userid" | "ProfileContainer" |
-| "/home/:userid/:track_id" | "TrackContainer" |
+| "/latest" | "LatestTrackContainer" |
+| "/profile" | "ProfileContainer" |
+| "/profile/tracks" | "TrackIndex" |
+| "/:track_id" | "TrackContainer" |
+| "/:track_id/comments" | "CommentIndex" |
 | "/new_track | "NewTrackContainer" |
 | "/edit_profile" | "EditProfile" |
