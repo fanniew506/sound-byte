@@ -24,7 +24,7 @@
   - NewCommentForm
   - CommentItem
 
- **TrackIndex**
+**TrackIndex**
  - TrackDetailItem
   + TrackInformation
 
@@ -49,7 +49,7 @@
 |-------|-------------|
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
-| "/home" | "HomeContainer" |
+| "/" | "HomeContainer" |
 | "/latest" | "LatestTrackContainer" |
 | "/profile" | "ProfileContainer" |
 | "/profile/tracks" | "TrackIndex" |

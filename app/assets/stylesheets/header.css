@@ -1,0 +1,29 @@
+.header {
+background-color: black;
+font-weight: bold;
+width: 900px;
+margin: 0 auto;
+}
+
+
+.header-logo {
+  background-color: black;
+  float: left;
+}
+
+.header-nav {
+  background-color: black;
+  float: right;
+}
+
+.header h2 {
+  color: white;
+  padding: 10px 20px;
+}
+
+.header-nav h4 {
+  float:left;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 400;
+}

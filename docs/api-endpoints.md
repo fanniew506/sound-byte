@@ -29,7 +29,7 @@
 
 ### Comments
 
-- `GET /api/tracks/:id/comments` : A track's comments will be included in the track show template
-- `POST /api/tracks/:id/comment`
-- `DELETE /api/tracks/:id/:comment_id` : remove comment from track by
+- `GET /api/tracks/:tracks_id/comments` : A track's comments will be included in the track show template
+- `POST /api/tracks/:tracks_id/comments`
+- `DELETE /api/tracks/:tracks_id/comments/:id` : remove comment from track by
   id
