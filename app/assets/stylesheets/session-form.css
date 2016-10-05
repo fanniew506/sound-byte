@@ -1,18 +1,32 @@
 
 .session-form-container {
-  width: 500px;
-  position: absolute;
+  width: 400px;
   background-color: white;
   border: 1px solid gray;
-  
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  padding: 10px;
 }
 
-.session-form {
 
+
+.session-form-header{
+  text-transform: capitalize;
+  background-color:white
+  font-size: 15px;
 }
 
 .session-form-container input {
+  border-radius: 5px;
+  border: 0.5px solid grey;
+  padding: 5px;
+  margin: 10px;
+  width: 180px;
+}
 
+.session-form-container label {
+  font-size: 12px;
 }
 
 .session-form-container footer {

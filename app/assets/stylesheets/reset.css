@@ -9,6 +9,10 @@ body, div, ul, li, ol, section, article, nav, header, p, h1, h2, h3, h4, a, form
   outline: 0;
 }
 
+ul {
+  list-style: none;
+}
+
 .group:after {
   content: "";
   display: block;
