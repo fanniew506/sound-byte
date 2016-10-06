@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const App = ({children}) => {
-  const currentUser = store.getState().session.currentUser
+  debugger
+  const currentUser = window.currentUser
   let navHTML;
 
   if (currentUser === null){
