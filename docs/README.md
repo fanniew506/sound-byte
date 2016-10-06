@@ -2,7 +2,7 @@
 
 [Heroku link][heroku] **Note:** This should be a link to your production site
 
-[heroku]: https://sound-byte.herokuapp.com/
+[heroku]: https://soundbyte.herokuapp.com/
 
 ## Minimum Viable Product
 
