@@ -6,23 +6,30 @@ import Modal from 'react-modal';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { user: { username: "", password: "" }, modalIsOpen: true, errors: [] };
+    this.state = { username: "", password: "", modalIsOpen: true, errors: [] };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateUsername = this.updateUsername.bind(this);
+    this.updatePassword = this.updatePassword.bind(this);
+
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = this.state.user;
+    debugger
+    const user = { username: this.state.username, password: this.state.password } ;
     this.props.actionType(user);
   }
 
-  update (fieldName) {
-    const newValue = event.target.value;
-    return () => {
-      this.setState({
-        user: { [fieldName]: newValue }
-      });
-    };
+  updateUsername (e) {
+    this.setState({
+      username: e.currentTarget.value
+    });
+  }
+
+  updatePassword (e) {
+    this.setState({
+      password: e.currentTarget.value
+    });
   }
 
 
@@ -71,11 +78,11 @@ class SessionForm extends React.Component {
              {this.renderErrors()}
              <br/>
              <label> Username:
-               <input type="text" value={this.state.user.username} onChange={this.update("username")}/>
+               <input type="text" value={this.state.username} onChange={this.updateUsername}/>
              </label>
              <br/>
              <label> Password:
-               <input type="password" value={this.state.user.password} onChange={this.update("password")}/>
+               <input type="password" value={this.state.password} onChange={this.updatePassword}/>
              </label>
              <br/>
              <input type="submit" value="Submit"/>
