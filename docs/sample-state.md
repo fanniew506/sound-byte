@@ -15,15 +15,12 @@
       description: "Classic Song",
       author_id: 1,
       picture_url: "imgsrc.com"
-      comments: [{
-        1: {
-          id: 1
-          body: "Great Song!"
-          author_id: 2
-          track_id: 1
-        }]
-      }
+      comments_id: [ 1, 2, 4]
     }
+  }
+  comments: {
+    1: { body: "Great Song!" },
+    2: { body: "Love this" }
   }
   currentlyPlayed: {
     trackId: 1,

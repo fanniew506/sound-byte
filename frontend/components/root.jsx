@@ -4,19 +4,36 @@ import { Provider } from 'react-redux';
 import App from './app'
 import SessionFormContainer from './session/session_form_container';
 
-const Root = ({ store }) => (
-  <Provider store={store}>
-    <Router history={hashHistory}>
-      <Route path='/' component={ App }>
-        <Route path='/login' component={ SessionFormContainer }></Route>
-        <Route path='/signup' component={ SessionFormContainer }></Route>
-      </Route>
-    </Router>
-  </Provider>
-);
+const Root = ({ store }) => {
+
+  const redirectIfLoggedIn = () => {
+    debugger
+    const currentUser = store.getState().session.currentUser
+    if(currentUser) hashHistory.push('/profile');
+  }
+
+  const ensureLoggedIn = () => {
+    const currentUser = store.getState().session.currentUser
+    if(!currentUser) hashHistory.push('/login');
+  }
+
+  return (
+    <Provider store={store}>
+      <Router history={hashHistory}>
+        <Route path='/' component={ App }>
+          <Route path='/login' component={ SessionFormContainer } onEnter={redirectIfLoggedIn}></Route>
+          <Route path='/signup' component={ SessionFormContainer } onEnter={redirectIfLoggedIn}></Route>
+        </Route>
+      </Router>
+    </Provider>
+  );
+
+}
 
 export default Root;
 
+// <Route path='/profile' component={ ProfileContainer } onEnter={ ensureLoggedIn}></Route>
+// <Route path='/home' component={ HomeContainer }>
 
 // <Route path ='/latest' component={LatestTrackContainer}></Route>
 

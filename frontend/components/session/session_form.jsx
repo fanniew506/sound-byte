@@ -15,9 +15,9 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     const user = { username: this.state.username, password: this.state.password } ;
     this.props.actionType(user);
+    if (this.props.loggedIn) hashHistory.push("/");
   }
 
   updateUsername (e) {
@@ -30,11 +30,6 @@ class SessionForm extends React.Component {
     this.setState({
       password: e.currentTarget.value
     });
-  }
-
-
-  componentDidMount() {
-    if (this.props.loggedIn) hashHistory.push("/");
   }
 
   renderFooter() {
@@ -65,7 +60,6 @@ class SessionForm extends React.Component {
     );
   }
 
-
   render() {
     Modal.setAppElement('body');
     return (
@@ -74,7 +68,10 @@ class SessionForm extends React.Component {
          >
          <div className="session-form-container">
            <form onSubmit={this.handleSubmit} className="session-form">
-             <h2 className="session-form-header">{this.props.formType}</h2>
+             <header className="session-form-header">
+               <h2 className="session-form-cancel"><Link to='/'>X</Link></h2>
+               <h2>{this.props.formType}</h2>
+             </header>
              {this.renderErrors()}
              <br/>
              <label> Username:
@@ -90,7 +87,7 @@ class SessionForm extends React.Component {
              <footer className="session-form-footer">
                {this.renderFooter()}
                <br/>
-               <Link to='/'>Cancel</Link>
+
              </footer>
            </form>
          </div>

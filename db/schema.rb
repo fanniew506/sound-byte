@@ -11,17 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004151430) do
+ActiveRecord::Schema.define(version: 20161006183611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.string   "username",        null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
+  create_table "comments", force: :cascade do |t|
+    t.text     "body",             null: false
+    t.integer  "commentable_id",   null: false
+    t.string   "commentable_type", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+
+  create_table "tracks", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.text     "description"
+    t.integer  "author_id",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tracks", ["author_id"], name: "index_tracks_on_author_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username",           null: false
+    t.string   "password_digest",    null: false
+    t.string   "session_token",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

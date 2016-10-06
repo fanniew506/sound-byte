@@ -6,7 +6,7 @@
   margin: 0 auto;
   position: relative;
   text-align: center;
-  padding: 10px;
+  font-size: 16px
 }
 
 
@@ -14,7 +14,6 @@
 .session-form-header{
   text-transform: capitalize;
   background-color: white;
-  font-size: 15px;
 }
 
 .session-form-container input {
@@ -30,5 +29,11 @@
 }
 
 .session-form-container footer {
+  padding: 5px;
+
+}
+.session-form-cancel {
+  text-align: right;
+  padding: 10px;
 
 }
