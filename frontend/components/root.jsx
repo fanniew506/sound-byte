@@ -8,7 +8,6 @@ import Profile from './profile/profile'
 const Root = ({ store }) => {
 
   const redirectIfLoggedIn = () => {
-    debugger
     const currentUser = store.getState().session.currentUser
     if(currentUser) hashHistory.push('/profile');
   }

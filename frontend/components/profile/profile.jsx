@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Profile = ({store}) => {
-  debugger
   return (
     <div className='profile-view'>
       <header>
