@@ -10,7 +10,6 @@ const Root = ({ store }) => (
       <Route path='/' component={ App }>
         <Route path='/login' component={ SessionFormContainer }></Route>
         <Route path='/signup' component={ SessionFormContainer }></Route>
-        <Route path ='/latest' component={LatestTrackContainer}></Route>
       </Route>
     </Router>
   </Provider>
@@ -19,6 +18,7 @@ const Root = ({ store }) => (
 export default Root;
 
 
+// <Route path ='/latest' component={LatestTrackContainer}></Route>
 
 // <Route path ='/profile' component={ProfileContainer}>
 //   <Route path ='/tracks' component={TrackIndex}>
