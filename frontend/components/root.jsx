@@ -3,6 +3,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import App from './app'
 import SessionFormContainer from './session/session_form_container';
+import Profile from './profile/profile'
 
 const Root = ({ store }) => {
 
@@ -23,6 +24,7 @@ const Root = ({ store }) => {
         <Route path='/' component={ App }>
           <Route path='/login' component={ SessionFormContainer } onEnter={redirectIfLoggedIn}></Route>
           <Route path='/signup' component={ SessionFormContainer } onEnter={redirectIfLoggedIn}></Route>
+          <Route path='/profile' component={ Profile } onEnter={ ensureLoggedIn}></Route>
         </Route>
       </Router>
     </Provider>
@@ -32,7 +34,6 @@ const Root = ({ store }) => {
 
 export default Root;
 
-// <Route path='/profile' component={ ProfileContainer } onEnter={ ensureLoggedIn}></Route>
 // <Route path='/home' component={ HomeContainer }>
 
 // <Route path ='/latest' component={LatestTrackContainer}></Route>

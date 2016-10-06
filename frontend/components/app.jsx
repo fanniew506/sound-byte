@@ -15,19 +15,30 @@ const App = ({children}) => {
   } else {
     navHTML = (
       <nav className='header-nav loggedin'>
+        <Link to='/new-track-form'><h4>Upload</h4></Link>
         <Link to='/profile'><h4>{currentUser.username}</h4></Link>
+        <ul>
+          <li>
+
+          </li>
+          <li>
+
+          </li>
+        </ul>
       </nav>
     );
   }
 
   return (
-    <div className="header-container">
-      <header className="header group">
-        <div className='header-logo'>
-          <Link to='/'><h2>SoundByte</h2></Link>
-        </div>
-        {navHTML}
-      </header>
+    <div className="body-container">
+      <div className="header-container">
+        <header className="header group">
+          <div className='header-logo'>
+            <Link to='/'><h2>SoundByte</h2></Link>
+          </div>
+          {navHTML}
+        </header>
+      </div>
       {children}
     </div>
   );

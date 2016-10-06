@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
 
