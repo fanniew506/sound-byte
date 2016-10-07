@@ -6,7 +6,6 @@ import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
-    window.store = store;
     window.login  = login;
     window.logout = logout;
     window.signup = signup;
@@ -20,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }
+    window.store = store;
 
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store}/>, root);

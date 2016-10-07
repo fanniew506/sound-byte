@@ -13,7 +13,9 @@ const App = ({children}) => {
           <NavigationContainer/>
         </header>
       </div>
-      {children}
+      <main>
+        {children}
+      </main>
     </div>
   );
 };

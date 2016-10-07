@@ -16,6 +16,7 @@ class Navigation extends React.Component {
         <nav className='header-nav loggedin'>
           <Link to='/new-track-form'><h4>Upload</h4></Link>
           <Link to='/profile'><h4>{currentUser.username}</h4></Link>
+          <button onClick={this.props.logout}><h4>Log out</h4></button>
           <ul>
             <li>
 
