@@ -1,35 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
+import NavigationContainer from './navigation/navigation_container';
 
 const App = ({children}) => {
-  debugger
-  const currentUser = window.currentUser
-  let navHTML;
-
-  if (currentUser === null){
-    navHTML = (
-      <nav className='header-nav loggedout'>
-        <Link to='/login'><h4>Log In</h4></Link>
-        <Link to='/signup'><h4>Create Account</h4></Link>
-      </nav>
-    );
-  } else {
-    navHTML = (
-      <nav className='header-nav loggedin'>
-        <Link to='/new-track-form'><h4>Upload</h4></Link>
-        <Link to='/profile'><h4>{currentUser.username}</h4></Link>
-        <ul>
-          <li>
-
-          </li>
-          <li>
-
-          </li>
-        </ul>
-      </nav>
-    );
-  }
-
   return (
     <div className="body-container">
       <div className="header-container">
@@ -37,7 +10,7 @@ const App = ({children}) => {
           <div className='header-logo'>
             <Link to='/'><h2>SoundByte</h2></Link>
           </div>
-          {navHTML}
+          <NavigationContainer/>
         </header>
       </div>
       {children}
