@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import App from './app'
 import SessionFormContainer from './session/session_form_container';
 import Profile from './profile/profile'
+import NewTrackFormContainer from './new_track/new_track_form_container'
 
 const Root = ({ store }) => {
 
@@ -24,6 +25,7 @@ const Root = ({ store }) => {
           <Route path='/login' component={ SessionFormContainer } onEnter={redirectIfLoggedIn}></Route>
           <Route path='/signup' component={ SessionFormContainer } onEnter={redirectIfLoggedIn}></Route>
           <Route path='/profile' component={ Profile } onEnter={ ensureLoggedIn}></Route>
+          <Route path='/new-track-form' component={ NewTrackFormContainer } onEnter={ ensureLoggedIn}></Route>
         </Route>
       </Router>
     </Provider>

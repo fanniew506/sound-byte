@@ -14,7 +14,7 @@ export default (state = defaultState, action) => {
     case LOGOUT:
       return merge({}, defaultState);
     case RECEIVE_CURRENT_USER:
-      return merge({}, defaultState, { currentUser: action.currentUser });
+      return merge({}, defaultState, { currentUser: action.currentUser.user });
     case RECEIVE_ERRORS:
       return merge({}, defaultState, { errors: action.errors });
     default:

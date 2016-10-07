@@ -21,15 +21,15 @@ export const deleteTrack = track => ({
   track
 });
 
-export const receiveCurrentUserTracks = currentUser => ({
+export const receiveCurrentUserTracks = track => ({
   type: RECEIVE_CURRENT_USER_TRACKS,
-  currentUser
+  track
 });
 
 export const receiveTrackInformation = track => ({
   type: RECEIVE_TRACK_INFORMATION,
   track
-})
+});
 
 export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,

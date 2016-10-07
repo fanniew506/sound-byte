@@ -15,7 +15,7 @@
 #
 
 class User < ActiveRecord::Base
-  has_attached_file :image, default_url: "missing.jpng"
+  has_attached_file :image, default_url: "https://s3.amazonaws.com/sound-byte-dev/users/images/000/000/001/original/default_user.jpeg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :session_token, :password_digest, presence: true
@@ -24,9 +24,11 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
   attr_reader :password
-  attr_accessor :avatar
 
-  has_many :tracks
+  has_many :tracks,
+    foreign_key: :author_id,
+    primary_key: :id,
+    class_name: 'Track'
 
   def ensure_session_token
     self.session_token ||= SecureRandom.base64
@@ -49,6 +51,10 @@ class User < ActiveRecord::Base
       return user
     end
     return nil
+  end
+
+  def image_url
+    self.image.url
   end
 
   def is_password?(password)

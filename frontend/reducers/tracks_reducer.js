@@ -11,7 +11,9 @@ const defaultState = Object.freeze({
 export default (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER_TRACKS:
-      return merge({}, defaultState, { action.id: action.track });
+      const track_id = action.track.id;
+      const obj = { [track_id]: action.track };
+      return merge({}, defaultState, obj );
     default:
       return state;
   }

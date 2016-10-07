@@ -6,19 +6,20 @@ class NewTrackForm extends React.Component {
     super(props);
     this.state = { title: "", description: "", errors: [] };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateUsername = this.updateUsername.bind(this);
-    this.updatePassword = this.updatePassword.bind(this);
+    this.updateTitle = this.updateTitle.bind(this);
+    this.updateDescription = this.updateDescription.bind(this);
 
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     const track = {
       title: this.state.title,
       description: this.state.description,
-      author_id: this.props.author_id,
       };
-    this.props.createNewTrack(track);
+    this.props.createTrack(track);
+    hashHistory.push('/profile');
   }
 
   updateTitle(e) {
@@ -46,29 +47,25 @@ class NewTrackForm extends React.Component {
   render() {
     return (
        <div className="new-track-form-container">
-         <form onSubmit={this.handleSubmit} className="session-form">
+         <form onSubmit={this.handleSubmit} className="new-track-form">
              <h2 className="session-form-cancel"><Link to='/profile'>X</Link></h2>
+             <h2>Upload to SoundByte</h2>
            {this.renderErrors()}
            <br/>
            <label> Title:
              <input type="text" value={this.state.title} onChange={this.updateTitle}/>
            </label>
            <br/>
-           <label> description:
-             <input type="text" value={this.state.description} onChange={this.updateDescription}/>
+           <label> Description:
+             <input type="textarea" value={this.state.description} onChange={this.updateDescription}/>
            </label>
            <br/>
            <input type="submit" value="Submit"/>
            <br/>
-           <footer className="session-form-footer">
-             {this.renderFooter()}
-             <br/>
-
-           </footer>
          </form>
        </div>
     );
   }
 }
 
-export default SessionForm;
+export default NewTrackForm;

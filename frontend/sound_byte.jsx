@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.login  = login;
     window.logout = logout;
     window.signup = signup;
+    window.createTrack = createTrack;
     if (window.currentUser) {
       const initialState = {
         session: {
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }
-    debugger
+
     window.store = store;
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store}/>, root);

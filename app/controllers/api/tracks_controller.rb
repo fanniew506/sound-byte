@@ -4,7 +4,7 @@ class Api::TracksController < ApplicationController
     author = current_user
     @track = author.tracks.new(track_params)
     if @track.save
-      render 'api/tracks/show'
+      render json: @track
     else
       render json: @track.errors.full_messages, status: 401
     end
@@ -43,6 +43,6 @@ class Api::TracksController < ApplicationController
 
   private
   def track_params
-    params.require(:user).permit(:username, :password, :avatar)
+    params.require(:track).permit(:title, :author_id, :description)
   end
 end
