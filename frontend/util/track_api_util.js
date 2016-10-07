@@ -2,7 +2,7 @@
 export const createTrack = (track, success, error) => {
 	$.ajax({
 		method: 'POST',
-		url: '/api/tracks',
+		url: '/api/users/:user_id/tracks',
 		data: { track },
 		success,
 		error
@@ -11,30 +11,22 @@ export const createTrack = (track, success, error) => {
 
 export const updateTrack = (track, success, error) => {
 	$.ajax({
-		method: 'POST',
-		url: '/api/tracks',
-		data: { track },
-		success,
-		error
-	});
-};
-export const deleteTrack = (track, success, error) => {
-	$.ajax({
-		method: 'DELETE',
-		url: '/api/tracks',
+		method: 'PATCH',
+		url: '/api/users/:user_id/tracks/:id',
 		data: { track },
 		success,
 		error
 	});
 };
 
-export const deleteTrack = success => {
+export const deleteTrack = (track, success, error) => {
 	$.ajax({
 		method: 'DELETE',
-		url: '/api/session',
+		url: '/api/users/:user_id/tracks/:id',
+		data: { track },
 		success,
-		error: () => {
-		  console.log("Logout error in SessionApiUtil#logout");
+    error: () => {
+		  console.log("Track Delete error in TrackApiUtil#deleteTrack");
 		}
 	});
 };

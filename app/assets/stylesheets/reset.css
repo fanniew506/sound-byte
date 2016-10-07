@@ -10,6 +10,10 @@ body, div, ul, button, li, ol, section, article, nav, img, header, p, h1, h2, h3
   background: transparent;
 }
 
+img {
+  border-style: none;
+}
+
 ul {
   list-style: none;
 }

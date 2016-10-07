@@ -15,7 +15,7 @@
 #
 
 class User < ActiveRecord::Base
-  has_attached_file :image, default_url: "missing.png"
+  has_attached_file :image, default_url: "missing.jpng"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :session_token, :password_digest, presence: true

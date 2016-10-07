@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = { username: this.state.username, password: this.state.password } ;
+    const user = { username: this.state.username, password: this.state.password };
     this.props.actionType(user);
     if (this.props.loggedIn) hashHistory.push("/");
   }

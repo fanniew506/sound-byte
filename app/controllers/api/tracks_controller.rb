@@ -1,10 +1,10 @@
 class Api::TracksController < ApplicationController
 
   def create
-    @track = Track.new(track_params)
-    @track.author_id = current_user.id
+    author = current_user
+    @track = author.tracks.new(track_params)
     if @track.save
-      render json: @track
+      render 'api/tracks/show'
     else
       render json: @track.errors.full_messages, status: 401
     end
@@ -14,16 +14,28 @@ class Api::TracksController < ApplicationController
     @track = Track.find(params[:id])
     @track.update(track_params)
     if @track.save
-      render json: @track
+      render 'api/tracks/show'
     else
       render json: @track.errors.full_messages, status: 401
     end
   end
 
   def show
+    @track = Track.find(params[:id])
+    if @track
+      render 'api/tracks/show'
+    else
+      render json: @track.errors.full_messages, status: 401
+    end
   end
 
   def destroy
+    @track = Track.find(params[:id])
+    if @track.destroy
+      render 'api/tracks/show'
+    else
+      render json: @track.errors.full_messages, status: 401
+    end
   end
 
   def index

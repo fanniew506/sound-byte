@@ -1,15 +1,4 @@
-.default-profile-picture {
-  background-image: url('http://s3.amazonaws.com/sound-byte-dev/users/images/000/000/001/original/default_user.jpeg?1475779331');
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  position: relative;
-  background-size: contain;
-  position: relative;
-  z-index: 2;
-  top: 20px;
-  left: 20px;
-}
+
 
 .header-background {
   width: 1000px;
@@ -23,4 +12,17 @@
 .profile-view {
   width: 1000px;
   margin: 0 auto;
+}
+
+.user-profile-picture {
+  background-image: url('http://s3.amazonaws.com/sound-byte-dev/users/images/000/000/001/original/default_user.jpeg?1475779331');
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  background-size: contain;
+  position: relative;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
 }

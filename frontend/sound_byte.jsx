@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { signup, login, logout, receiveCurrentUser } from './actions/session_actions';
 import configureStore from './store/store.js';
 import Root from './components/root';
+import { createTrack } from './actions/track_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -19,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }
+    debugger
     window.store = store;
-
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store}/>, root);
 });
