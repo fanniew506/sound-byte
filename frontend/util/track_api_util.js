@@ -30,3 +30,13 @@ export const deleteTrack = (track, success, error) => {
 		}
 	});
 };
+
+export const fetchAllTracksForUser = (success, error) => {
+  $.ajax({
+    method: 'GET',
+    url: '/api/users/:user_id/tracks',
+    success,
+    error
+  });
+
+};

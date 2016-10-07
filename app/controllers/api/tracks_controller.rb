@@ -39,6 +39,13 @@ class Api::TracksController < ApplicationController
   end
 
   def index
+    user = current_user
+    @tracks = user.tracks
+    if @tracks.nil?
+      render json: ["No tracks for user"]
+    else
+      render json: @tracks
+    end
   end
 
   private

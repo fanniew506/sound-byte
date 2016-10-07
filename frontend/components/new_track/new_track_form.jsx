@@ -12,7 +12,6 @@ class NewTrackForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     const track = {
       title: this.state.title,

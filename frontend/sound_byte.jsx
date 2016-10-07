@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { signup, login, logout, receiveCurrentUser } from './actions/session_actions';
 import configureStore from './store/store.js';
 import Root from './components/root';
-import { createTrack } from './actions/track_actions';
+import { createTrack, fetchAllTracksForUser } from './actions/track_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -11,10 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.logout = logout;
     window.signup = signup;
     window.createTrack = createTrack;
+    window.fetchAllTracksForUser = fetchAllTracksForUser;
     if (window.currentUser) {
+
       const initialState = {
         session: {
           currentUser: window.currentUser
+        },
+        tracks: {
+
         }
       };
       store = configureStore(initialState);

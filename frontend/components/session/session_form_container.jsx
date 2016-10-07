@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
 import { login, signup } from '../../actions/session_actions';
+import { fetchAllTracksForUser } from '../../actions/track_actions';
 
 const mapStateToProps = ({ session }) => ({
-  loggedIn : Boolean(session.currentUser),
+  loggedIn: Boolean(session.currentUser),
   errors: session.errors
 });
 
@@ -13,7 +14,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     actionType: user => dispatch(actionType(user)),
-    formType
+    formType,
+    fetchAllTracksForUser: user => dispatch(fetchAllTracksForUser(user))
   };
 };
 

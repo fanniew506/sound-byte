@@ -1,6 +1,6 @@
 import {
   RECEIVE_CURRENT_USER_TRACKS,
-  RECEIVE_CURRENT_USER,
+  RECEIVE_ALL_TRACKS,
   RECEIVE_ERRORS } from '../actions/track_actions';
 import merge from 'lodash/merge';
 
@@ -14,6 +14,10 @@ export default (state = defaultState, action) => {
       const track_id = action.track.id;
       const obj = { [track_id]: action.track };
       return merge({}, defaultState, obj );
+    case RECEIVE_ALL_TRACKS:
+      return merge({}, action.tracks);
+    case RECEIVE_ERRORS:
+      return merge({}, action.errors);
     default:
       return state;
   }
