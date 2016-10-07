@@ -26,7 +26,7 @@ export const logout = () => {
 		url: '/api/session',
     succress: () => {
       console.log("Successfully logged out");
-    }
+    },
 		error: () => {
 		  console.log("Logout error in SessionApiUtil#logout");
 		}
