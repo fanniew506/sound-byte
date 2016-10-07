@@ -20,11 +20,11 @@ export const signup = (user, success, error) => {
 	});
 };
 
-export const logout = () => {
+export const logout = success => {
 	$.ajax({
 		method: 'DELETE',
 		url: '/api/session',
-    succress: () => {
+    success: () => {
       console.log("Successfully logged out");
     },
 		error: () => {

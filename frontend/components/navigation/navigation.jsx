@@ -1,7 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
+
 
 class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLogOut = this.handleLogOut.bind(this);
+  }
+
+  handleLogOut() {
+    this.props.logout();
+    hashHistory.push('/');
+  }
   render() {
     const currentUser = this.props.currentUser;
     if (currentUser === null){
@@ -16,7 +26,7 @@ class Navigation extends React.Component {
         <nav className='header-nav loggedin'>
           <Link to='/new-track-form'><h4>Upload</h4></Link>
           <Link to='/profile'><h4>{currentUser.username}</h4></Link>
-          <button onClick={this.props.logout}><h4>Log out</h4></button>
+          <button onClick={this.handleLogOut}><h4>Log out</h4></button>
           <ul>
             <li>
 
