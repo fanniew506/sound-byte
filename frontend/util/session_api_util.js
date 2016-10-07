@@ -20,11 +20,13 @@ export const signup = (user, success, error) => {
 	});
 };
 
-export const logout = success => {
+export const logout = () => {
 	$.ajax({
 		method: 'DELETE',
 		url: '/api/session',
-		success,
+    succress: () => {
+      console.log("Successfully logged out");
+    }
 		error: () => {
 		  console.log("Logout error in SessionApiUtil#logout");
 		}
