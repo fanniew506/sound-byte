@@ -8,13 +8,11 @@ const mapStateToProps = ({ session }) => ({
   errors: session.errors
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  const formType = ownProps.location.pathname.slice(1);
-  const actionType = (formType === 'login') ? login : signup;
+const mapDispatchToProps = (dispatch) => {
 
   return {
-    actionType: user => dispatch(actionType(user)),
-    formType,
+    login: user => dispatch(login(user)),
+    signup: user => dispatch(signup(user)),
     fetchAllTracksForUser: user => dispatch(fetchAllTracksForUser(user))
   };
 };

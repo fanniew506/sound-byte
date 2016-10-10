@@ -1,37 +1,35 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
-import App from './app'
+import App from './app';
 import SessionFormContainer from './session/session_form_container';
-import Profile from './profile/profile'
-import NewTrackFormContainer from './new_track/new_track_form_container'
+import Profile from './profile/profile';
+import NewTrackFormContainer from './new_track/new_track_form_container';
 
 const Root = ({ store }) => {
 
   const redirectIfLoggedIn = () => {
-    const currentUser = store.getState().session.currentUser
+    const currentUser = store.getState().session.currentUser;
     if(currentUser) hashHistory.push('/profile');
-  }
+  };
 
   const ensureLoggedIn = () => {
-    const currentUser = store.getState().session.currentUser
+    const currentUser = store.getState().session.currentUser;
     if(!currentUser) hashHistory.push('/login');
-  }
+  };
 
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path='/' component={ App }>
-          <Route path='/login' component={ SessionFormContainer } onEnter={redirectIfLoggedIn}></Route>
-          <Route path='/signup' component={ SessionFormContainer } onEnter={redirectIfLoggedIn}></Route>
-          <Route path='/profile' component={ Profile } onEnter={ ensureLoggedIn}></Route>
+          <Route path='/profile' component={ Profile } onEnter={ ensureLoggedIn }></Route>
           <Route path='/new-track-form' component={ NewTrackFormContainer } onEnter={ ensureLoggedIn}></Route>
         </Route>
       </Router>
     </Provider>
   );
 
-}
+};
 
 export default Root;
 
