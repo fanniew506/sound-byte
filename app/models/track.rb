@@ -38,5 +38,12 @@ class Track < ActiveRecord::Base
     end
   end
 
+  def author_name
+    self.user.username
+  end
+
+  def author_image_url
+    self.user.image_url
+  end
 
 end
