@@ -25,3 +25,25 @@
   top: 20px;
   left: 20px;
 }
+
+.profile-tracks-content {
+  top: 100px;
+  position: relative;
+  margin: 0, auto;
+  padding: 10px;
+}
+
+.profile-tracks-header {
+
+}
+
+.profile-tracks-list li {
+  width: 250px;
+  display: inline-block;
+}
+
+.album-cover {
+  position: relative;
+  width: 180px;
+  margin: 0 auto;
+}

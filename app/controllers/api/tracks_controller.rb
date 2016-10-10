@@ -1,6 +1,7 @@
 class Api::TracksController < ApplicationController
 
   def create
+    debugger
     author = current_user
     @track = author.tracks.new(track_params)
     if @track.save
@@ -14,7 +15,7 @@ class Api::TracksController < ApplicationController
     @track = Track.find(params[:id])
     @track.update(track_params)
     if @track.save
-      render 'api/tracks/show'
+      render json: @track
     else
       render json: @track.errors.full_messages, status: 401
     end
@@ -23,7 +24,7 @@ class Api::TracksController < ApplicationController
   def show
     @track = Track.find(params[:id])
     if @track
-      render 'api/tracks/show'
+      render json: @track
     else
       render json: @track.errors.full_messages, status: 401
     end
@@ -32,7 +33,7 @@ class Api::TracksController < ApplicationController
   def destroy
     @track = Track.find(params[:id])
     if @track.destroy
-      render 'api/tracks/show'
+      render json: @track
     else
       render json: @track.errors.full_messages, status: 401
     end
@@ -40,16 +41,16 @@ class Api::TracksController < ApplicationController
 
   def index
     user = current_user
-    @tracks = user.tracks
-    if @tracks.nil?
-      render json: ["No tracks for user"]
+    if user.nil?
+      render json: {}
     else
-      render json: @tracks
+      @tracks = user.tracks
+      render '/api/tracks/index.json.jbuilder'
     end
   end
 
   private
   def track_params
-    params.require(:track).permit(:title, :author_id, :description)
+    params.require(:track).permit(:title, :author_id, :description, :album_image, :audio)
   end
 end

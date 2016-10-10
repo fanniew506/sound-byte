@@ -3,7 +3,9 @@ export const createTrack = (track, success, error) => {
 	$.ajax({
 		method: 'POST',
 		url: '/api/users/:user_id/tracks',
-		data: { track },
+		data: track,
+    contentType: false,
+    processData: false,
 		success,
 		error
 	});
@@ -14,6 +16,9 @@ export const updateTrack = (track, success, error) => {
 		method: 'PATCH',
 		url: '/api/users/:user_id/tracks/:id',
 		data: { track },
+    dataType: 'json',
+    contentType: false,
+    processData: false,
 		success,
 		error
 	});
@@ -38,5 +43,4 @@ export const fetchAllTracksForUser = (success, error) => {
     success,
     error
   });
-
 };

@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import NewTrackForm from './new_track_form';
 import { createTrack } from '../../actions/track_actions';
 
-const mapStateToProps = ({ session, tracks }) => ({
-  loggedIn : Boolean(session.currentUser),
-  errors: tracks.errors
+const mapStateToProps = (state) => ({
+  loggedIn : Boolean(state.session.currentUser),
+  errors: state.tracks.errors
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

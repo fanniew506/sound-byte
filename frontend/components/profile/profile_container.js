@@ -1,12 +1,18 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
 
-const mapStateToProps = ({ session }) => ({
-  loggedIn: Boolean(session.currentUser),
-  currentUser: session.currentUser
+const mapStateToProps = (state) => ({
+  loggedIn: Boolean(state.session.currentUser),
+  currentUser: state.session.currentUser,
+  tracks: state.tracks
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  
 });
 
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Profile);

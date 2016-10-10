@@ -13,20 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
     window.createTrack = createTrack;
     window.fetchAllTracksForUser = fetchAllTracksForUser;
     if (window.currentUser) {
-
       const initialState = {
         session: {
           currentUser: window.currentUser
         },
         tracks: {
-
         }
       };
       store = configureStore(initialState);
+      store.dispatch(fetchAllTracksForUser());
     } else {
       store = configureStore();
     }
-
     window.store = store;
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store}/>, root);

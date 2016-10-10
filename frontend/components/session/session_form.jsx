@@ -19,6 +19,7 @@ class SessionForm extends React.Component {
     const user = { username: this.state.username, password: this.state.password };
     if (this.props.formType === 'login') {
       this.props.login(user);
+      this.props.fetchAllTracksForUser();
     } else if (this.props.formType === 'signup') {
       this.props.signup(user);
     }

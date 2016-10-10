@@ -4,20 +4,34 @@ import { Link, hashHistory } from 'react-router';
 class NewTrackForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { title: "", description: "", errors: [] };
+    this.state = {
+      title: "",
+      description: "",
+      errors: [],
+      imageUrl: "",
+      imageFile: null,
+      audioFile: null };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateTitle = this.updateTitle.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
+    this.updateAudioFile = this.updateAudioFile.bind(this);
+    this.updateImageFile = this.updateImageFile.bind(this);
 
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const track = {
-      title: this.state.title,
-      description: this.state.description,
-      };
-    this.props.createTrack(track);
+    let formData = new FormData();
+    formData.append("track[title]", this.state.title);
+    formData.append("track[description]", this.state.description);
+    if (this.state.imageFile) {
+      formData.append("track[album_image]", this.state.imageFile);
+    }
+    if (this.state.audioFile) {
+      formData.append("track[audio]", this.state.audioFile);
+    }
+
+    this.props.createTrack(formData);
     hashHistory.push('/profile');
   }
 
@@ -33,14 +47,47 @@ class NewTrackForm extends React.Component {
     });
   }
 
+  updateImageFile (e) {
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        imageFile: file, imageUrl: reader.result
+      });
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
+  }
+
+  updateAudioFile (e) {
+    const file = e.currentTarget.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      this.setState({
+        audioFile: file
+      });
+    };
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ audioFile: null });
+    }
+  }
+
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, idx) => (
-          <li key={`error-${idx}`}>{error}</li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors !== undefined) {
+      return(
+        <ul>
+          {this.props.errors.map((error, idx) => (
+            <li key={`error-${idx}`}>{error}</li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {
@@ -58,6 +105,15 @@ class NewTrackForm extends React.Component {
            <label> Description:
              <input type="textarea" value={this.state.description} onChange={this.updateDescription}/>
            </label>
+           <br/>
+           <label> Upload Image:
+             <input type="file" onChange={this.updateImageFile}/>
+           </label>
+           <br/>
+           <label> Upload Audio File:
+             <input type="file" onChange={this.updateAudioFile}/>
+           </label>
+
            <br/>
            <input type="submit" value="Submit"/>
            <br/>
