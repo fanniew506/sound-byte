@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Sound from 'react-sound';
 import { signup, login, logout, receiveCurrentUser } from './actions/session_actions';
 import configureStore from './store/store.js';
 import Root from './components/root';
@@ -18,6 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
           currentUser: window.currentUser
         },
         tracks: {
+        },
+        currentTrackView: {
+          track: null
+        },
+        audio: {
+          currentSong: null,
+          position: 0,
+          volume: 50,
+          playStatus: Sound.status.STOPPED,
         }
       };
       store = configureStore(initialState);

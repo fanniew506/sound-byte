@@ -1,25 +1,37 @@
 import React from 'react';
+import { Link, hashHistory } from 'react-router';
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.showUsersTracks =  this.showUsersTracks.bind(this);
+    this.updateCurrentTrackView =  this.updateCurrentTrackView.bind(this);
+    this.playCurrentTrack =  this.playCurrentTrack.bind(this);
   }
+
+  updateCurrentTrackView(track){
+    this.props.currentTrackView(track)
+    hashHistory.push('/track-view')
+  }
+
+  playCurrentTrack(track){
+    debugger
+    this.props.selectSong(track)
+  }
+
 
   showUsersTracks() {
     const tracks = this.props.tracks;
     const tracksArr = [];
     for (let idx in tracks) { tracksArr.push(tracks[idx]); }
-    debugger
     let trackList = tracksArr.map((track) => {
       return (
-        <li key={track.id}>
-          <h3 className="album-title">{track.title}</h3>
-          <img className="album-cover" src={track.album_image_url}></img>
+        <li key={ track.id }>
+          <h3 onClick={ this.updateCurrentTrackView.bind(this, track) }>{ track.title }</h3>
+          <img onClick={ this.playCurrentTrack.bind(this, track) } className="album-cover" src={ track.album_image_url }></img>
         </li>
       );
     });
-    debugger
     return trackList;
   }
 
@@ -28,7 +40,6 @@ class Profile extends React.Component {
       <div className='profile-view'>
         <header>
           <div className="header-background">
-            <img className="user-profile-picture"></img>
           </div>
           <div className="default-profile-picture">
             <img src={this.props.currentUser.image_url} className="user-profile-picture"></img>

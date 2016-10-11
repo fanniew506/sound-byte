@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
+import { currentTrackView, selectSong } from '../../actions/audio_actions';
 
 const mapStateToProps = (state) => ({
   loggedIn: Boolean(state.session.currentUser),
@@ -8,7 +9,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  
+    currentTrackView: track => dispatch(currentTrackView(track)),
+    selectSong: track => dispatch(selectSong(track))
 });
 
 

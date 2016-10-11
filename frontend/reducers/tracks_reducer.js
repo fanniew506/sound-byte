@@ -15,10 +15,8 @@ export default (state = defaultState, action) => {
       const obj = { [track_id]: action.track };
       return merge({}, defaultState, obj );
     case RECEIVE_ALL_TRACKS:
-    debugger
       return merge({}, action.tracks);
     case RECEIVE_ERRORS:
-    debugger
       return merge({}, action.errors);
     default:
       return state;

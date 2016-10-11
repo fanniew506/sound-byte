@@ -3,9 +3,11 @@ import {
   UPDATE_TRACK,
   DELETE_TRACK,
   FETCH_ALL_TRACKS_FOR_USER,
+  CURRENT_TRACK_VIEW,
   receiveCurrentUserTracks,
   receiveAllTracks,
-  receiveErrors } from '../actions/track_actions';
+  receiveErrors,
+  currentTrackView } from '../actions/track_actions';
 import * as API from '../util/track_api_util';
 
 export default ({ dispatch }) => next => action => {
@@ -26,6 +28,8 @@ export default ({ dispatch }) => next => action => {
       debugger
       API.fetchAllTracksForUser(fetchSuccess, errorCallback);
       return next(action);
+    case CURRENT_TRACK_VIEW:
+      return (next(action));
     default:
       return(next(action));
   }

@@ -46,4 +46,8 @@ class Track < ActiveRecord::Base
     self.user.image_url
   end
 
+  def audio_url
+    self.audio.url
+  end
+
 end

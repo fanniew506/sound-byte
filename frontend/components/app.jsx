@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import NavigationContainer from './navigation/navigation_container';
+import AudioPlayerContainer from './audio_player/audio_player_container.js';
 
 const App = ({children}) => {
   return (
@@ -16,6 +17,7 @@ const App = ({children}) => {
       <main>
         {children}
       </main>
+        <AudioPlayerContainer/>
     </div>
   );
 };

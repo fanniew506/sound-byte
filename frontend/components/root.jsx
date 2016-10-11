@@ -5,6 +5,8 @@ import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import ProfileContainer from './profile/profile_container';
 import NewTrackFormContainer from './new_track/new_track_form_container';
+import TrackViewContainer from './track_view/track_view_container';
+
 
 const Root = ({ store }) => {
 
@@ -15,7 +17,7 @@ const Root = ({ store }) => {
 
   const ensureLoggedIn = () => {
     const currentUser = store.getState().session.currentUser;
-    if(!currentUser) hashHistory.push('/login');
+    if(!currentUser) hashHistory.push('/');
   };
 
   return (
@@ -23,7 +25,8 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path='/' component={ App }>
           <Route path='/profile' component={ ProfileContainer } onEnter={ ensureLoggedIn }></Route>
-          <Route path='/new-track-form' component={ NewTrackFormContainer } onEnter={ ensureLoggedIn}></Route>
+          <Route path='/new-track-form' component={ NewTrackFormContainer } onEnter={ ensureLoggedIn }></Route>
+          <Route path='/track-view' component={ TrackViewContainer }></Route>
         </Route>
       </Router>
     </Provider>

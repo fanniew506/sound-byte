@@ -1,0 +1,39 @@
+.track-view {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.track-header-background {
+  width: 1000px;
+  height: 250px;
+  z-index: 1;
+  position: absolute;
+  margin: 0 auto;
+  background: linear-gradient(150deg, #698CCF, #A4BAE5);
+}
+
+.track-profile-picture {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  background-size: contain;
+  position: relative;
+  z-index: 2;
+  top: 25px;
+  left: 770px;
+}
+
+.track-info {
+  z-index: 3;
+  color: black;
+  position: relative;
+  top: -100px;
+  left: 50px;
+}
+
+.comments-container {
+  top: 50px;
+  position: relative;
+  margin: 0, auto;
+  padding: 10px;
+}
