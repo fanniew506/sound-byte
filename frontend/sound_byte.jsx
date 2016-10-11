@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       };
       store = configureStore(initialState);
-      store.dispatch(fetchAllTracksForUser());
     } else {
       store = configureStore();
     }

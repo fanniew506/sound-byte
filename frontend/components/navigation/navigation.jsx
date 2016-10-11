@@ -27,7 +27,8 @@ class Navigation extends React.Component {
   }
 
   handleLogOut() {
-    this.props.logout(()=>hashHistory.push('/'));
+    this.props.logout();
+    hashHistory.push('/');
   }
   render() {
     Modal.setAppElement('body');

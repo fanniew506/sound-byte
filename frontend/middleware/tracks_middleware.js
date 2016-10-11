@@ -25,6 +25,7 @@ export default ({ dispatch }) => next => action => {
       API.deleteTrack(() => dispatch(fetchAllTracksForUser()), errorCallback)
       return next(action);
     case FETCH_ALL_TRACKS_FOR_USER:
+    debugger
       API.fetchAllTracksForUser(fetchSuccess, errorCallback);
       return next(action);
     case CURRENT_TRACK_VIEW:

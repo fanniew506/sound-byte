@@ -6,7 +6,7 @@ import SessionFormContainer from './session/session_form_container';
 import ProfileContainer from './profile/profile_container';
 import NewTrackFormContainer from './new_track/new_track_form_container';
 import TrackViewContainer from './track_view/track_view_container';
-
+import { fetchAllTracksForUser } from '../actions/track_actions';
 
 const Root = ({ store }) => {
 
@@ -17,7 +17,11 @@ const Root = ({ store }) => {
 
   const ensureLoggedIn = () => {
     const currentUser = store.getState().session.currentUser;
-    if(!currentUser) hashHistory.push('/');
+    if(!currentUser) {
+      hashHistory.push('/');
+    } else {
+      store.dispatch(fetchAllTracksForUser());
+    }
   };
 
   return (
