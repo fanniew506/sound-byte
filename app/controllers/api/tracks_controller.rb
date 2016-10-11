@@ -1,7 +1,6 @@
 class Api::TracksController < ApplicationController
 
   def create
-    debugger
     author = current_user
     @track = author.tracks.new(track_params)
     if @track.save
