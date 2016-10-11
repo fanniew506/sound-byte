@@ -2,6 +2,7 @@ class Api::TracksController < ApplicationController
 
   def create
     author = current_user
+    render json: ["Not Logged In"] if author.nil? 
     @track = author.tracks.new(track_params)
     if @track.save
       render json: @track
