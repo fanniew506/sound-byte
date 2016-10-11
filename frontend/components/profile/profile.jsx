@@ -21,6 +21,7 @@ class Profile extends React.Component {
 
 
   showUsersTracks() {
+    this.props.fetchAllTracksForUser();
     const tracks = this.props.tracks;
     const tracksArr = [];
     for (let idx in tracks) { tracksArr.push(tracks[idx]); }
