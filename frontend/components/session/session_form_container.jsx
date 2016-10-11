@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     login: user => dispatch(login(user)),
     signup: user => dispatch(signup(user)),
-    fetchAllTracksForUser: user => dispatch(fetchAllTracksForUser(user))
+    fetchAllTracksForUser: () => dispatch(fetchAllTracksForUser())
   };
 };
 

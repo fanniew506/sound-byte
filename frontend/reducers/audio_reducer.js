@@ -17,7 +17,7 @@ const defaultState = {
   currentSong: null,
   position: 0,
   volume: 50,
-  playStatus: Sound.status.STOPPED };
+  playStatus: Sound.status.PLAYING };
 
 export default (state = defaultState, action) => {
   switch(action.type) {

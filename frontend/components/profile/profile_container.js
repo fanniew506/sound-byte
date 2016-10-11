@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
-import { currentTrackView, selectSong } from '../../actions/audio_actions';
-import { fetchAllTracksForUser } from '../../actions/track_actions';
+import { selectSong } from '../../actions/audio_actions';
+import { fetchAllTracksForUser, currentTrackView } from '../../actions/track_actions';
 
 const mapStateToProps = (state) => ({
   loggedIn: Boolean(state.session.currentUser),

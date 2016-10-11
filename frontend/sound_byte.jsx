@@ -27,10 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
           currentSong: null,
           position: 0,
           volume: 50,
-          playStatus: Sound.status.STOPPED,
+          playStatus: Sound.status.PLAYING,
         }
       };
       store = configureStore(initialState);
+      store.dispatch(fetchAllTracksForUser());
     } else {
       store = configureStore();
     }

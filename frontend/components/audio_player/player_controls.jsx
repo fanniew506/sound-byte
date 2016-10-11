@@ -1,20 +1,26 @@
 import React from 'react';
 import Sound from 'react-sound';
 
-function control(text, clickHandler) {
-  const onClick = (e) => {
-    e.preventDefault();
-    clickHandler();
-  };
-  return <li><a href="#" onClick={onClick}>{text}</a></li>;
-}
 
 export default class PlayerControls extends React.Component {
+  constructor(props) {
+    super(props);
+    this.control = this.control.bind(this);
+  }
+
   render() {
     return <div>
       {this.renderControls()}
     </div>;
   }
+
+  control(text, clickHandler) {
+    const onClick = (e) => {
+      e.preventDefault();
+      clickHandler();
+    };
+    return <li><a href="#" onClick={onClick}>{text}</a></li>;
+    }
 
   renderControls() {
     const controls = {
@@ -31,10 +37,10 @@ export default class PlayerControls extends React.Component {
         <button onClick={this.props.onVolumeUp}>+</button>
 
         <ul>
-          {controls.play && control('Play', this.props.onPlay)}
-          {controls.stop && control('Stop', this.props.onStop)}
-          {controls.pause && control('Pause', this.props.onPause)}
-          {controls.resume && control('Resume', this.props.onResume)}
+          {controls.play && this.control('Play', this.props.onPlay)}
+          {controls.stop && this.control('Stop', this.props.onStop)}
+          {controls.pause && this.control('Pause', this.props.onPause)}
+          {controls.resume && this.control('Resume', this.props.onResume)}
         </ul>
       </div>
     );

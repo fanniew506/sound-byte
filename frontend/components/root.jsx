@@ -19,9 +19,7 @@ const Root = ({ store }) => {
     const currentUser = store.getState().session.currentUser;
     if(!currentUser) {
       hashHistory.push('/');
-    } else {
-      store.dispatch(fetchAllTracksForUser());
-    }
+    } 
   };
 
   return (
