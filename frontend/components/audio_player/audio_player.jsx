@@ -18,8 +18,8 @@ export default class AudioPlayer extends React.Component {
             onResume={this.props.onResume}
             onStop={this.props.onStop}
             onSeek={this.props.onSeek}
-            onVolumeUp={this.props.onVolumeUp}
-            onVolumeDown={this.props.onVolumeDown}
+            onVolumeUp={ this.props.onVolumeUp.bind(this, this.props.volume) }
+            onVolumeDown={ this.props.onVolumeDown.bind(this, this.props.volume) }
             duration={this.props.currentSong ? this.props.duration : 0}
             position={this.props.position} />
           {this.props.currentSong.audio_url &&
@@ -27,7 +27,7 @@ export default class AudioPlayer extends React.Component {
               url={this.props.currentSong.audio_url}
               playStatus={this.props.playStatus}
               playFromPosition={this.props.position}
-              volume={this.props.volume}
+              volume={ this.props.volume }
               onLoading={({bytesLoaded, bytesTotal}) => console.log(`${bytesLoaded / bytesTotal * 100}% loaded`)}
               onFinishedPlaying={this.props.onFinishedPlaying} />}
         </div>

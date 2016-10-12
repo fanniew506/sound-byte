@@ -44,3 +44,13 @@ export const fetchAllTracksForUser = (success, error) => {
     error
   });
 };
+
+export const fetchAllComments = (id, success, error) => {
+  $.ajax({
+    method: 'GET',
+    url: '/api/users/:user_id/tracks/:track_id/remarks',
+    data: { id },
+    success,
+    error
+  });
+};

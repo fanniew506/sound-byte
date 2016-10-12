@@ -8,7 +8,8 @@ class TrackView extends React.Component {
 
   render() {
     const currentTrack = this.props.currentTrackView
-    debugger
+  
+    this.props.fetchAllComments(currentTrack.id)
     return(
       <div className='track-view'>
         <header>
@@ -24,6 +25,9 @@ class TrackView extends React.Component {
         </header>
         <content className="comments-container">
           <h2> COMMENTS </h2>
+            <ul>
+              <li>{this.props.comments}</li>
+            </ul>
         </content>
       </div>
     );

@@ -6,6 +6,8 @@ export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const FETCH_ALL_TRACKS_FOR_USER = "FETCH_ALL_TRACKS_FOR_USER";
 export const RECEIVE_ALL_TRACKS = "RECEIVE_ALL_TRACKS";
 export const CURRENT_TRACK_VIEW = "CURRENT_TRACK_VIEW";
+export const ALL_COMMENTS = "ALL_COMMENTS";
+export const FETCH_ALL_COMMENTS = "FETCH_ALL_COMMENTS";
 
 export const createTrack = track => ({
   type: CREATE_TRACK,
@@ -44,4 +46,14 @@ export const receiveAllTracks = tracks => ({
 export const currentTrackView = track => ({
   type: CURRENT_TRACK_VIEW,
   track
+});
+
+export const allComments = comments => ({
+  type: ALL_COMMENTS,
+  comments
+});
+
+export const fetchAllComments = (id) => ({
+  type: FETCH_ALL_COMMENTS,
+  id: id
 });

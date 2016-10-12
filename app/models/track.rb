@@ -30,6 +30,8 @@ class Track < ActiveRecord::Base
     primary_key: :id,
     class_name: 'User'
 
+  has_many :remarks
+  
   def album_image_url
     if self.album_image.url === "missing.jpeg"
       return self.user.image_url

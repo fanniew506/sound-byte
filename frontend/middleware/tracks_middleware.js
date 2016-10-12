@@ -7,12 +7,16 @@ import {
   receiveCurrentUserTracks,
   receiveAllTracks,
   receiveErrors,
-  currentTrackView } from '../actions/track_actions';
+  currentTrackView,
+  FETCH_ALL_COMMENTS,
+  allComments
+  } from '../actions/track_actions';
 import * as API from '../util/track_api_util';
 
 export default ({ dispatch }) => next => action => {
   const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON))
   const fetchSuccess = tracks => dispatch(receiveAllTracks(tracks))
+  const fetchCommentSuccess = comments => dispatch(allComments(comments))
 
   switch(action.type) {
     case CREATE_TRACK:
@@ -29,6 +33,9 @@ export default ({ dispatch }) => next => action => {
       return next(action);
     case CURRENT_TRACK_VIEW:
       return (next(action));
+    case FETCH_ALL_COMMENTS:
+      API.fetchAllComments(action.id, fetchCommentSuccess, errorCallback);
+      return next(action);
     default:
       return(next(action));
   }

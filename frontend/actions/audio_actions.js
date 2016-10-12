@@ -1,7 +1,7 @@
 export const ON_PLAY  = "ON_PLAY";
 export const ON_PAUSE = "ON_PAUSE";
 export const ON_RESUME = "ON_RESUME";
-export const ON_STOPPED = "ON_STOPPED";
+export const ON_STOP = "ON_STOP";
 export const ON_FINISHED_PLAYING = "ON_FINISHED_PLAYING";
 export const ON_SEEK = "ON_SEEK";
 export const ON_VOLUME_UP = "ON_VOLUME_UP";
@@ -27,20 +27,22 @@ export const onPause = () => ({
   type: ON_PAUSE
 });
 
-export const onStopped = () => ({
-  type: ON_STOPPED
+export const onStop = () => ({
+  type: ON_STOP
 });
 
 export const onFinishedPlaying = () => ({
   type: ON_FINISHED_PLAYING
 });
 
-export const onVolumeUp = () => ({
-  type: ON_VOLUME_UP
+export const onVolumeUp = (currentVolume) => ({
+  type: ON_VOLUME_UP,
+  currentVolume
 });
 
-export const onVolumeDown = () => ({
-  type: ON_VOLUME_DOWN
+export const onVolumeDown = (currentVolume) => ({
+  type: ON_VOLUME_DOWN,
+  currentVolume
 });
 
 export const duration = () => ({

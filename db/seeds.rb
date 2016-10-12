@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 picture1 = "http://s3.amazonaws.com/sound-byte-dev/tracks/album_images/000/000/010/original/2.jpg?1476219428"
-audio1 = "http://s3.amazonaws.com/sound-byte-dev/tracks/audios/000/000/009/original/mpthreetest.mp3?1476221533"
+audio1 = "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
 User.destroy_all
 
 user1 = User.create(username: "fannie", password: "starwars", image: picture1),
@@ -20,3 +20,9 @@ track3 = Track.create(title: "Happy Birthday" , description: "Best day ever!", a
 track4 = Track.create(title: "Jingle Bells" , description: "Christmas Cheer", author_id: user1[0].id, album_image: picture1, audio: audio1);
 track5 = Track.create(title: "Cool Jazz" , description: "=)!", author_id: user1[0].id, album_image: picture1, audio: audio1);
 track6 = Track.create(title: "Hip Hop Jamz" , description: "Very Cool stuff", author_id: user1[0].id, album_image: picture1, audio: audio1);
+
+Remark.destroy_all
+
+remark1 = Remark.create(body: "I love this one!", author_id: 2, track_id: 1)
+remark2 = Remark.create(body: "This is amazing.", author_id: 1, track_id: 1)
+remark3 = Remark.create(body: "Would love to hear more tracks like this.", author_id: 2, track_id: 1)

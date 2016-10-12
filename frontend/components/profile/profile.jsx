@@ -15,7 +15,6 @@ class Profile extends React.Component {
   }
 
   playCurrentTrack(track){
-    debugger
     this.props.selectSong(track)
   }
 

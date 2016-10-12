@@ -2,7 +2,7 @@ import {
   ON_PLAY,
   ON_PAUSE,
   ON_RESUME,
-  ON_STOPPED,
+  ON_STOP,
   ON_FINISHED_PLAYING,
   ON_SEEK,
   ON_VOLUME_UP,
@@ -27,16 +27,16 @@ export default (state = defaultState, action) => {
       return merge({}, state, {playStatus: Sound.status.PAUSED} );
     case ON_RESUME:
       return merge({}, state, {playStatus: Sound.status.PLAYING} );
-    case ON_STOPPED:
+    case ON_STOP  :
       return merge({}, state, {playStatus: Sound.status.STOPPED} );
     case ON_SEEK:
       return merge({}, state, { position: action.position } );
     case ON_FINISHED_PLAYING:
       return merge({}, state, {playStatus: Sound.status.STOPPED} );
     case ON_VOLUME_UP:
-      return merge({}, state, {volume: volume+10} );
+      return merge({}, state, {volume: action.currentVolume+10} );
     case ON_VOLUME_DOWN:
-      return merge({}, state, {volume: volume+10} );
+      return merge({}, state, {volume: action.currentVolume+10} );
     case SELECT_SONG:
       return merge({}, state, { currentSong: action.track });
     default:

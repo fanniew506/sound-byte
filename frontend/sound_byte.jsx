@@ -4,7 +4,7 @@ import Sound from 'react-sound';
 import { signup, login, logout, receiveCurrentUser } from './actions/session_actions';
 import configureStore from './store/store.js';
 import Root from './components/root';
-import { createTrack, fetchAllTracksForUser } from './actions/track_actions';
+import { createTrack, fetchAllTracksForUser, fetchAllComments, allComments } from './actions/track_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.signup = signup;
     window.createTrack = createTrack;
     window.fetchAllTracksForUser = fetchAllTracksForUser;
+    window.fetchAllComments = fetchAllComments;
+    window.allComments = allComments;
     if (window.currentUser) {
       const initialState = {
         session: {
@@ -21,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         tracks: {
         },
         currentTrackView: {
-          track: null
+          track: null,
+          comments: null
         },
         audio: {
           currentSong: null,

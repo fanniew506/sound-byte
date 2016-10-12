@@ -30,6 +30,11 @@ class User < ActiveRecord::Base
     primary_key: :id,
     class_name: 'Track'
 
+  has_many :remarks,
+    foreign_key: :author_id,
+    primary_key: :id,
+    class_name: 'Remark'
+
   def ensure_session_token
     self.session_token ||= SecureRandom.base64
   end
