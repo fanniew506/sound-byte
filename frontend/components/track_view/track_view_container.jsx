@@ -1,14 +1,20 @@
 import { connect } from 'react-redux';
 import TrackView from './track_view';
-import { fetchAllComments } from '../../actions/track_actions';
+import { fetchAllComments, createComment } from '../../actions/remark_actions';
+import { fetchCurrentTrackView } from '../../actions/track_actions';
 
-const mapStateToProps = ({ currentTrackView }) => ({
+const mapStateToProps = ({ currentTrackView, session }) => {
+  return {
+  currentUser: session.currentUser,
   currentTrackView: currentTrackView.track,
   comments: currentTrackView.comments
-});
+  }
+};
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchAllComments: (id) => dispatch(fetchAllComments(id))
+  fetchCurrentTrackView: () => dispatch(fetchCurrentTrackView()),
+  fetchAllComments: (id) => dispatch(fetchAllComments(id)),
+  createComment: comment => dispatch(createComment(comment))
 });
 
 

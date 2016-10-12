@@ -1,5 +1,14 @@
 .header-container {
-   background-color: #2F2F2F;
+  background-color: #2F2F2F;
+  width: 100%;
+}
+
+.header .group {
+  position: absolute;
+  z-index: 4;
+}
+
+ .content {
  }
 
  .header {
@@ -9,6 +18,7 @@
  margin: 0 auto;
  border-right: 1px solid grey;
  border-left: 1px solid grey;
+ display: block;
  }
 
  .header-logo {

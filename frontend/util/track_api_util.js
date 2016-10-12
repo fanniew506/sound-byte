@@ -2,7 +2,7 @@
 export const createTrack = (track, success, error) => {
 	$.ajax({
 		method: 'POST',
-		url: '/api/users/:user_id/tracks',
+		url: '/api/tracks',
 		data: track,
     contentType: false,
     processData: false,
@@ -14,7 +14,7 @@ export const createTrack = (track, success, error) => {
 export const updateTrack = (track, success, error) => {
 	$.ajax({
 		method: 'PATCH',
-		url: '/api/users/:user_id/tracks/:id',
+		url: '/api/tracks/:id',
 		data: { track },
     dataType: 'json',
     contentType: false,
@@ -27,7 +27,7 @@ export const updateTrack = (track, success, error) => {
 export const deleteTrack = (track, success, error) => {
 	$.ajax({
 		method: 'DELETE',
-		url: '/api/users/:user_id/tracks/:id',
+		url: '/api/tracks/:id',
 		data: { track },
 		success,
     error: () => {
@@ -39,17 +39,16 @@ export const deleteTrack = (track, success, error) => {
 export const fetchAllTracksForUser = (success, error) => {
   $.ajax({
     method: 'GET',
-    url: '/api/users/:user_id/tracks',
+    url: '/api/tracks',
     success,
     error
   });
 };
 
-export const fetchAllComments = (id, success, error) => {
+export const fetchCurrentTrackView = (id, success, error) => {
   $.ajax({
     method: 'GET',
-    url: '/api/users/:user_id/tracks/:track_id/remarks',
-    data: { id },
+    url: `/api/tracks/${id}`,
     success,
     error
   });

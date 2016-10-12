@@ -5,13 +5,7 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.showUsersTracks =  this.showUsersTracks.bind(this);
-    this.updateCurrentTrackView =  this.updateCurrentTrackView.bind(this);
     this.playCurrentTrack =  this.playCurrentTrack.bind(this);
-  }
-
-  updateCurrentTrackView(track){
-    this.props.currentTrackView(track)
-    hashHistory.push('/track-view')
   }
 
   playCurrentTrack(track){
@@ -26,7 +20,7 @@ class Profile extends React.Component {
     let trackList = tracksArr.map((track) => {
       return (
         <li key={ track.id }>
-          <h3 onClick={ this.updateCurrentTrackView.bind(this, track) }>{ track.title }</h3>
+          <Link to={`/track-view/${track.id}`}><h3>{ track.title }</h3></Link>
           <img onClick={ this.playCurrentTrack.bind(this, track) } className="album-cover" src={ track.album_image_url }></img>
         </li>
       );

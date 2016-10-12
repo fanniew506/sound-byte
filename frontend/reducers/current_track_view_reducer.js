@@ -1,4 +1,5 @@
-import { CURRENT_TRACK_VIEW, ALL_COMMENTS } from '../actions/track_actions';
+import { ALL_COMMENTS } from '../actions/remark_actions';
+import { CURRENT_TRACK_VIEW } from '../actions/track_actions';
 import merge from 'lodash/merge';
 
 const defaultState = Object.freeze({ track: null, comments: null});

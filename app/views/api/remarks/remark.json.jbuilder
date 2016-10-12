@@ -1,8 +1,1 @@
-json.remark do
-  json.id @remark.id
-  json.body @remark.body
-  json.track_id @remark.track_id
-  json.author_id @remark.track_id
-  json.author_image_url @remark.user.image_url
-  json.author_name @remark.user.username
-end
+json.extract! remark, :id, :body, :track_id, :author_id, :author_name, :author_image_url, :created_at

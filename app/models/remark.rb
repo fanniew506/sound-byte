@@ -20,6 +20,12 @@ class Remark < ActiveRecord::Base
 
   belongs_to :track
 
+  def author_name
+    self.user.username
+  end
 
+  def author_image_url
+    self.user.image_url
+  end
 
 end

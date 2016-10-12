@@ -10,10 +10,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    currentTrackView: track => dispatch(currentTrackView(track)),
     selectSong: track => dispatch(selectSong(track)),
     fetchAllTracksForUser: () => dispatch(fetchAllTracksForUser()),
-    fetchAllComments: (id) => dispatch(fetchAllComments(id))
 });
 
 

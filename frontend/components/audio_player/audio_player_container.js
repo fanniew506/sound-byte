@@ -27,7 +27,8 @@ const mapDispatchToProps = (dispatch) => ({
     onVolumeUp: () => dispatch(onVolumeUp()),
     onVolumeDown: () => dispatch(onVolumeDown()),
     duration: () => dispatch(duration()),
-    playFromPosition: () => dispatch(playFromPosition())
+    playFromPosition: () => dispatch(playFromPosition()),
+    updatePosition: (position) => dispatch(updatePosition(position))
 });
 
 export default connect(

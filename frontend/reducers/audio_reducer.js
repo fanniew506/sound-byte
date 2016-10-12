@@ -9,7 +9,8 @@ import {
   ON_VOLUME_DOWN,
   DURATION,
   SELECT_SONG,
-  PLAY_FROM_POSITION } from '../actions/audio_actions';
+  PLAY_FROM_POSITION,
+  UPDATE_POSITION } from '../actions/audio_actions';
 import merge from 'lodash/merge';
 import Sound from 'react-sound';
 
@@ -39,7 +40,9 @@ export default (state = defaultState, action) => {
       return merge({}, state, {volume: action.currentVolume+10} );
     case SELECT_SONG:
       return merge({}, state, { currentSong: action.track });
+    case UPDATE_POSITION:
+      return merge({}, state, { position: action.position });
     default:
-      return defaultState;
+      return state;
   }
 };

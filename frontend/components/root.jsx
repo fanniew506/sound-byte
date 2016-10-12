@@ -6,7 +6,8 @@ import SessionFormContainer from './session/session_form_container';
 import ProfileContainer from './profile/profile_container';
 import NewTrackFormContainer from './new_track/new_track_form_container';
 import TrackViewContainer from './track_view/track_view_container';
-import { fetchAllTracksForUser } from '../actions/track_actions';
+import { fetchAllTracksForUser, fetchCurrentTrackView } from '../actions/track_actions';
+import { fetchAllComments } from '../actions/remark_actions';
 
 const Root = ({ store }) => {
 
@@ -19,16 +20,25 @@ const Root = ({ store }) => {
     const currentUser = store.getState().session.currentUser;
     if(!currentUser) {
       hashHistory.push('/');
-    } 
+    }
   };
 
+  const getTrackView = (nextState) => {
+		store.dispatch(fetchCurrentTrackView(nextState.params.id));
+  }
+
+  const getProfileView = () => {
+    store.dispatch(fetchAllTracksForUser())
+  }
+
+
   return (
-    <Provider store={store}>
-      <Router history={hashHistory}>
+    <Provider store={ store }>
+      <Router history={ hashHistory }>
         <Route path='/' component={ App }>
-          <Route path='/profile' component={ ProfileContainer } onEnter={ ensureLoggedIn }></Route>
+          <Route path='/profile' component={ ProfileContainer } onEnter={ getProfileView }></Route>
           <Route path='/new-track-form' component={ NewTrackFormContainer } onEnter={ ensureLoggedIn }></Route>
-          <Route path='/track-view' component={ TrackViewContainer }></Route>
+          <Route path='/track-view/:id' component={ TrackViewContainer } onEnter={ getTrackView }></Route>
         </Route>
       </Router>
     </Provider>

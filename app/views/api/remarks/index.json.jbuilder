@@ -1,12 +1,5 @@
 @remarks.each do |remark|
-
   json.set! remark.id do
-    json.id remark.id
-    json.body remark.body
-    json.track_id remark.track_id
-    json.author_id remark.track_id
-    json.author_image_url remark.user.image_url
-    json.author_name remark.user.username
+    json.partial! 'api/remarks/remark.json.jbuilder', remark: remark
   end
-
 end

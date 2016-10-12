@@ -1,5 +1,46 @@
 .audio-player {
-  position: relative;
-  width: 1100px;
-  margin: 0 auto;
+  position: absolute;
+  width: 900px;
+}
+
+.audio-container {
+  width: 100%;
+}
+
+.player-controls {
+  float: left;
+}
+
+.fa-play, .fa-pause {
+  font-size: 16px;
+}
+
+.progress-bar {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
+.progress-circle {
+  width: 10px;
+  height: 20px;
+  background-color: black;
+}
+
+.player-album-info  {
+  width: 100px;
+  float: right;
+  text-align: center
+}
+
+.player-album-info img {
+  width: 60px;
+}
+
+.player-album-info h2 {
+  font-size: 14px;
+}
+
+.player-album-info h4 {
+  font-size: 12px;
 }

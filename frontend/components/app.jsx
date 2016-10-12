@@ -14,10 +14,10 @@ const App = ({children}) => {
           <NavigationContainer/>
         </header>
       </div>
-      <main>
+      <div className="content group">
         {children}
-      </main>
-        <AudioPlayerContainer/>
+      </div>
+      <AudioPlayerContainer/>
     </div>
   );
 };
