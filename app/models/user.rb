@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
     class_name: 'Remark'
 
   def ensure_session_token
-    self.session_token ||= SecureRandom.base64
+    self.session_token ||= SecureRandom.urlsafe_base64
   end
 
   def password=(password)
@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
   end
 
   def reset_session_token
-    self.session_token = SecureRandom.base64
+    self.session_token = SecureRandom.urlsafe_base64
     self.save!
     self.session_token
   end
