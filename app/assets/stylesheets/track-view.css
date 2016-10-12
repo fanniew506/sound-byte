@@ -37,3 +37,27 @@
   margin: 0, auto;
   padding: 10px;
 }
+
+.author-info{
+ padding: 30px;
+}
+
+.author-display {
+  float: left;
+  width: 200px;
+}
+
+.author-info h2{
+  text-align: center;
+}
+
+.author-info img{
+  width: 200px;
+  border-radius: 50%;
+}
+
+.track-description {
+  width: 700;
+  display: inline-block;
+  margin: 0 0 0 20px;
+}

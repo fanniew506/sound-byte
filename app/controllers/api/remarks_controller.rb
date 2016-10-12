@@ -18,7 +18,7 @@ class Api::RemarksController < ApplicationController
   def index
     track = Track.find(params[:id])
     @remarks = track.remarks
-    render json: 'api/remarks/index'
+    render json: @remarks
   end
 
   def destroy

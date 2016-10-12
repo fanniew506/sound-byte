@@ -8,7 +8,7 @@ class TrackView extends React.Component {
 
   render() {
     const currentTrack = this.props.currentTrackView
-  
+
     this.props.fetchAllComments(currentTrack.id)
     return(
       <div className='track-view'>
@@ -23,6 +23,17 @@ class TrackView extends React.Component {
             <h3>{ currentTrack.author_name }</h3>
           </div>
         </header>
+        <div className="author-info group">
+          <div className="author-display">
+            <img src={currentTrack.author_image_url}></img>
+            <h3>{currentTrack.author_name}</h3>
+          </div>
+          <div classname="track-description">
+            <p>
+              {currentTrack.description}
+            </p>
+          </div>
+        </div>
         <content className="comments-container">
           <h2> COMMENTS </h2>
             <ul>
