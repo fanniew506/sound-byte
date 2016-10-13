@@ -15,7 +15,7 @@
 #
 
 class User < ActiveRecord::Base
-  has_attached_file :image, default_url: "https://s3.amazonaws.com/sound-byte-dev/users/images/000/000/001/original/default_user.jpeg"
+  has_attached_file :image, default_url: "https://s3.amazonaws.com/sound-byte-dev/users/images/000/000/005/original/default_user.jpeg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :session_token, :password_digest, presence: true

@@ -7,6 +7,7 @@ import {
   receiveAllTracks,
   receiveErrors,
   } from '../actions/track_actions';
+
 import * as API from '../util/track_api_util';
 
 export default ({ dispatch }) => next => action => {

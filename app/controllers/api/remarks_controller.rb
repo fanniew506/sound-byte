@@ -1,12 +1,12 @@
 class Api::RemarksController < ApplicationController
   def create
-    track = Track.find(params[:id])
+    track = Track.find(params[:track_id])
     user = current_user
-    @remark = Remark.new(remark_params)
+    @remark = Remark.new({body: params[:body]})
     @remark.author_id = user.id
     @remark.track_id = track.id
     if @remark.save
-      render json: 'api/remarks/remark'
+      render json: @remark
     else
       render json: @remark.errors.full_messages
     end
@@ -18,13 +18,13 @@ class Api::RemarksController < ApplicationController
   def index
     track = Track.find(params[:id])
     @remarks = track.remarks
-    render json: @remarks
+    render 'api/remarks/index'
   end
 
   def destroy
-    @remark = Remark.find(params[:id])
+    @remark = Remark.find(params[:track_id])
     @remark.destroy
-      render json: 'api/remarks/remark'
+      render json: @remark
   end
 
   private

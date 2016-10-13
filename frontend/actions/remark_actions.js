@@ -13,7 +13,7 @@ export const fetchAllComments = (id) => ({
   id
 });
 
-export const createComment = (comment) => ({
+export const createComment = (data) => ({
   type: CREATE_COMMENT,
-  comment
+  data
 });

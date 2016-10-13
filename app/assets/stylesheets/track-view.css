@@ -1,11 +1,11 @@
 .track-view {
-  width: 1000px;
+  width: 1100px;
   margin: 0 auto;
 }
 
 .track-header-background {
-  width: 1000px;
-  height: 250px;
+  width: 1100px;
+  height: 350px;
   z-index: 1;
   position: absolute;
   margin: 0 auto;
@@ -13,8 +13,8 @@
 }
 
 .track-profile-picture {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   position: relative;
   background-size: contain;
   position: relative;

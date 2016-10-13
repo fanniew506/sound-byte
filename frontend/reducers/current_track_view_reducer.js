@@ -7,9 +7,7 @@ const defaultState = Object.freeze({ track: null, comments: null});
 export default (state = defaultState, action) => {
   switch(action.type) {
     case CURRENT_TRACK_VIEW:
-      return merge({}, state, {track: action.track});
-    case ALL_COMMENTS:
-      return merge({}, state, {comments: action.comments});
+      return merge({}, defaultState, action.track);
     default:
       return state;
   }

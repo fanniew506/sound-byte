@@ -24,6 +24,7 @@ class Api::TracksController < ApplicationController
   def show
     @track = Track.find(params[:id])
     if @track
+      @remarks = @track.remarks
       render 'api/tracks/show.json.jbuilder'
     else
       render json: @track.errors.full_messages, status: 401

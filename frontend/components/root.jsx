@@ -24,7 +24,7 @@ const Root = ({ store }) => {
   };
 
   const getTrackView = (nextState) => {
-		store.dispatch(fetchCurrentTrackView(nextState.params.id));
+		store.dispatch(fetchCurrentTrackView(nextState.params.id))
   }
 
   const getProfileView = () => {

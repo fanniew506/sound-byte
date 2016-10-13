@@ -1,7 +1,7 @@
 
 
 .header-background {
-  width: 1000px;
+  width: 1100px;
   height: 250px;
   z-index: 1;
   position: absolute;
@@ -10,7 +10,7 @@
 }
 
 .profile-view {
-  width: 1000px;
+  width: 1100px;
   margin: 0 auto;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .profile-tracks-list li {
-  width: 250px;
+  width: 25%;
   display: inline-block;
 }
 

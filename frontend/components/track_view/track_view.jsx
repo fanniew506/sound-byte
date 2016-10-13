@@ -6,13 +6,11 @@ class TrackView extends React.Component {
     this.state = { comment: "" }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.updateComment = this.updateComment.bind(this)
-    debugger
   }
 
   handleSubmit(e){
     e.preventDefault()
     const data = { id: this.props.currentTrackView.id, comment: this.state.comment }
-    debugger
     this.props.createComment(data)
   }
 
@@ -23,12 +21,25 @@ class TrackView extends React.Component {
   }
 
   renderComments(){
-    this.props.fetchAllComments(this.props.currentTrackView.id)
+    const comments = this.props.comments
+    if ( comments ) {
+
+    }
   }
 
   render() {
     if (this.props.currentTrackView) {
-      const currentTrack = this.props.currentTrackView
+      const comments = this.props.comments
+      const currentTrack = this.props.currentTrackView;
+      const commentList = comments.map((comment) => {
+        return (
+          <li key={ comment.id }>
+            <img src={ comment.author_image_url }></img>
+            <h3>{ comment.author_name }</h3>
+            <p>{ comment.body }</p>
+          </li>
+        );
+      })
       return(
         <div className='track-view'>
           <header>
@@ -64,15 +75,16 @@ class TrackView extends React.Component {
           </div>
           <content className="comments-container">
             <h2> COMMENTS </h2>
-                { this.renderComments }
-              <ul>
+              <ul className="comments-list">
+                { commentList }
               </ul>
           </content>
         </div>
       );
     } else {
       return <div></div>;
-  }}
+    }
+  }
 }
 
 export default TrackView;

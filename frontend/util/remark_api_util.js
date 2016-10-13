@@ -1,10 +1,9 @@
-export const createComment = (data, success, error) => {
+export const createComment = (sent_data) => {
+
   $.ajax({
     method: 'POST',
-    url: `/api/tracks/${data.id}/remarks`,
-    data: { comment: data.comment },
-    success,
-    error
+    url: `/api/tracks/${sent_data.id}/remarks`,
+    data: { body: sent_data.comment }
   });
 };
 
