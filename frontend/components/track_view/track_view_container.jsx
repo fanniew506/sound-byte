@@ -15,7 +15,7 @@ const mapStateToProps = ({ currentTrackView, session, audio }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchCurrentTrackView: () => dispatch(fetchCurrentTrackView()),
+  fetchCurrentTrackView: (id) => dispatch(fetchCurrentTrackView(id)),
   fetchAllComments: (id) => dispatch(fetchAllComments(id)),
   createComment: comment => dispatch(createComment(comment)),
   selectSong: track => dispatch(selectSong(track)),

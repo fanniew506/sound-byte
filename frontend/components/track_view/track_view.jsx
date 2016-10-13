@@ -1,5 +1,6 @@
 import React from 'react';
 import TrackPlayerControls from'./track_player_controls';
+import { hashHistory } from 'react-router';
 
 class TrackView extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class TrackView extends React.Component {
     e.preventDefault()
     const data = { id: this.props.currentTrackView.id, comment: this.state.comment }
     this.props.createComment(data)
-    hashHistory.push(`/track-view/${this.props.currentTrackView.id}`)
+    this.props.fetchCurrentTrackView(this.props.currentTrackView.id)
+    this.setState({comment: ""})
   }
 
   updateComment(e){

@@ -12,9 +12,7 @@ const App = ({children}) => {
           <audio src="http://s3.amazonaws.com/sound-byte-dev/tracks/audios/000/000/001/original/The_20Irish_20Washerwoman.mp3?1476237886">
           </audio>
       </div>
-      <footer className="audio-footer group">
         <AudioPlayerContainer/>
-      </footer>
     </div>
   );
 };
