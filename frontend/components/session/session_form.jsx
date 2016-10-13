@@ -84,6 +84,7 @@ class SessionForm extends React.Component {
              <input
                type="text"
                placeholder="Username"
+
                value={ this.state.username }
                onChange={ this.updateUsername }/>
            <br/>
