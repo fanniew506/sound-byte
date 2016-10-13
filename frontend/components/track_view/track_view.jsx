@@ -65,36 +65,38 @@ class TrackView extends React.Component {
               <h2>{ currentTrack.title }</h2>
             </div>
           </header>
-          <form onSubmit={ this.handleSubmit } className="new-comment-form">
-            <img src={this.props.currentUser.image_url}></img>
-              <input className="comment-input"
-                type="text"
-                placeholder="Write A Comment"
-                value={ this.state.comment }
-                onChange={ this.updateComment }
-                />
-              <input className="submit-button" type="submit" value=""/>
-          </form>
-          <div className="author-info group">
-            <div className="author-display">
-              <img src={currentTrack.author_image_url}></img>
-              <h3 className="author-display-name">{currentTrack.author_name}</h3>
+          <div className="track-content">
+            <form onSubmit={ this.handleSubmit } className="new-comment-form">
+              <img src={this.props.currentUser.image_url}></img>
+                <input className="comment-input"
+                  type="text"
+                  placeholder="Write A Comment"
+                  value={ this.state.comment }
+                  onChange={ this.updateComment }
+                  />
+                <input className="submit-button" type="submit" value=""/>
+            </form>
+            <div className="author-info group">
+              <div className="author-display">
+                <img src={currentTrack.author_image_url}></img>
+                <h3 className="author-display-name">{currentTrack.author_name}</h3>
+              </div>
+              <div className="track-description">
+                <p>
+                  {currentTrack.description}
+                </p>
+              </div>
             </div>
-            <div className="track-description">
-              <p>
-                {currentTrack.description}
-              </p>
-            </div>
+            <content className="comments-container">
+              <h2 className="comments-header">
+                <i className="fa fa-comments" aria-hidden="false"></i>
+                <div className="comment-list-title">comments</div>
+              </h2>
+                <ul className="comments-list group">
+                  { commentList }
+                </ul>
+            </content>
           </div>
-          <content className="comments-container">
-            <h2 className="comments-header">
-              <i className="fa fa-comments" aria-hidden="false"></i>
-              <div className="comment-list-title">comments</div>
-            </h2>
-              <ul className="comments-list group">
-                { commentList }
-              </ul>
-          </content>
         </div>
       );
     } else {

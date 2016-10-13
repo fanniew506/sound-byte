@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.track-content {
+  /*margin-left: 130px;*/
+}
+
 .track-header-background {
   width: 1200px;
   height: 350px;
