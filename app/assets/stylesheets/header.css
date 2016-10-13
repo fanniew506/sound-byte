@@ -22,8 +22,10 @@
  }
 
  .header-logo {
-   background-color: #2F2F2F;
-   float: left;
+  background-color: #2F2F2F;
+  float: left;
+  padding-top: 5px;
+  height: 100%;
  }
 
  .header-nav {
@@ -38,11 +40,19 @@
 
  .header-nav h4 {
    float:left;
-   padding: 10px 20px;
+   padding: 15px 20px;
    color: white;
    font-weight: 400;
  }
 
  .header-nav button {
    cursor: pointer;
+ }
+
+ .profile-thumb {
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   float: left;
+   margin-top: 10px;
  }
