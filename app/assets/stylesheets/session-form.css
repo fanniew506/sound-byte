@@ -1,5 +1,9 @@
 
 .session-form-container {
+
+}
+
+.session-form {
   width: 400px;
   background-color: white;
   border: 1px solid gray;
@@ -7,8 +11,8 @@
   position: relative;
   text-align: center;
   font-size: 16px
+  padding: 40px;
 }
-
 
 
 .session-form-header{
@@ -19,21 +23,13 @@
 .session-form-container input {
   border-radius: 5px;
   border: 0.5px solid grey;
-  padding: 5px;
+  padding: 7px;
   margin: 10px;
-  width: 180px;
+  width: 200px;
 }
 
-.session-form-container label {
-  font-size: 12px;
-}
 
-.session-form-container footer {
-  padding: 5px;
-
-}
 .session-form-cancel {
   text-align: right;
   padding: 10px;
-
 }

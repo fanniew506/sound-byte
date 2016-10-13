@@ -1,6 +1,8 @@
 .header-container {
-  background-color: #2F2F2F;
+  background-color: #333;
   width: 100%;
+  position: fixed;
+  z-index: 100;
 }
 
 .header .group {
@@ -8,17 +10,27 @@
   z-index: 4;
 }
 
+ .body-container {
+   position: relative;
+   top: 51px;
+ }
+
  .content {
+   background-color: #fff;
+   width: 1200px;
+   margin: 0 auto;
+   height: 100%;
  }
 
  .header {
  background-color: #2F2F2F;
  font-weight: bold;
- width: 1100px;
+ width: 1200px;
  margin: 0 auto;
  border-right: 1px solid grey;
  border-left: 1px solid grey;
  display: block;
+
  }
 
  .header-logo {
@@ -34,15 +46,23 @@
  }
 
  .header h2 {
-   color: white;
+   color: #ccc;
    padding: 10px 20px;
  }
 
  .header-nav h4 {
    float:left;
    padding: 15px 20px;
-   color: white;
+   color: #ccc;
    font-weight: 400;
+ }
+
+ .header-nav .username {
+   padding: 15px 20px 15px 5px;
+ }
+
+ .header-nav h4:hover {
+   color: #fff;
  }
 
  .header-nav button {

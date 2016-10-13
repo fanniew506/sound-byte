@@ -1,4 +1,5 @@
 import React from 'react';
+import TrackPlayerControls from'./track_player_controls';
 
 class TrackView extends React.Component {
   constructor(props) {
@@ -12,19 +13,13 @@ class TrackView extends React.Component {
     e.preventDefault()
     const data = { id: this.props.currentTrackView.id, comment: this.state.comment }
     this.props.createComment(data)
+    hashHistory.push(`/track-view/${this.props.currentTrackView.id}`)
   }
 
   updateComment(e){
     this.setState({
       comment: e.currentTarget.value
     });
-  }
-
-  renderComments(){
-    const comments = this.props.comments
-    if ( comments ) {
-
-    }
   }
 
   render() {
@@ -34,9 +29,12 @@ class TrackView extends React.Component {
       const commentList = comments.map((comment) => {
         return (
           <li key={ comment.id }>
-            <img src={ comment.author_image_url }></img>
-            <h3>{ comment.author_name }</h3>
-            <p>{ comment.body }</p>
+            <div className="thumb">
+              <img src={ comment.author_image_url }></img>
+            </div>
+            <h3 className="comment-author-name">{ comment.author_name }</h3>
+            <p className="comment-body">{ comment.body }</p>
+            <br></br>
           </li>
         );
       })
@@ -49,23 +47,36 @@ class TrackView extends React.Component {
               <img src={ currentTrack.album_image_url } className="track-profile-picture"></img>
             </div>
             <div className="track-info">
-              <h2>{ currentTrack.title }</h2>
+              <div className="track-play-toggle">
+                <TrackPlayerControls
+                  playStatus={this.props.playStatus}
+                  onPlay={this.props.onPlay}
+                  onPause={this.props.onPause}
+                  onResume={this.props.onResume}
+                  selectSong={this.props.selectSong.bind(this, this.props.currentTrackView)}
+                  currentTrackView={this.props.currentTrackView}
+                  currentSong={this.props.currentSong}
+                  />
+              </div>
               <h3>{ currentTrack.author_name }</h3>
+              <br/>
+              <h2>{ currentTrack.title }</h2>
             </div>
           </header>
           <form onSubmit={ this.handleSubmit } className="new-comment-form">
             <img src={this.props.currentUser.image_url}></img>
               <input className="comment-input"
                 type="text"
+                placeholder="Write A Comment"
                 value={ this.state.comment }
                 onChange={ this.updateComment }
                 />
-            <input type="submit" value="Submit"/>
+              <input className="submit-button" type="submit" value=""/>
           </form>
           <div className="author-info group">
             <div className="author-display">
               <img src={currentTrack.author_image_url}></img>
-              <h3>{currentTrack.author_name}</h3>
+              <h3 className="author-display-name">{currentTrack.author_name}</h3>
             </div>
             <div className="track-description">
               <p>
@@ -74,8 +85,11 @@ class TrackView extends React.Component {
             </div>
           </div>
           <content className="comments-container">
-            <h2> COMMENTS </h2>
-              <ul className="comments-list">
+            <h2 className="comments-header">
+              <i className="fa fa-comments" aria-hidden="false"></i>
+              <div className="comment-list-title">comments</div>
+            </h2>
+              <ul className="comments-list group">
                 { commentList }
               </ul>
           </content>

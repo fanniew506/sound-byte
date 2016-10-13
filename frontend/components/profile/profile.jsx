@@ -30,12 +30,15 @@ class Profile extends React.Component {
 
   render(){
     return (
-      <div className='profile-view'>
+      <div className='profile-view group'>
         <header>
           <div className="header-background">
           </div>
           <div className="default-profile-picture">
             <img src={this.props.currentUser.image_url} className="user-profile-picture"></img>
+          </div>
+          <div className="username-profile">
+            <h4>{ this.props.currentUser.username }</h4>
           </div>
         </header>
         <content className="profile-tracks-content">

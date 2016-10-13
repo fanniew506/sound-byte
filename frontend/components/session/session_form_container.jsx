@@ -8,12 +8,12 @@ const mapStateToProps = ({ session }) => ({
   errors: session.errors
 });
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, props) => {
 
   return {
     login: user => dispatch(login(user)),
     signup: user => dispatch(signup(user)),
-    fetchAllTracksForUser: () => dispatch(fetchAllTracksForUser())
+    fetchAllTracksForUser: () => dispatch(fetchAllTracksForUser()),
   };
 };
 

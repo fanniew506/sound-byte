@@ -3,6 +3,12 @@
   width: 900px;
 }
 
+.audio-footer {
+  position:fixed;
+  bottom: 0px;
+  z-index: 100;
+}
+
 .audio-container {
   width: 100%;
 }

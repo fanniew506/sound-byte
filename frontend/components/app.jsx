@@ -5,19 +5,16 @@ import AudioPlayerContainer from './audio_player/audio_player_container.js';
 
 const App = ({children}) => {
   return (
-    <div className="body-container">
-      <div className="header-container">
-        <header className="header group">
-          <div className='header-logo'>
-            <Link to='/'><h2>SoundByte</h2></Link>
-          </div>
-          <NavigationContainer/>
-        </header>
-      </div>
+    <div className="body-container group">
+      <NavigationContainer/>
       <div className="content group">
-        {children}
+          {children}
+          <audio src="http://s3.amazonaws.com/sound-byte-dev/tracks/audios/000/000/001/original/The_20Irish_20Washerwoman.mp3?1476237886">
+          </audio>
       </div>
-      <AudioPlayerContainer/>
+      <footer className="audio-footer group">
+        <AudioPlayerContainer/>
+      </footer>
     </div>
   );
 };

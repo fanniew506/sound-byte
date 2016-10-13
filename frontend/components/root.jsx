@@ -11,10 +11,6 @@ import { fetchAllComments } from '../actions/remark_actions';
 
 const Root = ({ store }) => {
 
-  const redirectIfLoggedIn = () => {
-    const currentUser = store.getState().session.currentUser;
-    if(currentUser) hashHistory.push('/profile');
-  };
 
   const ensureLoggedIn = () => {
     const currentUser = store.getState().session.currentUser;

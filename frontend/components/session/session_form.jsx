@@ -5,23 +5,26 @@ import Modal from 'react-modal';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", password: "", errors: [] };
+    this.state = { username: "", password: "", errors: [], formType: this.props.formType };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateUsername = this.updateUsername.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
-
+    debugger
   }
   componentDidUpdate() {
     if (this.props.loggedIn) hashHistory.push("/");
   }
+
+
   handleSubmit(e) {
     e.preventDefault();
     const user = { username: this.state.username, password: this.state.password };
     if (this.props.formType === 'login') {
       this.props.login(user);
-
-    } else if (this.props.formType === 'signup') {
+      this.props.closeModal();
+    } else if (this.state.formType === 'signup') {
       this.props.signup(user);
+      this.props.closeModal();
     }
   }
 
@@ -37,19 +40,20 @@ class SessionForm extends React.Component {
     });
   }
 
+
   renderFooter() {
-    if (this.props.formType === 'login') {
+    if (this.state.formType === 'login') {
       return (
         <div>
           Don't have an account?
-          <Link to="/signup"> Sign Up</Link>
+          <button onClick={ this.updateToSignUp }><h2>Sign Up</h2></button>
         </div>
       );
     } else {
       return (
         <div>
           Already have an account?
-          <Link to="/login"> Log In</Link>
+          <button onClick={ this.updateToLogIn }><h2>Log In</h2></button>
         </div>
       );
     }
@@ -73,24 +77,24 @@ class SessionForm extends React.Component {
        <div className="session-form-container">
          <form onSubmit={this.handleSubmit} className="session-form">
            <header className="session-form-header">
-            <h2>{this.props.formType}</h2>
+            <h2>{this.state.formType}</h2>
            </header>
            {this.renderErrors()}
            <br/>
-           <label> Username:
-             <input type="text" value={ this.state.username } onChange={ this.updateUsername }/>
-           </label>
+             <input
+               type="text"
+               placeholder="Username"
+               value={ this.state.username }
+               onChange={ this.updateUsername }/>
            <br/>
-           <label> Password:
-             <input type="password" value={ this.state.password } onChange={ this.updatePassword }/>
-           </label>
+             <input
+               type="password"
+               placeholder="Password"
+               value={ this.state.password }
+               onChange={ this.updatePassword }/>
            <br/>
            <input type="submit" value="Submit"/>
            <br/>
-           <footer className="session-form-footer">
-             { this.renderFooter() }
-             <br/>
-           </footer>
          </form>
        </div>
     );

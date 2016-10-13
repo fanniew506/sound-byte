@@ -30,36 +30,46 @@ class Navigation extends React.Component {
     this.props.logout();
     hashHistory.push('/');
   }
+
   render() {
     Modal.setAppElement('body');
     const currentUser = this.props.currentUser;
     if (currentUser === null){
       return(
-        <div>
-          <nav className='header-nav loggedout'>
-            <button onClick={this.openLoginModal}><h4>Log In</h4></button>
-            <button onClick={this.openSignupModal}><h4>Create Account</h4></button>
-          </nav>
-          <Modal isOpen={this.state.modalIsOpen}>
-            <SessionFormContainer formType={this.state.formType}/>
-            <button onClick={this.closeModal}><h4>X</h4></button>
-          </Modal>
+        <div className="header-container logged-out">
+          <header className="header group">
+            <div className='header-logo'>
+              <Link to='/'><h2>SoundByte</h2></Link>
+            </div>
+            <nav className='header-nav loggedout'>
+              <button onClick={this.openLoginModal}><h4>Log In</h4></button>
+              <button onClick={this.openSignupModal}><h4>Create Account</h4></button>
+            </nav>
+            <Modal isOpen={this.state.modalIsOpen} closeModal={ this.closeModal }>
+              <SessionFormContainer formType={this.state.formType}/>
+              <button onClick={this.closeModal}><h4>Cancel</h4></button>
+            </Modal>
+          </header>
         </div>
         );
       } else {
       return (
-        <div>
-          <nav className='header-nav loggedin'>
-            <Link to='/new-track-form'><h4>Upload</h4></Link>
-
-            <Link to='/profile'>
-              <img className="profile-thumb" src={currentUser.image_url}/>
-              <h4 className="username">
-                {currentUser.username}
-              </h4>
-            </Link>
-            <button onClick={this.handleLogOut}><h4>Log out</h4></button>
-          </nav>
+        <div className="header-container logged-in">
+          <header className="header group">
+            <div className='header-logo'>
+              <Link to='/'><h2>SoundByte</h2></Link>
+            </div>
+            <nav className='header-nav loggedin'>
+              <Link to='/new-track-form'><h4>Upload</h4></Link>
+              <Link to='/profile'>
+                <img className="profile-thumb" src={currentUser.image_url}/>
+                <h4 className="username">
+                  {currentUser.username}
+                </h4>
+              </Link>
+              <button onClick={this.handleLogOut}><h4>Log out</h4></button>
+            </nav>
+          </header>
         </div>
       );
     }
