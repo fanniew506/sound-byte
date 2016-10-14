@@ -30,6 +30,10 @@ const Root = ({ store }) => {
     store.dispatch(fetchAllTracksForUser())
   }
 
+  const getProfileView = (nextState) => {
+    store.dispatch(getOtherProfileView(nextState.params.id))
+  }
+
 
   return (
     <Provider store={ store }>
@@ -40,6 +44,7 @@ const Root = ({ store }) => {
           <Route path='/signup' component={ SignUpFormContainer }> formType="signups"</Route>
           <Route path='/new-track-form' component={ NewTrackFormContainer } onEnter={ ensureLoggedIn }></Route>
           <Route path='/track-view/:id' component={ TrackViewContainer } onEnter={ getTrackView }></Route>
+          <Route path='/profile/:id' component={ OtherProfileViewContainter } onEnter={ getOtherProfileView }></Route>
         </Route>
       </Router>
     </Provider>
