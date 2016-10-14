@@ -53,3 +53,13 @@ export const fetchCurrentTrackView = (id, success, error) => {
     error
   });
 };
+
+export const getOtherProfileView = (id, success, error) => {
+	debugger
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/tracks/${id}`,
+    success,
+    error
+  });
+};

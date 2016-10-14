@@ -5,8 +5,8 @@ import { fetchAllTracksForOtherUser, currentTrackView} from '../../actions/track
 
 const mapStateToProps = (state) => ({
   loggedIn: Boolean(state.session.currentUser),
-  otherUser: state.otherUser.otherUser,
-  otherUserTracks: state.otherUser.otherUserTracks
+  user: state.otherView.user,
+  tracks: state.otherView.tracks
 });
 
 const mapDispatchToProps = (dispatch) => ({

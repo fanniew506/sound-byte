@@ -8,9 +8,10 @@ import SignUpFormContainer from './session/signup_form_container';
 import ProfileContainer from './profile/profile_container';
 import NewTrackFormContainer from './new_track/new_track_form_container';
 import TrackViewContainer from './track_view/track_view_container';
-import { fetchAllTracksForUser, fetchCurrentTrackView } from '../actions/track_actions';
+import { getOtherProfileView, fetchAllTracksForUser, fetchCurrentTrackView } from '../actions/track_actions';
 import { fetchAllComments } from '../actions/remark_actions';
 import Modal from 'react-modal';
+import OtherProfileViewContainter from './profile/other_profile_container';
 
 const Root = ({ store }) => {
 
@@ -23,16 +24,16 @@ const Root = ({ store }) => {
   };
 
   const getTrackView = (nextState) => {
-		store.dispatch(fetchCurrentTrackView(nextState.params.id))
-  }
+		store.dispatch(fetchCurrentTrackView(nextState.params.id));
+  };
 
   const getProfileView = () => {
-    store.dispatch(fetchAllTracksForUser())
-  }
+    store.dispatch(fetchAllTracksForUser());
+  };
 
-  const getProfileView = (nextState) => {
-    store.dispatch(getOtherProfileView(nextState.params.id))
-  }
+  const getOther = (nextState) => {
+    store.dispatch(getOtherProfileView(nextState.params.id));
+  };
 
 
   return (
@@ -44,7 +45,7 @@ const Root = ({ store }) => {
           <Route path='/signup' component={ SignUpFormContainer }> formType="signups"</Route>
           <Route path='/new-track-form' component={ NewTrackFormContainer } onEnter={ ensureLoggedIn }></Route>
           <Route path='/track-view/:id' component={ TrackViewContainer } onEnter={ getTrackView }></Route>
-          <Route path='/profile/:id' component={ OtherProfileViewContainter } onEnter={ getOtherProfileView }></Route>
+          <Route path='/profile/:id' component={ OtherProfileViewContainter } onEnter={ getOther }></Route>
         </Route>
       </Router>
     </Provider>

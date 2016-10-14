@@ -12,10 +12,10 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-    @track = Track.find(params[:id])
-    @track.update(track_params)
-    if @track.save
-      render 'api/tracks/show.json.jbuilder'
+    @user = User.find(params[:id])
+    @tracks = @user.tracks
+    if @user
+      render 'api/tracks/otherview.json.jbuilder'
     else
       render json: @track.errors.full_messages, status: 401
     end

@@ -1,6 +1,6 @@
 import React from 'react';
 import TrackPlayerControlsContainer from'./track_player_controls_container';
-import { hashHistory } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 class TrackView extends React.Component {
   constructor(props) {
@@ -26,20 +26,22 @@ class TrackView extends React.Component {
 
   render() {
     if (this.props.currentTrackView) {
-      const comments = this.props.comments
+      const comments = this.props.comments;
       const currentTrack = this.props.currentTrackView;
       const commentList = comments.map((comment) => {
         return (
           <li key={ comment.id }>
             <div className="thumb">
-              <img src={ comment.author_image_url }></img>
+              <Link to={`/profile/${comment.author_id}`}>
+                <img src={ comment.author_image_url }></img>
+              </Link>
             </div>
             <h3 className="comment-author-name">{ comment.author_name }</h3>
             <p className="comment-body">{ comment.body }</p>
             <br></br>
           </li>
         );
-      })
+      });
       return(
         <div className='track-view'>
           <header>
@@ -70,7 +72,9 @@ class TrackView extends React.Component {
             </form>
             <div className="author-info group">
               <div className="author-display">
-                <img src={currentTrack.author_image_url}></img>
+                <Link to={`/profile/${currentTrack.author_id}`}>
+                  <img src={currentTrack.author_image_url}></img>
+                </Link>
                 <h3 className="author-display-name">{currentTrack.author_name}</h3>
               </div>
               <div className="track-description">
