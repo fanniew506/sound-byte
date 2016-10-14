@@ -1,4 +1,4 @@
-body, div, ul, button, li, ol, section, article, nav, img, header, p, h1, h2, h3, h4, a, form, label, input {
+body, footer, div, ul, button, li, ol, section, article, nav, img, header, p, h1, h2, h3, h4, a, form, label, input, Link {
   font: inherit;
   font-size: inherit;
   font-weight: 100;
@@ -15,6 +15,7 @@ body, div, ul, button, li, ol, section, article, nav, img, header, p, h1, h2, h3
 
 img {
   border-style: none;
+  height: 100%;
 }
 
 ul {
@@ -33,5 +34,6 @@ ul {
 
 body {
   background-color: #f2f2f2;
-  height: 100%;
+  min-height: 800px;
+  padding-bottom: 75px;
 }

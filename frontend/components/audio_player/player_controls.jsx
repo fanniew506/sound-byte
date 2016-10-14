@@ -8,11 +8,9 @@ function control(text, clickHandler) {
   };
   let button;
     if (text === 'Play' || text === 'Resume') {
-      return <li><i onClick={onClick} className="fa fa-play" aria-hidden="true"></i></li>;
+      return <li><i onClick={onClick} className="fa fa-play fa-lg" aria-hidden="true"></i></li>;
     } else if (text === 'Pause') {
-      return <li><i onClick={onClick} className="fa fa-pause" aria-hidden="true"></i></li>;
-    } else {
-      return <li><i onClick={onClick} className="fa fa-pause" aria-hidden="true"></i></li>;
+      return <li><i onClick={onClick} className="fa fa-pause fa-lg" aria-hidden="true"></i></li>;
     }
   }
 
@@ -22,9 +20,13 @@ export default class PlayerControls extends React.Component {
   }
 
   render() {
-    return <div>
-      {this.renderControls()}
-    </div>;
+    return (
+      <ul className="player-controls">
+        <li><i className="fa fa-step-backward" aria-hidden="true"></i></li>
+        {this.renderControls()}
+        <i className="fa fa-step-forward" aria-hidden="true"></i>
+      </ul>
+    );
   }
 
 

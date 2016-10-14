@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import TrackPlayerControlsContainer from '../track_view/track_player_controls_container'
 
 class Profile extends React.Component {
   constructor(props) {
@@ -19,9 +20,12 @@ class Profile extends React.Component {
     for (let idx in tracks) { tracksArr.push(tracks[idx]); }
     let trackList = tracksArr.map((track) => {
       return (
-        <li key={ track.id }>
-          <Link to={`/track-view/${track.id}`}><h3>{ track.title }</h3></Link>
-          <img onClick={ this.playCurrentTrack.bind(this, track) } className="album-cover" src={ track.album_image_url }></img>
+        <li className="user-tracks" key={ track.id }>
+          <Link to={`/track-view/${track.id}`}>
+            <img className="album-cover" src={ track.album_image_url }></img>
+            <h3>{ track.title }</h3>
+          </Link>
+          <TrackPlayerControlsContainer currentTrackView={track}/>
         </li>
       );
     });

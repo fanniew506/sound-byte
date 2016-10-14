@@ -1,5 +1,5 @@
 import React from 'react';
-import TrackPlayerControls from'./track_player_controls';
+import TrackPlayerControlsContainer from'./track_player_controls_container';
 import { hashHistory } from 'react-router';
 
 class TrackView extends React.Component {
@@ -48,21 +48,13 @@ class TrackView extends React.Component {
             <div>
               <img src={ currentTrack.album_image_url } className="track-profile-picture"></img>
             </div>
+            <div className="track-play-toggle">
+              <TrackPlayerControlsContainer currentTrackView={this.props.currentTrackView}/>
+            </div>
             <div className="track-info">
-              <div className="track-play-toggle">
-                <TrackPlayerControls
-                  playStatus={this.props.playStatus}
-                  onPlay={this.props.onPlay}
-                  onPause={this.props.onPause}
-                  onResume={this.props.onResume}
-                  selectSong={this.props.selectSong.bind(this, this.props.currentTrackView)}
-                  currentTrackView={this.props.currentTrackView}
-                  currentSong={this.props.currentSong}
-                  />
-              </div>
-              <h3>{ currentTrack.author_name }</h3>
+              <h3 className="name">{ currentTrack.author_name }</h3>
               <br/>
-              <h2>{ currentTrack.title }</h2>
+              <h2 className="title">{ currentTrack.title }</h2>
             </div>
           </header>
           <div className="track-content">

@@ -2,23 +2,28 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 200;
+  z-index: 4;
   background-color: #f2f2f2;
-  border: 1px solid #ccc;
+  margin: 0 auto;
+  border-top: 1px solid #ccc;
 }
 
-.audio-footer {
-  position:fixed;
-  bottom: 0px;
-  z-index: 100;
+.footer {
+position: fixed;
+bottom: 0;
+margin-top: 80px;
 }
 
-.audio-container {
-  width: 100%;
-}
 
 .player-controls {
   float: left;
+  margin: 18px 15px 15px 40px;
+  width: 150px;
+}
+
+.player-controls i {
+  float: left;
+  margin-right: 30px;
 }
 
 .fa-play, .fa-pause {
@@ -26,31 +31,48 @@
 }
 
 .progress-bar {
-  width: 20px;
-  height: 20px;
-  background-color: red;
+  width: 600px;
+  height: 2px;
+  background-color: #ccc;
+  float: left;
+  margin: 22px 22px 0 60px;
 }
 
 .progress-circle {
   width: 10px;
-  height: 20px;
-  background-color: black;
+  height: 0px;
+  background-color: #f50;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  position: relative;
 }
 
 .player-album-info  {
-  width: 100px;
+  width: 200px;
   float: right;
-  text-align: center
+  text-align: center;
+  margin-left: 50px;
+  margin-top: 5px;
 }
 
 .player-album-info img {
-  width: 60px;
+  width: 40px;
+  height: 40px;
+  float: left;
 }
 
-.player-album-info h2 {
+.audio-player-album-name .audio-title {
   font-size: 14px;
+  float: left;
 }
 
-.player-album-info h4 {
+.audio-player-album-name .audio-name  {
   font-size: 12px;
+  float: left;
+}
+
+.control-holder {
+  width: 1200px;
+  margin: 0 auto;
+  z-index: 20;
 }

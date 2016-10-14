@@ -52,16 +52,39 @@
 }
 
 .profile-tracks-header {
+  font-size: 18px;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
 
+.profile-tracks-list {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 20 px;
 }
 
 .profile-tracks-list li {
-  width: 25%;
+  width: 50%;
   display: inline-block;
+  padding-left: 20px;
+
 }
 
 .album-cover {
   position: relative;
-  width: 180px;
+  width: 160px;
+  height: 160px;
   margin: 0 auto;
+}
+
+.user-tracks {
+  margin: 0 auto;
+}
+
+.user-tracks .fa.fa-play-circle, .user-tracks .fa.fa-pause-circle {
+  color: #F50;
+  font-size: 40px;
+  z-index: 20;
 }

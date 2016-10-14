@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
+import ReactDom from 'react-dom';
 import SessionFormContainer from '../session/session_form_container';
 
 
@@ -31,48 +32,61 @@ class Navigation extends React.Component {
     hashHistory.push('/');
   }
 
+  componentDidMount(){
+  }
+  // const elementH = document.getElementById('header-container');
+
   render() {
     Modal.setAppElement('body');
     const currentUser = this.props.currentUser;
     if (currentUser === null){
       return(
-        <div className="header-container logged-out">
-          <header className="header group">
+        <span className="header-container logged-out">
+          <header className="header logged-out group">
             <div className='header-logo'>
-              <Link to='/'><h2>SoundByte</h2></Link>
+              <Link to='/'>
+              <i className="fa fa-soundcloud" aria-hidden="true"></i>
+                <h3 className="logged-out-logo this-one">SOUNDBYTE</h3>
+              </Link>
             </div>
             <nav className='header-nav loggedout'>
-              <button onClick={this.openLoginModal}><h4>Log In</h4></button>
-              <button onClick={this.openSignupModal}><h4>Create Account</h4></button>
+              <Link to="/login"><h3 className="login this">Log In</h3></Link>
+              <h3 className="loggedout or">OR</h3>
+              <button onClick={this.openSignupModal} className="createaccount this create"><h3>Create Account</h3></button>
             </nav>
             <Modal isOpen={this.state.modalIsOpen} closeModal={ this.closeModal }>
               <SessionFormContainer formType={this.state.formType}/>
               <button onClick={this.closeModal}><h4>Cancel</h4></button>
             </Modal>
           </header>
-        </div>
+        </span>
         );
+
       } else {
       return (
         <div className="header-container logged-in">
           <header className="header group">
             <div className='header-logo'>
-              <Link to='/'><h2>SoundByte</h2></Link>
+              <Link to='/'>
+                  <i className="fa fa-soundcloud" aria-hidden="true"></i>
+                  <h2 className="logged-in-logo this-one">HOME</h2>
+              </Link>
             </div>
             <nav className='header-nav loggedin'>
-              <Link to='/new-track-form'><h4>Upload</h4></Link>
+              <Link to='/new-track-form'><h3>Upload</h3></Link>
               <Link to='/profile'>
                 <img className="profile-thumb" src={currentUser.image_url}/>
-                <h4 className="username">
+                <h3 className="username">
                   {currentUser.username}
-                </h4>
+                </h3>
               </Link>
-              <button onClick={this.handleLogOut}><h4>Log out</h4></button>
+              <button onClick={this.handleLogOut}><h3>Log out</h3></button>
             </nav>
           </header>
         </div>
       );
     }
+
   }
 }
 

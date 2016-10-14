@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
 
-class SessionForm extends React.Component {
+class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { username: "", password: "", errors: [], formType: this.props.formType };
@@ -19,7 +19,8 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = { username: this.state.username, password: this.state.password };
-      this.props.login(user);
+      this.props.signup(user);
+
   }
 
   updateUsername (e) {
@@ -53,7 +54,7 @@ class SessionForm extends React.Component {
        <div className="session-form-container">
          <form onSubmit={this.handleSubmit} className="session-form">
            <header className="session-form-header">
-            <h2>Log In!</h2>
+            <h2>Create Account!</h2>
            </header>
            {this.renderErrors()}
            <br/>
@@ -73,8 +74,8 @@ class SessionForm extends React.Component {
            <input className="session-submit" type="submit" value="Submit"/>
            <br/>
              <div>
-               Don't Have an Account?
-               <Link to="signup">Signup</Link>
+               Already Have an Account?
+               <Link to="login">Login</Link>
              </div>
          </form>
        </div>
@@ -82,4 +83,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default SignUpForm;

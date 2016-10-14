@@ -5,9 +5,48 @@
   z-index: 100;
 }
 
+.header.logged-out {
+  background: transparent;
+  z-index: 1;
+}
+
+.header-container.logged-out {
+  background: transparent;
+  background-image: url(https://hd.unsplash.com/photo-1420161900862-9a86fa1f5c79);
+  height: 1000px;
+  background-size: contain;
+}
+
+.header-nav.loggedout {
+    background: transparent;
+    border: none;
+}
 .header .group {
   position: absolute;
   z-index: 4;
+}
+
+h3.loggedout.or {
+  float: left;
+}
+
+.login.this {
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  color: #fff;
+  padding: 5px;
+  margin: 10px;
+}
+
+.createaccount.this.create {
+  border-radius: 5%;
+  color: #fff;
+  background-color: #f50;
+  padding: 5px;
+  margin: 10px;
+}
+.login:hover {
+    border: 1px solid white;
 }
 
  .body-container {
@@ -45,12 +84,33 @@
    float: right;
  }
 
- .header h2 {
+ .header h3 {
    color: #ccc;
    padding: 10px 20px;
  }
 
- .header-nav h4 {
+ .logged-out-logo.this-one {
+   font-size: 14px;
+   letter-spacing: 1px;
+   color: white;
+   float: left;
+   margin-left: 55px;
+   background-color: #f50;
+   top: 0;
+   position: absolute;
+   height: 23px;
+   padding: 14px 20px;
+   vertical-align: center;
+ }
+
+ .logged-in-logo.this-one {
+   color: #ccc;
+   padding: 10px 0;
+   float: left;
+   margin-left: 80px;
+ }
+
+ .header-nav h3 {
    float: left;
    padding: 15px 20px;
    color: #ccc;
@@ -61,7 +121,7 @@
    padding: 15px 20px 15px 5px;
  }
 
- .header-nav h4:hover {
+ .header-nav h3:hover {
    color: #fff;
  }
 
@@ -75,4 +135,14 @@
    border-radius: 50%;
    float: left;
    margin-top: 10px;
+ }
+
+ .fa.fa-soundcloud{
+   background-color: #f50;
+   color: white;
+   font-size: 51px;
+   z-index: 500;
+   float: left;
+   top: 0;
+   position:absolute;
  }
