@@ -7,7 +7,9 @@ import {
   receiveAllTracks,
   receiveErrors,
   GET_OTHER_PROFILE_VIEW,
-  receiveOtherProfileView
+  receiveOtherProfileView,
+  FETCH_LATEST_TRACKS,
+  receiveLatestTracks,
   } from '../actions/track_actions';
 
 import * as API from '../util/track_api_util';
@@ -16,6 +18,7 @@ export default ({ dispatch }) => next => action => {
   const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON))
   const fetchSuccess = tracks => dispatch(receiveAllTracks(tracks))
   const otherFetchSuccess = data => dispatch(receiveOtherProfileView(data))
+  const latestSuccess = tracks => dispatch(receiveLatestTracks(tracks))
 
   switch(action.type) {
     case CREATE_TRACK:
@@ -32,6 +35,9 @@ export default ({ dispatch }) => next => action => {
       return next(action);
     case GET_OTHER_PROFILE_VIEW:
       API.getOtherProfileView(action.id, otherFetchSuccess, errorCallback);
+      return next(action);
+    case FETCH_LATEST_TRACKS:
+      API.fetchLatestTracks(latestSuccess, errorCallback);
       return next(action);
     default:
       return(next(action));

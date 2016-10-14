@@ -10,6 +10,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    @tracks = Track.all
+    render 'api/users/latest_tracks'
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :password)

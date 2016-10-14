@@ -1,14 +1,12 @@
 import { connect } from 'react-redux';
-import Navigation from './navigation';
-import { logout } from '../../actions/session_actions'
+import LatestTracks from './latest_track';
 import { fetchAllTracksForUser, fetchLatestTracks } from '../../actions/track_actions';
 
-const mapStateToProps = ({ session }) => ({
-  currentUser : session.currentUser
+const mapStateToProps = ({ latestTracks }) => ({
+  tracks: latestTracks.tracks
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    logout: () => dispatch(logout()),
     fetchAllTracksForUser: () => dispatch(fetchAllTracksForUser()),
     fetchLatestTracks: () => dispatch(fetchLatestTracks())
 });
@@ -16,4 +14,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Navigation);
+)(LatestTracks);

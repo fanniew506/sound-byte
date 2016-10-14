@@ -63,3 +63,12 @@ export const getOtherProfileView = (id, success, error) => {
     error
   });
 };
+
+export const fetchLatestTracks = (success, error) => {
+  $.ajax({
+    method: 'POST',
+    url: `/api/users`,
+    success,
+    error
+  });
+};

@@ -9,7 +9,8 @@ export const FETCH_CURRENT_TRACK_VIEW = "FETCH_CURRENT_TRACK_VIEW";
 export const CURRENT_TRACK_VIEW = "CURRENT_TRACK_VIEW";
 export const GET_OTHER_PROFILE_VIEW = "GET_OTHER_PROFILE_VIEW";
 export const RECEIVE_OTHER_PROFILE_VIEW = "RECEIVE_OTHER_PROFILE_VIEW";
-
+export const FETCH_LATEST_TRACKS = "FETCH_LATEST_TRACKS";
+export const RECEIVE_LATEST_TRACKS = "RECEIVE_LATEST_TRACKS";
 
 export const createTrack = track => ({
   type: CREATE_TRACK,
@@ -64,4 +65,13 @@ export const getOtherProfileView = (id) => ({
 export const receiveOtherProfileView = (otherView) => ({
   type: RECEIVE_OTHER_PROFILE_VIEW,
   otherView
+});
+
+export const fetchLatestTracks = () => ({
+  type: fetchLatestTracks
+});
+
+export const receiveLatestTracks = tracks => ({
+  type: RECEIVE_LATEST_TRACKS,
+  tracks
 });

@@ -10,21 +10,6 @@ class Navigation extends React.Component {
     super(props);
     this.state = { modalIsOpen: false, formType: ""};
     this.handleLogOut = this.handleLogOut.bind(this);
-    this.openLoginModal = this.openLoginModal.bind(this);
-    this.openSignupModal = this.openSignupModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
-
-  openLoginModal() {
-    this.setState({modalIsOpen: true, formType: "login"});
-   }
-
-  openSignupModal() {
-    this.setState({modalIsOpen: true, formType: "signup"});
-  }
-
-  closeModal() {
-  this.setState({modalIsOpen: false});
   }
 
   handleLogOut() {
@@ -32,12 +17,8 @@ class Navigation extends React.Component {
     hashHistory.push('/');
   }
 
-  componentDidMount(){
-  }
-  // const elementH = document.getElementById('header-container');
 
   render() {
-    Modal.setAppElement('body');
     const currentUser = this.props.currentUser;
     if (currentUser === null){
       return(
@@ -54,16 +35,13 @@ class Navigation extends React.Component {
               <h3 className="loggedout or">OR</h3>
               <Link to="/signup"><h3 className="createaccount this">Create Account</h3></Link>
             </nav>
-            <Modal isOpen={this.state.modalIsOpen} closeModal={ this.closeModal }>
-              <SessionFormContainer formType={this.state.formType}/>
-              <button onClick={this.closeModal}><h4>Cancel</h4></button>
-            </Modal>
           </header>
         </span>
         );
 
       } else {
       return (
+      <div>
         <div className="header-container logged-in">
           <header className="header group">
             <div className='header-logo'>
@@ -84,6 +62,7 @@ class Navigation extends React.Component {
             </nav>
           </header>
         </div>
+      </div>
       );
     }
 
