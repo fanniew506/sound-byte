@@ -1,15 +1,20 @@
-
-.new-track-form-container {
+.new-track-form-container{
+padding: 30px;
+}
+.new-track-form{
   width: 400px;
   background-color: white;
   border: 1px solid gray;
   margin: 0 auto;
   position: relative;
   text-align: center;
-  font-size: 16px
+  font-size: 16px;
 }
 
-
+.new-track.title {
+  font-size: 16px;
+  margin-top: 20px;
+}
 
 .new-track-form-header{
   text-transform: capitalize;
@@ -20,14 +25,14 @@
   border-radius: 5px;
   border: 0.5px solid grey;
   padding: 5px;
-  margin: 10px;
-  width: 180px;
+  margin: 15px;
+  width: 300px;
+
 }
 
 .new-track-form-container label {
-  font-size: 12px;
+  padding-top: 15px;
 }
-
 .new-track-form-container footer {
   padding: 5px;
 
@@ -36,4 +41,28 @@
   text-align: right;
   padding: 10px;
 
+}
+
+textarea {
+  font-size: 16px;
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.submit.new-track {
+  background-color: #f50;
+  color: white;
+  padding: 5px;
+  width: 200px;
+}
+
+.submit.new-track:hover {
+    background-color: rgba(255,72,0,.8);
+}
+
+session-form.submit:hover {
+  background-color: rgba(255,72,0,.8);
 }

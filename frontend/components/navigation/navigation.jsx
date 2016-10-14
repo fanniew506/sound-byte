@@ -45,14 +45,14 @@ class Navigation extends React.Component {
           <header className="header logged-out group">
             <div className='header-logo'>
               <Link to='/'>
-              <i className="fa fa-soundcloud" aria-hidden="true"></i>
+              <i className="fa fa-soundcloud loggedout" aria-hidden="true"></i>
                 <h3 className="logged-out-logo this-one">SOUNDBYTE</h3>
               </Link>
             </div>
             <nav className='header-nav loggedout'>
               <Link to="/login"><h3 className="login this">Log In</h3></Link>
               <h3 className="loggedout or">OR</h3>
-              <button onClick={this.openSignupModal} className="createaccount this create"><h3>Create Account</h3></button>
+              <Link to="/signup"><h3 className="createaccount this">Create Account</h3></Link>
             </nav>
             <Modal isOpen={this.state.modalIsOpen} closeModal={ this.closeModal }>
               <SessionFormContainer formType={this.state.formType}/>
@@ -68,7 +68,7 @@ class Navigation extends React.Component {
           <header className="header group">
             <div className='header-logo'>
               <Link to='/'>
-                  <i className="fa fa-soundcloud" aria-hidden="true"></i>
+                  <i className="fa fa-soundcloud loggedin" aria-hidden="true"></i>
                   <h2 className="logged-in-logo this-one">HOME</h2>
               </Link>
             </div>

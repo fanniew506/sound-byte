@@ -75,7 +75,7 @@ class SignUpForm extends React.Component {
            <br/>
              <div>
                Already Have an Account?
-               <Link to="login">Login</Link>
+               <Link to="login"> Login</Link>
              </div>
          </form>
        </div>

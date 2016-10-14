@@ -92,19 +92,16 @@ class NewTrackForm extends React.Component {
 
   render() {
     return (
-       <div className="new-track-form-container">
+      <div className="new-track-form-container">
+       <div className="new-track-form">
          <form onSubmit={this.handleSubmit} className="new-track-form">
-             <h2 className="session-form-cancel"><Link to='/profile'>X</Link></h2>
-             <h2>Upload to SoundByte</h2>
+             <h2 className="new-track title">Upload to SoundByte</h2>
            {this.renderErrors()}
            <br/>
-           <label> Title:
-             <input type="text" value={this.state.title} onChange={this.updateTitle}/>
-           </label>
+             <input type="text"
+               placeholder="Track Title" value={this.state.title} onChange={this.updateTitle}/>
            <br/>
-           <label> Description:
-             <input type="textarea" value={this.state.description} onChange={this.updateDescription}/>
-           </label>
+             <textarea placeholder="Enter Track Description" value={this.state.description} onChange={this.updateDescription}></textarea>
            <br/>
            <label> Upload Image:
              <input type="file" onChange={this.updateImageFile}/>
@@ -115,9 +112,10 @@ class NewTrackForm extends React.Component {
            </label>
 
            <br/>
-           <input type="submit" value="Submit"/>
+           <input className="submit new-track" type="submit" value="Upload"/>
            <br/>
          </form>
+       </div>
        </div>
     );
   }
