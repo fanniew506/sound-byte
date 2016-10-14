@@ -15,7 +15,8 @@ body, footer, div, ul, button, li, ol, section, article, nav, img, header, p, h1
 
 img {
   border-style: none;
-  height: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
 ul {

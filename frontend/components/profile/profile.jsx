@@ -20,10 +20,10 @@ class Profile extends React.Component {
     for (let idx in tracks) { tracksArr.push(tracks[idx]); }
     let trackList = tracksArr.map((track) => {
       return (
-        <li className="user-tracks" key={ track.id }>
+        <li className="user-tracks group" key={ track.id }>
           <Link to={`/track-view/${track.id}`}>
             <img className="album-cover" src={ track.album_image_url }></img>
-            <h3>{ track.title }</h3>
+            <h3 className="user-profile-track-title">{ track.title }</h3>
           </Link>
           <TrackPlayerControlsContainer currentTrackView={track}/>
         </li>
@@ -47,7 +47,7 @@ class Profile extends React.Component {
         </header>
         <content className="profile-tracks-content">
           <h2 className="profile-tracks-header">Uploads</h2>
-          <ul className="profile-tracks-list">
+          <ul className="profile-tracks-list group">
             {this.showUsersTracks()}
           </ul>
         </content>

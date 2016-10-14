@@ -41,6 +41,9 @@
   border-radius: 50%;
 }
 
+.comments-list {
+}
+
 .thumb {
   display: inline-block;
   float:left;

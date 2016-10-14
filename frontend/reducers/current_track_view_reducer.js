@@ -7,7 +7,8 @@ const defaultState = Object.freeze({ track: null, comments: null});
 export default (state = defaultState, action) => {
   switch(action.type) {
     case CURRENT_TRACK_VIEW:
-      return merge({}, defaultState, action.track);
+      const reversed = action.track.comments.reverse();
+      return merge({}, defaultState, {track: action.track.track, comments: reversed });
     default:
       return state;
   }

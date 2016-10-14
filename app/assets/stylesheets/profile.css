@@ -30,6 +30,7 @@
 .profile-view {
   width: 1200px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .user-profile-picture {
@@ -37,11 +38,12 @@
   height: 200px;
   border-radius: 50%;
   position: relative;
-  background-size: contain;
+  background-size: cover;
   position: relative;
   z-index: 2;
   top: 20px;
   left: 20px;
+  overflow: hidden;
 }
 
 .profile-tracks-content {
@@ -60,13 +62,14 @@
 }
 
 .profile-tracks-list {
-  width: 80%;
+  width: 1000px;
   margin: 0 auto;
-  padding-top: 20 px;
+  padding: 20px 100px 60px 100px;
+  background-color: white;
 }
 
 .profile-tracks-list li {
-  width: 50%;
+  width: 40%;
   display: inline-block;
   padding-left: 20px;
 
@@ -77,8 +80,13 @@
   width: 160px;
   height: 160px;
   margin: 0 auto;
+  float: left;
+  padding: 20px 10px 10px 10px;
 }
 
+.user-profile-track-title{
+  margin: 20px 0;
+}
 .user-tracks {
   margin: 0 auto;
 }
