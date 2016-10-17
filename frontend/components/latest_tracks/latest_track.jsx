@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import TrackPlayerControlsContainer from '../track_view/track_player_controls_container';
 
-class LatestTracks extends React.Component {
+export default class LatestTracks extends React.Component {
   constructor(props) {
     super(props);
-    debugger
   }
 
   render() {
@@ -25,7 +25,7 @@ class LatestTracks extends React.Component {
       });
       return (
         <content className="profile-tracks-content">
-          <h2 className="profile-tracks-header">Uploads</h2>
+          <h2 className="profile-tracks-header">Latest Uploads</h2>
           <ul className="profile-tracks-list group">
             {trackDivs}
           </ul>

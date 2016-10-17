@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import Navigation from './navigation';
-import { logout } from '../../actions/session_actions'
-import { fetchAllTracksForUser, fetchLatestTracks } from '../../actions/track_actions';
+import { logout } from '../../actions/session_actions';
+import {
+  fetchAllTracksForUser, 
+  fetchLatestTracks } from '../../actions/track_actions';
 
 const mapStateToProps = ({ session }) => ({
   currentUser : session.currentUser

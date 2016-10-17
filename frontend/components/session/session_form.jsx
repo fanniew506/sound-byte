@@ -12,7 +12,7 @@ class SessionForm extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.props.loggedIn) hashHistory.push("/");
+    if (this.props.loggedIn) hashHistory.push("/home");
   }
 
 
@@ -53,6 +53,7 @@ class SessionForm extends React.Component {
        <div className="session-form-container">
          <form onSubmit={this.handleSubmit} className="session-form">
            <header className="session-form-header">
+             <Link to='/'><h2 className="form-cancel">X</h2></Link>
             <h2>Log In!</h2>
            </header>
            {this.renderErrors()}

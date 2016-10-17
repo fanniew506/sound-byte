@@ -37,6 +37,7 @@ export default ({ dispatch }) => next => action => {
       API.getOtherProfileView(action.id, otherFetchSuccess, errorCallback);
       return next(action);
     case FETCH_LATEST_TRACKS:
+    debugger
       API.fetchLatestTracks(latestSuccess, errorCallback);
       return next(action);
     default:

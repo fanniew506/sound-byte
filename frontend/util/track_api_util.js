@@ -55,7 +55,6 @@ export const fetchCurrentTrackView = (id, success, error) => {
 };
 
 export const getOtherProfileView = (id, success, error) => {
-	debugger
   $.ajax({
     method: 'PATCH',
     url: `/api/tracks/${id}`,
@@ -65,9 +64,10 @@ export const getOtherProfileView = (id, success, error) => {
 };
 
 export const fetchLatestTracks = (success, error) => {
+	debugger
   $.ajax({
-    method: 'POST',
-    url: `/api/users`,
+    method: 'PATCH',
+    url: `/api/users/:id`,
     success,
     error
   });

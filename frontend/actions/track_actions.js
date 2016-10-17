@@ -68,7 +68,7 @@ export const receiveOtherProfileView = (otherView) => ({
 });
 
 export const fetchLatestTracks = () => ({
-  type: fetchLatestTracks
+  type: FETCH_LATEST_TRACKS
 });
 
 export const receiveLatestTracks = tracks => ({

@@ -147,6 +147,10 @@ h3.loggedout.or:hover {
    margin-top: 10px;
  }
 
+ .form-cancel {
+   text-align: right;
+ }
+
  .fa.fa-soundcloud{
    background-color: #f50;
    color: white;

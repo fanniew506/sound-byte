@@ -45,7 +45,7 @@ class Navigation extends React.Component {
         <div className="header-container logged-in">
           <header className="header group">
             <div className='header-logo'>
-              <Link to='/'>
+              <Link to='/home'>
                   <i className="fa fa-soundcloud loggedin" aria-hidden="true"></i>
                   <h2 className="logged-in-logo this-one">HOME</h2>
               </Link>
