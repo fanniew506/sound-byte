@@ -16,6 +16,9 @@ class SessionForm extends React.Component {
     if (this.props.loggedIn) hashHistory.push("/home");
   }
 
+  componentDidMount() {
+    if (this.props.loggedIn) hashHistory.push("/home");
+  }
 
   handleSubmit(e) {
     e.preventDefault();
