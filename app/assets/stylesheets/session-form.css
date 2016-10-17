@@ -38,5 +38,16 @@
 
 .session-submit {
   background-color: #f50;
-  color: white; 
+  color: white;
+}
+
+.demo-login {
+  border-radius: 5px;
+  border: 0.5px solid grey;
+  padding: 7px;
+  margin: 30px 95px;
+  width: 200px;
+  background-color: #f50;
+  color: white;
+  text-align: center;
 }

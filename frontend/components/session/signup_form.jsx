@@ -20,8 +20,8 @@ class SignUpForm extends React.Component {
     e.preventDefault();
     const user = { username: this.state.username, password: this.state.password };
       this.props.signup(user);
-
   }
+
 
   updateUsername (e) {
     this.setState({

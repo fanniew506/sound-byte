@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateUsername = this.updateUsername.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentDidUpdate() {
@@ -19,6 +20,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = { username: this.state.username, password: this.state.password };
+      this.props.login(user);
+  }
+
+  demoLogin(){
+    const user = { username: "jennifer", password: "starwars" };
       this.props.login(user);
   }
 
@@ -77,6 +83,8 @@ class SessionForm extends React.Component {
                Don't Have an Account?
                <Link to="signup"> Signup</Link>
              </div>
+             <br/>
+             <h2 onClick={this.demoLogin} className="demo-login">Demo Login</h2>
          </form>
        </div>
     );

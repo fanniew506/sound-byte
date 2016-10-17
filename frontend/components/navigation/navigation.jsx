@@ -17,6 +17,12 @@ class Navigation extends React.Component {
     hashHistory.push('/');
   }
 
+  componentDidMount() {
+    if (this.props.currentUser) {
+      hashHistory.push('/home');
+    }
+  }
+
 
   render() {
     const currentUser = this.props.currentUser;
