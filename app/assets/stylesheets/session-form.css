@@ -39,7 +39,14 @@
 .session-submit {
   background-color: #f50;
   color: white;
+  cursor: pointer;
 }
+
+.session-submit:hover, .demo-login:hover {
+  background-color: rgba(255,72,0,.8);
+
+}
+
 
 .demo-login {
   border-radius: 5px;
@@ -50,4 +57,6 @@
   background-color: #f50;
   color: white;
   text-align: center;
+  cursor: pointer;
+
 }
