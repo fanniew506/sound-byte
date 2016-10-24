@@ -10,7 +10,6 @@ SoundByte is a music upload sharing and streaming web application inspired by So
 
 * Authentication
   * Session is authenticated in the backend. All queries return data that corresponds to the proper user.
-  * User can log in from any page in the app. Clicking on a link to save a recipe, access recipe box, etc. prompt the user for log in (as on the original app).
 * Continuous play of selected song while navigating pages
 * User can upload new tracks
 * Comment on tracks
