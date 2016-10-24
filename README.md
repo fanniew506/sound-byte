@@ -21,8 +21,8 @@ SoundByte music upload sharing and streaming web application inspired by SoundCl
 
 If you'd like to take a closer look at the code behind the Cookbook App, the best folders to look in are:
 
-* [Cookbook.jsx](./frontend/Cookbook.jsx)
-* [React components](./frontend/components)
+* [sound_byte.jsx](./frontend/sound_byte.jsx)
+* [React components](./frontend/components/)
   * [App](./frontend/components/app.jsx)
 * [Rails controllers](./app/controllers/api)
 * [Redux Stores](./frontend/store/store.js)
