@@ -7,19 +7,37 @@ class OtherProfileView extends React.Component {
     super(props);
     this.showUsersTracks =  this.showUsersTracks.bind(this);
     this.playCurrentTrack =  this.playCurrentTrack.bind(this);
-    debugger
+    this.displayEditProfile = this.displayEditProfile.bind(this);
   }
 
   playCurrentTrack(track){
-    this.props.selectSong(track)
+    this.props.selectSong(track);
   }
 
+  displayEditTrack() {
+
+  }
+
+  handleProfileSubmit() {
+
+  }
+
+  displayEditProfile() {
+    if (this.props.currentUser.id === this.props.user.id) {
+      return (
+        <form onSubmit={this.handleProfileSubmit} className="update-profile-pic">
+          <input type="file"></input>
+          <h1>EDIT PROFILE PICTURE</h1>
+        </form>
+      );
+    }
+  }
 
   showUsersTracks() {
     const tracks = this.props.tracks;
     const tracksArr = [];
     for (let idx in tracks) { tracksArr.push(tracks[idx]); }
-    debugger
+    tracksArr.reverse();
     let trackList = tracksArr.map((track) => {
       return (
         <li className="user-tracks group" key={ track.id }>
@@ -49,6 +67,7 @@ class OtherProfileView extends React.Component {
             </div>
           </header>
           <content className="profile-tracks-content">
+            {this.displayEditProfile()}
             <h2 className="profile-tracks-header">Uploads</h2>
             <ul className="profile-tracks-list group">
               {this.showUsersTracks()}

@@ -4,7 +4,8 @@ import { createTrack } from '../../actions/track_actions';
 
 const mapStateToProps = (state) => ({
   loggedIn : Boolean(state.session.currentUser),
-  errors: state.tracks.errors
+  errors: state.tracks.errors,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import TrackPlayerControlsContainer from '../track_view/track_player_controls_container'
+import TrackPlayerControlsContainer from '../track_view/track_player_controls_container';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -10,9 +10,8 @@ class Profile extends React.Component {
   }
 
   playCurrentTrack(track){
-    this.props.selectSong(track)
+    this.props.selectSong(track);
   }
-
 
   showUsersTracks() {
     const tracks = this.props.tracks;
@@ -31,7 +30,9 @@ class Profile extends React.Component {
     });
     return trackList;
   }
+ showUpdatePictureButton() {
 
+ }
   render(){
     return (
       <div className='profile-view group'>
@@ -48,7 +49,7 @@ class Profile extends React.Component {
         <content className="profile-tracks-content">
           <h2 className="profile-tracks-header">Uploads</h2>
           <ul className="profile-tracks-list group">
-            {this.showUsersTracks()}
+            { this.showUsersTracks() }
           </ul>
         </content>
       </div>

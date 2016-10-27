@@ -32,7 +32,7 @@ class NewTrackForm extends React.Component {
     }
 
     this.props.createTrack(formData);
-    hashHistory.push('/profile');
+    hashHistory.push(`/profile/${this.props.currentUser.id}`);
   }
 
   updateTitle(e) {

@@ -15,6 +15,10 @@ class Api::UsersController < ApplicationController
     render 'api/users/latest_tracks'
   end
 
+  def show
+
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :password)

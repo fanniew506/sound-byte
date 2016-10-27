@@ -9,7 +9,6 @@ import LatestTracksReducer from './latest_tracks';
 
 export default combineReducers({
   session: SessionReducer,
-  tracks: TracksReducer,
   currentTrackView: CurrentTrackViewReducer,
   audio: AudioReducer,
   otherView: OtherViewReducer,

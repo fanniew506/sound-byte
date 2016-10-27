@@ -32,16 +32,11 @@ const Root = ({ store }) => {
 		store.dispatch(fetchCurrentTrackView(nextState.params.id));
   };
 
-  const getProfileView = () => {
-    store.dispatch(fetchAllTracksForUser());
-  };
-
-  const getOther = (nextState) => {
+  const getProfileView = (nextState) => {
     store.dispatch(getOtherProfileView(nextState.params.id));
   };
 
   const getLatest = () => {
-    debugger
     store.dispatch(fetchLatestTracks());
   };
 
@@ -51,12 +46,11 @@ const Root = ({ store }) => {
       <Router history={ hashHistory }>
         <Route path='/' component={ App }>
           <Route path='/home' component={ LatestTracksContainer } onEnter={ getLatest }></Route>
-          <Route path='/profile' component={ ProfileContainer } onEnter={ getProfileView }></Route>
-          <Route path='/login' component={ SessionFormContainer }> formType="login"</Route>
-          <Route path='/signup' component={ SignUpFormContainer }> formType="signups"</Route>
+          <Route path='/login' component={ SessionFormContainer }></Route>
+          <Route path='/profile/:id' component={ OtherProfileViewContainter } onEnter={ getProfileView }></Route>
+          <Route path='/signup' component={ SignUpFormContainer }></Route>
           <Route path='/new-track-form' component={ NewTrackFormContainer } onEnter={ ensureLoggedIn }></Route>
           <Route path='/track-view/:id' component={ TrackViewContainer } onEnter={ getTrackView }></Route>
-          <Route path='/profile/:id' component={ OtherProfileViewContainter } onEnter={ getOther }></Route>
         </Route>
       </Router>
     </Provider>

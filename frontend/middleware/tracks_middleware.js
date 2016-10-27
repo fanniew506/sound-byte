@@ -15,10 +15,10 @@ import {
 import * as API from '../util/track_api_util';
 
 export default ({ dispatch }) => next => action => {
-  const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON))
-  const fetchSuccess = tracks => dispatch(receiveAllTracks(tracks))
-  const otherFetchSuccess = data => dispatch(receiveOtherProfileView(data))
-  const latestSuccess = tracks => dispatch(receiveLatestTracks(tracks))
+  const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
+  const fetchSuccess = tracks => dispatch(receiveAllTracks(tracks));
+  const otherFetchSuccess = data => dispatch(receiveOtherProfileView(data));
+  const latestSuccess = tracks => dispatch(receiveLatestTracks(tracks));
 
   switch(action.type) {
     case CREATE_TRACK:
@@ -37,7 +37,6 @@ export default ({ dispatch }) => next => action => {
       API.getOtherProfileView(action.id, otherFetchSuccess, errorCallback);
       return next(action);
     case FETCH_LATEST_TRACKS:
-    debugger
       API.fetchLatestTracks(latestSuccess, errorCallback);
       return next(action);
     default:

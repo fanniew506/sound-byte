@@ -58,7 +58,7 @@ class Navigation extends React.Component {
             </div>
             <nav className='header-nav loggedin'>
               <Link to='/new-track-form'><h3>Upload</h3></Link>
-              <Link to='/profile'>
+              <Link to={`/profile/${currentUser.id}`}>
                 <img className="profile-thumb" src={currentUser.image_url}/>
                 <h3 className="username">
                   {currentUser.username}

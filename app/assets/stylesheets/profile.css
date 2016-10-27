@@ -96,3 +96,7 @@
   font-size: 40px;
   z-index: 20;
 }
+
+.update-profilep-pic {
+  z-index: 300000;
+}
