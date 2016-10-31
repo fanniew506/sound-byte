@@ -5,15 +5,14 @@ import { Provider } from 'react-redux';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import SignUpFormContainer from './session/signup_form_container';
-import ProfileContainer from './profile/profile_container';
 import NewTrackFormContainer from './new_track/new_track_form_container';
 import TrackViewContainer from './track_view/track_view_container';
 import {
-  getOtherProfileView,
   fetchAllTracksForUser,
   fetchCurrentTrackView,
   fetchLatestTracks } from '../actions/track_actions';
 import { fetchAllComments } from '../actions/remark_actions';
+import {  getOtherProfileView } from '../actions/user_actions';
 import Modal from 'react-modal';
 import OtherProfileViewContainter from './profile/other_profile_container';
 import LatestTracksContainer from './latest_tracks/latest_track_container';

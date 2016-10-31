@@ -7,10 +7,9 @@ export const FETCH_ALL_TRACKS_FOR_USER = "FETCH_ALL_TRACKS_FOR_USER";
 export const RECEIVE_ALL_TRACKS = "RECEIVE_ALL_TRACKS";
 export const FETCH_CURRENT_TRACK_VIEW = "FETCH_CURRENT_TRACK_VIEW";
 export const CURRENT_TRACK_VIEW = "CURRENT_TRACK_VIEW";
-export const GET_OTHER_PROFILE_VIEW = "GET_OTHER_PROFILE_VIEW";
-export const RECEIVE_OTHER_PROFILE_VIEW = "RECEIVE_OTHER_PROFILE_VIEW";
 export const FETCH_LATEST_TRACKS = "FETCH_LATEST_TRACKS";
 export const RECEIVE_LATEST_TRACKS = "RECEIVE_LATEST_TRACKS";
+export const RECEIVE_NEW_TRACK = "RECEIVE_NEW_TRACK"
 
 export const createTrack = track => ({
   type: CREATE_TRACK,
@@ -46,7 +45,6 @@ export const receiveAllTracks = tracks => ({
   tracks
 });
 
-
 export const fetchCurrentTrackView = id => ({
   type: FETCH_CURRENT_TRACK_VIEW,
   id
@@ -57,16 +55,6 @@ export const currentTrackView = (track) => ({
   track
 });
 
-export const getOtherProfileView = (id) => ({
-  type: GET_OTHER_PROFILE_VIEW,
-  id
-});
-
-export const receiveOtherProfileView = (otherView) => ({
-  type: RECEIVE_OTHER_PROFILE_VIEW,
-  otherView
-});
-
 export const fetchLatestTracks = () => ({
   type: FETCH_LATEST_TRACKS
 });
@@ -74,4 +62,9 @@ export const fetchLatestTracks = () => ({
 export const receiveLatestTracks = tracks => ({
   type: RECEIVE_LATEST_TRACKS,
   tracks
+});
+
+export const receiveNewTrack = track => ({
+  type: RECEIVE_NEW_TRACK,
+  track
 });

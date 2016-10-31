@@ -7,7 +7,6 @@ class NewTrackForm extends React.Component {
     this.state = {
       title: "",
       description: "",
-      errors: [],
       imageUrl: "",
       imageFile: null,
       audioFile: null };
@@ -17,6 +16,10 @@ class NewTrackForm extends React.Component {
     this.updateAudioFile = this.updateAudioFile.bind(this);
     this.updateImageFile = this.updateImageFile.bind(this);
 
+  }
+
+  componentDidUpdate(){
+    
   }
 
   handleSubmit(e) {
@@ -78,25 +81,12 @@ class NewTrackForm extends React.Component {
     }
   }
 
-  renderErrors() {
-    if (this.props.errors !== undefined) {
-      return(
-        <ul>
-          {this.props.errors.map((error, idx) => (
-            <li key={`error-${idx}`}>{error}</li>
-          ))}
-        </ul>
-      );
-    }
-  }
-
   render() {
     return (
       <div className="new-track-form-container">
        <div className="new-track-form">
          <form onSubmit={this.handleSubmit} className="new-track-form">
              <h2 className="new-track title">Upload to SoundByte</h2>
-           {this.renderErrors()}
            <br/>
              <input type="text"
                placeholder="Track Title" value={this.state.title} onChange={this.updateTitle}/>

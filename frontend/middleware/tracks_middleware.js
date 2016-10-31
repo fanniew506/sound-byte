@@ -2,14 +2,11 @@ import {
   CREATE_TRACK,
   UPDATE_TRACK,
   DELETE_TRACK,
-  FETCH_ALL_TRACKS_FOR_USER,
-  receiveCurrentUserTracks,
+  FETCH_LATEST_TRACKS,
   receiveAllTracks,
   receiveErrors,
-  GET_OTHER_PROFILE_VIEW,
-  receiveOtherProfileView,
-  FETCH_LATEST_TRACKS,
   receiveLatestTracks,
+  receiveNewTrack
   } from '../actions/track_actions';
 
 import * as API from '../util/track_api_util';
@@ -17,24 +14,16 @@ import * as API from '../util/track_api_util';
 export default ({ dispatch }) => next => action => {
   const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
   const fetchSuccess = tracks => dispatch(receiveAllTracks(tracks));
-  const otherFetchSuccess = data => dispatch(receiveOtherProfileView(data));
   const latestSuccess = tracks => dispatch(receiveLatestTracks(tracks));
-
   switch(action.type) {
     case CREATE_TRACK:
-      API.createTrack(action.track, () => dispatch(fetchAllTracksForUser()), errorCallback);
+      API.createTrack(action.track, () => {console.log("success");}, errorCallback);
       return next(action);
     case UPDATE_TRACK:
-      API.updateTrack(action.track, () => dispatch(fetchAllTracksForUser()), errorCallback)
+      API.updateTrack(action.track, track => dispatch(receiveNewTrack(track)), errorCallback);
       return next(action);
     case DELETE_TRACK:
-      API.deleteTrack(() => dispatch(fetchAllTracksForUser()), errorCallback)
-      return next(action);
-    case FETCH_ALL_TRACKS_FOR_USER:
-      API.fetchAllTracksForUser(fetchSuccess, errorCallback);
-      return next(action);
-    case GET_OTHER_PROFILE_VIEW:
-      API.getOtherProfileView(action.id, otherFetchSuccess, errorCallback);
+      API.deleteTrack(() => dispatch(fetchAllTracksForUser()), errorCallback);
       return next(action);
     case FETCH_LATEST_TRACKS:
       API.fetchLatestTracks(latestSuccess, errorCallback);

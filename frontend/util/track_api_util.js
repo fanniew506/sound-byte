@@ -1,5 +1,6 @@
 
 export const createTrack = (track, success, error) => {
+	debugger
 	$.ajax({
 		method: 'POST',
 		url: '/api/tracks',
@@ -36,7 +37,7 @@ export const deleteTrack = (track, success, error) => {
 	});
 };
 
-export const fetchAllTracksForUser = (success, error) => {
+export const fetchLatestTracks = (success, error) => {
   $.ajax({
     method: 'GET',
     url: '/api/tracks',
@@ -49,25 +50,6 @@ export const fetchCurrentTrackView = (id, success, error) => {
   $.ajax({
     method: 'GET',
     url: `/api/tracks/${id}`,
-    success,
-    error
-  });
-};
-
-export const getOtherProfileView = (id, success, error) => {
-  $.ajax({
-    method: 'PATCH',
-    url: `/api/tracks/${id}`,
-    success,
-    error
-  });
-};
-
-export const fetchLatestTracks = (success, error) => {
-	debugger
-  $.ajax({
-    method: 'PATCH',
-    url: `/api/users/:id`,
     success,
     error
   });

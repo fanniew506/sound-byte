@@ -12,13 +12,7 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    @tracks = @user.tracks
-    if @user
-      render 'api/tracks/otherview.json.jbuilder'
-    else
-      render json: @track.errors.full_messages, status: 401
-    end
+
   end
 
   def show
@@ -41,13 +35,8 @@ class Api::TracksController < ApplicationController
   end
 
   def index
-    user = current_user
-    if user.nil?
-      render json: {}
-    else
-      @tracks = user.tracks
-      render '/api/tracks/index'
-    end
+    @tracks = Track.all
+    render 'api/tracks/index.json.jbuilder'
   end
 
   private

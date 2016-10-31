@@ -1,9 +1,8 @@
-export const createComment = (sent_data) => {
-
+export const createComment = (sentData) => {
   $.ajax({
     method: 'POST',
-    url: `/api/tracks/${sent_data.id}/remarks`,
-    data: { body: sent_data.comment }
+    url: `/api/tracks/${sentData.id}/remarks`,
+    data: { body: sentData.comment }
   });
 };
 

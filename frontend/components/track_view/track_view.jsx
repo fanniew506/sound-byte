@@ -5,17 +5,17 @@ import { Link, hashHistory } from 'react-router';
 class TrackView extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { comment: "" }
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.updateComment = this.updateComment.bind(this)
+    this.state = { comment: "" };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateComment = this.updateComment.bind(this);
   }
 
   handleSubmit(e){
-    e.preventDefault()
-    const data = { id: this.props.currentTrackView.id, comment: this.state.comment }
-    this.props.createComment(data)
-    this.props.fetchCurrentTrackView(this.props.currentTrackView.id)
-    this.setState({comment: ""})
+    e.preventDefault();
+    const data = { id: this.props.currentTrackView.id, comment: this.state.comment };
+    this.props.createComment(data);
+    this.props.fetchCurrentTrackView(this.props.currentTrackView.id);
+    this.setState({comment: ""});
   }
 
   updateComment(e){

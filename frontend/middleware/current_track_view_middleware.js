@@ -5,17 +5,17 @@ import { fetchAllComments, createComment } from '../util/remark_api_util';
 import { receiveErrors } from '../actions/session_actions';
 
 export default ({ dispatch }) => next => action => {
-  const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON))
-  const fetchTrackSuccess = track => dispatch(currentTrackView(track))
-  const fetchCommentSuccess = comments => dispatch(allComments(comments))
+  const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
+  const fetchTrackSuccess = track => dispatch(currentTrackView(track));
+  const fetchCommentSuccess = comments => dispatch(allComments(comments));
 
   switch(action.type) {
     case FETCH_CURRENT_TRACK_VIEW:
-      fetchCurrentTrackView(action.id, fetchTrackSuccess, errorCallback)
-      return next(action)
+      fetchCurrentTrackView(action.id, fetchTrackSuccess, errorCallback);
+      return next(action);
     case FETCH_ALL_COMMENTS:
       fetchAllComments(action.id, fetchCommentSuccess, errorCallback);
-      return next(action)
+      return next(action);
     case CREATE_COMMENT:
       createComment(action.data);
       break;

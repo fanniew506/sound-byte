@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import TrackPlayerControlsContainer from '../track_view/track_player_controls_container'
+import TrackPlayerControlsContainer from '../track_view/track_player_controls_container';
 
 class OtherProfileView extends React.Component {
   constructor(props) {
@@ -8,6 +8,9 @@ class OtherProfileView extends React.Component {
     this.showUsersTracks =  this.showUsersTracks.bind(this);
     this.playCurrentTrack =  this.playCurrentTrack.bind(this);
     this.displayEditProfile = this.displayEditProfile.bind(this);
+    this.updateImageFile = this.updateImageFile.bind(this);
+    this.handleProfileSubmit = this.handleProfileSubmit.bind(this);
+    this.state = {imageFile: null, imageUrl: ""};
   }
 
   playCurrentTrack(track){
@@ -18,15 +21,36 @@ class OtherProfileView extends React.Component {
 
   }
 
-  handleProfileSubmit() {
+  handleProfileSubmit(e) {
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("user[id]", this.props.currentUser.id);
+    formData.append("user[image]", this.state.imageFile);
+    this.props.updateUser(formData);
+  }
 
+  updateImageFile(e) {
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        imageFile: file, imageUrl: reader.result
+      });
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
   }
 
   displayEditProfile() {
     if (this.props.currentUser.id === this.props.user.id) {
       return (
-        <form onSubmit={this.handleProfileSubmit} className="update-profile-pic">
-          <input type="file"></input>
+        <form onSubmit={ this.handleProfileSubmit } className="update-profile-pic">
+          <input type="file" onChange={ this.updateImageFile }></input>
+          <input type="submit" value="Submit"/>
           <h1>EDIT PROFILE PICTURE</h1>
         </form>
       );
@@ -52,7 +76,7 @@ class OtherProfileView extends React.Component {
     return trackList;
   }
 
-  render(){
+  render() {
     if (this.props.user) {
       return (
         <div className='profile-view group'>
