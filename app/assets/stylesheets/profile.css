@@ -97,6 +97,12 @@
   z-index: 20;
 }
 
-.update-profilep-pic {
+.update-profile-pic {
   z-index: 300000;
+}
+
+.image-preview {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }

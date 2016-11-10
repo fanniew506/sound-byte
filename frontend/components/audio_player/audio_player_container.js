@@ -9,7 +9,8 @@ import {
   onVolumeUp,
   onVolumeDown,
   duration,
-  playFromPosition } from '../../actions/audio_actions'
+  playFromPosition,
+  updatePosition } from '../../actions/audio_actions';
 
 const mapStateToProps = ({ audio }) => ({
   currentSong: audio.currentSong,

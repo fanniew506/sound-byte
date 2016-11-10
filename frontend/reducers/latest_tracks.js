@@ -6,7 +6,6 @@ const defaultState = Object.freeze({ tracks: null});
 export default (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_LATEST_TRACKS:
-    debugger
       return merge({}, defaultState, {tracks: action.tracks});
     default:
       return state;

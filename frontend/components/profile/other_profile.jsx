@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import TrackPlayerControlsContainer from '../track_view/track_player_controls_container';
+import Modal from 'react-modal';
 
 class OtherProfileView extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class OtherProfileView extends React.Component {
     this.displayEditProfile = this.displayEditProfile.bind(this);
     this.updateImageFile = this.updateImageFile.bind(this);
     this.handleProfileSubmit = this.handleProfileSubmit.bind(this);
-    this.state = {imageFile: null, imageUrl: ""};
+    this.state = {imageFile: null, imageUrl: "", modalIsOpen: false};
   }
 
   playCurrentTrack(track){
@@ -27,6 +28,7 @@ class OtherProfileView extends React.Component {
     formData.append("user[id]", this.props.currentUser.id);
     formData.append("user[image]", this.state.imageFile);
     this.props.updateUser(formData);
+    this.setState({ modalIsOpen: false });
   }
 
   updateImageFile(e) {
@@ -34,7 +36,7 @@ class OtherProfileView extends React.Component {
     const file = e.currentTarget.files[0];
     reader.onloadend = () => {
       this.setState({
-        imageFile: file, imageUrl: reader.result
+        imageFile: file, imageUrl: reader.result, modalIsOpen: true
       });
     };
 
@@ -46,12 +48,18 @@ class OtherProfileView extends React.Component {
   }
 
   displayEditProfile() {
+    Modal.setAppElement('html');
     if (this.props.currentUser.id === this.props.user.id) {
       return (
-        <form onSubmit={ this.handleProfileSubmit } className="update-profile-pic">
+        <form className="update-profile-pic">
           <input type="file" onChange={ this.updateImageFile }></input>
-          <input type="submit" value="Submit"/>
           <h1>EDIT PROFILE PICTURE</h1>
+          <Modal
+            className="update-image-modal"
+            isOpen={this.state.modalIsOpen}>
+            <img className="image-preview" src={this.state.imageUrl}></img>
+            <h2 onClick={this.handleProfileSubmit}>SUBMIT</h2>
+          </Modal>
         </form>
       );
     }

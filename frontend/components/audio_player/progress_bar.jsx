@@ -6,6 +6,8 @@ class ProgressBar extends React.Component {
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.displayPosition = this.displayPosition.bind(this);
+    this.displayDuration = this.displayDuration.bind(this);
   }
 
   handleClick(e){
@@ -21,12 +23,14 @@ class ProgressBar extends React.Component {
     return (
       <div>
         <div className='progress-bar' onClick={ this.handleClick }>
+          <div>{this.displayPosition}</div>
           <div className='audio-progress'
-               style={{width: `${100*(position/duration)}px`}}>
+               style={{width: `${600*(position/duration)}px`}}>
           </div>
           <div className='progress-circle'
-               style={{left: `${document.documentElement.clientWidth*(position/duration) - 8}px`}}>
+               style={{left: `${600*(position/duration)}px`}}>
           </div>
+          <div>{this.displayDuration}</div>
         </div>
 
       </div>

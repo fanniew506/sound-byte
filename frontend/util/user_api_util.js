@@ -1,5 +1,4 @@
 export const updateUser = (sentData, success) => {
-  debugger
   $.ajax({
     method: 'PATCH',
     url: `/api/users/${sentData.id}`,
