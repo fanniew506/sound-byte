@@ -7,13 +7,18 @@ import { Link } from 'react-router';
 export default class AudioPlayer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { position: 0, duration: 0};
+    this.state = { position: 0, duration: null};
     this.playAudio = this.playAudio.bind(this);
+    this.updatePosition = this.updatePosition.bind(this);
   }
 
   playAudio(playInfo){
     this.setState({position: playInfo.position});
     this.setState({duration: playInfo.duration});
+  }
+
+  updatePosition(number){
+    this.setState({position: number});
   }
 
   render() {
@@ -29,18 +34,17 @@ export default class AudioPlayer extends React.Component {
                 onResume={ this.props.onResume }
                 onStop={ this.props.onStop }
                 onSeek={ this.props.onSeek }
-                duration={ this.props.currentSong ? this.props.duration : 0 }
-                position={ this.props.position }/>
+                duration={ this.props.currentSong ? this.state.duration : 0 }
+                position={ this.state.position }/>
               <ProgressBar
                 position={ this.state.position }
                 duration={ this.props.currentSong ? this.state.duration : 0 }
-                updatePosition={ this.props.updatePosition.bind(this) }
+                updatePosition={ this.updatePosition }
               />
               { this.props.currentSong.audio_url &&
                 <Sound
                   url={this.props.currentSong.audio_url}
                   playStatus={this.props.playStatus}
-                  playFromPosition={this.props.position}
                   volume={ this.props.volume }
                   onFinishedPlaying={this.props.onFinishedPlaying}
                   onPlaying={ this.playAudio }/>

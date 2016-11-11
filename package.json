@@ -11,7 +11,6 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
-    "node-easel": "^0.1.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-modal": "^1.4.0",
@@ -30,6 +29,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fanniew506/sound-byte.git"
+  },
+  "engines": {
+    "node": "6.2.1"
   },
   "keywords": [],
   "author": "",

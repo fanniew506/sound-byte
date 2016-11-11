@@ -6,14 +6,15 @@ class ProgressBar extends React.Component {
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.displayPosition = this.displayPosition.bind(this);
-    this.displayDuration = this.displayDuration.bind(this);
+    // this.displayPosition = this.displayPosition.bind(this);
+    // this.displayDuration = this.displayDuration.bind(this);
   }
 
   handleClick(e){
-    const end = document.documentElement.clientWidth;
-    const position = Math.floor(this.props.duration*(e.clientX)/end);
+    const position = Math.floor(((e.clientX-262)/600)*this.props.duration);
+    debugger
     this.props.updatePosition(position);
+    debugger
   }
 
   render(){
@@ -21,8 +22,8 @@ class ProgressBar extends React.Component {
     let duration = this.props.duration;
 
     return (
-      <div>
-        <div className='progress-bar' onClick={ this.handleClick }>
+      <div className="progress-container" onClick={ this.handleClick }>
+        <div className='progress-bar'>
           <div>{this.displayPosition}</div>
           <div className='audio-progress'
                style={{width: `${600*(position/duration)}px`}}>
