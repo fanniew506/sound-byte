@@ -4,4 +4,14 @@
 
 .index-author-name {
   margin-top: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.index-author-name:hover{
+  color: #333;
+}
+
+.index-track-title {
+  color: #333;
 }
