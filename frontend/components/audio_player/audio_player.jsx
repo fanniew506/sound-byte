@@ -52,13 +52,13 @@ export default class AudioPlayer extends React.Component {
               <div className="player-album-info">
                 <Link to={`/track-view/${this.props.currentSong.id}`}>
                   <img src={this.props.currentSong.album_image_url}></img>
-                  <div className="audio-player-album-name">
-                    <h2 className="audio-title">{this.props.currentSong.title}</h2>
-                    <br/>
-                    <h4 className="audio-name">{this.props.currentSong.author_name}</h4>
-                  </div>
+                  <h2 className="audio-title">{this.props.currentSong.title}</h2>
                 </Link>
-              </div>
+                    <br/>
+                <Link to={`/profile/${this.props.currentSong.author_id}`}>
+                  <h4 className="audio-name">{this.props.currentSong.author_name}</h4>
+                </Link>
+            </div>
             </div>
           </div>
       );

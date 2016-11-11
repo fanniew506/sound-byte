@@ -34,6 +34,7 @@ margin-top: 80px;
   font-size: 16px;
 }
 
+/*Progress Bar*/
 .progress-container {
   width: 600px;
   float: left;
@@ -64,6 +65,7 @@ margin-top: 80px;
   position: relative;
 }
 
+/*Album info thumb*/
 .player-album-info  {
   width: 200px;
   float: right;
@@ -78,18 +80,33 @@ margin-top: 80px;
   float: left;
 }
 
-.audio-player-album-name .audio-title {
+.audio-title {
   font-size: 14px;
+  width: 140px;
   float: left;
   padding-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow:hidden;
+  text-align: left;
+  color: #666;
 }
 
-.audio-player-album-name .audio-name  {
+.audio-name  {
   font-size: 12px;
+  width: 140px;
   float: left;
   padding-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+  color: #666;
 }
 
+.audio-name:hover, .audio-title:hover {
+  color: #333;
+}
 .control-holder {
   width: 1200px;
   margin: 0 auto;
