@@ -8,14 +8,14 @@
 
 User.destroy_all
 
-user1 = User.create(username: "jennifer", password: "starwars", image: "http://static1.squarespace.com/static/55ad450ce4b00f4c52d6401e/55ed7b2de4b055e3b16b1912/55ed7b3be4b055e3b16b1cbc/1440147816000/V2-Christian-Webb-Photo-Headshots.jpg?format=original"),
-user2 = User.create(username: "marie", password: "starwars", image: "https://s-media-cache-ak0.pinimg.com/originals/cb/8b/be/cb8bbe37a7e5e3b742a1777edab68064.jpg"),
-user3 = User.create(username: "tawny", password: "starwars", image: "https://cdn.fstoppers.com/styles/full/s3/lead/2015/05/fstoppers-shooting-cinematic-headshots-indoors-dylan-patrick-6_0.jpg"),
-user4 = User.create(username: "amy", password: "starwars", image: "http://cdn.picturecorrect.com/wp-content/uploads/2013/11/modern-corporate-headshot-technique-3.jpg"),
-user5 = User.create(username: "joseph", password: "starwars", image: "http://www.mackephotography.com/headshots/men/0_medium.jpg"),
-user6 = User.create(username: "marco", password: "starwars", image: "https://s-media-cache-ak0.pinimg.com/originals/f4/9b/2a/f49b2a61a53c74a626b212b122463aa4.jpg"),
-user7 = User.create(username: "corbin", password: "starwars", image: "http://www.colemanphotographix.com/wp-content/uploads/MensHeadshot-0020.jpg"),
-user8 = User.create(username: "dominic", password: "starwars", image: "http://www.mackephotography.com/headshots/men/32_medium.jpg"),
+user1 = User.create(username: "Jennifer", password: "starwars", image: "http://static1.squarespace.com/static/55ad450ce4b00f4c52d6401e/55ed7b2de4b055e3b16b1912/55ed7b3be4b055e3b16b1cbc/1440147816000/V2-Christian-Webb-Photo-Headshots.jpg?format=original"),
+user2 = User.create(username: "Marie", password: "starwars", image: "https://s-media-cache-ak0.pinimg.com/originals/cb/8b/be/cb8bbe37a7e5e3b742a1777edab68064.jpg"),
+user3 = User.create(username: "Tawny", password: "starwars", image: "https://cdn.fstoppers.com/styles/full/s3/lead/2015/05/fstoppers-shooting-cinematic-headshots-indoors-dylan-patrick-6_0.jpg"),
+user4 = User.create(username: "Amy", password: "starwars", image: "http://cdn.picturecorrect.com/wp-content/uploads/2013/11/modern-corporate-headshot-technique-3.jpg"),
+user5 = User.create(username: "Joseph", password: "starwars", image: "http://www.mackephotography.com/headshots/men/0_medium.jpg"),
+user6 = User.create(username: "Marco", password: "starwars", image: "https://s-media-cache-ak0.pinimg.com/originals/f4/9b/2a/f49b2a61a53c74a626b212b122463aa4.jpg"),
+user7 = User.create(username: "Corbin", password: "starwars", image: "http://www.colemanphotographix.com/wp-content/uploads/MensHeadshot-0020.jpg"),
+user8 = User.create(username: "Dominic", password: "starwars", image: "http://www.mackephotography.com/headshots/men/32_medium.jpg"),
 
 audio1 = "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
 audio2 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2004.mp3"
