@@ -15,7 +15,6 @@ import {
 const mapStateToProps = ({ audio }) => ({
   currentSong: audio.currentSong,
   position: audio.position,
-  volume: audio.volume,
   playStatus: audio.playStatus,
 });
 
