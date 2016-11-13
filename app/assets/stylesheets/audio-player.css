@@ -36,19 +36,31 @@ margin-top: 80px;
 
 /*Progress Bar*/
 .progress-container {
-  width: 600px;
+ height: auto;
+ width: auto;
+ float: left;
+ padding: 15px;
+ font-size: 12px;
+}
+
+.progress-click {
   float: left;
-  height: 8px;
-  margin: 20px 20px 0 60px;
-  display: inline;
+  height: 15px;
+  /*margin: 20px 20px 0 60px;*/
+  /*display: inline;*/
   cursor: pointer;
 }
 
+.progress-click:hover .progress-circle{
+  visibility: visible;
+}
+
 .progress-bar {
-  width: 100%;
+  width: 600px;
   height: 2px;
   background-color: #ccc;
-  margin-top: 3px;
+  float:left;
+  margin-top: 7px;
 }
 
 .audio-progress {
@@ -63,6 +75,21 @@ margin-top: 80px;
   border-radius: 50%;
   bottom: 5px;
   position: relative;
+  visibility: hidden;
+}
+
+.progress-position {
+  /*display: inline;*/
+  float:left;
+  margin: 0 10px;
+  color: #f50;
+}
+
+.progress-duration {
+  /*display: inline;*/
+  float: left;
+  margin: 0 10px;
+
 }
 
 /*Album info thumb*/
