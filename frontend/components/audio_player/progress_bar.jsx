@@ -9,8 +9,14 @@ class ProgressBar extends React.Component {
   }
 
   handleClick(e){
-    const position = Math.floor(((e.clientX-262)/600)*this.props.duration);
+    let position = Math.floor(((e.clientX-280)/600)*this.props.duration);
+    if (position > this.props.duration) {
+      position = this.props.duration;
+    }
     this.props.updatePosition(position);
+    if (this.props.playStatus === "PAUSED" || this.props.playStatus === "STOPPED") {
+      this.props.onPlay();
+    }
   }
 
   displayPosition() {

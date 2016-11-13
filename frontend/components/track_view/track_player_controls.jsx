@@ -1,6 +1,7 @@
 import React from 'react';
 import Sound from 'react-sound';
 
+
 function control(text, clickHandler) {
   const onClick = (e) => {
     e.preventDefault();
@@ -30,6 +31,8 @@ export default class TrackPlayerControls extends React.Component {
 
   chooseSong() {
       this.props.selectSong(this.props.currentTrackView);
+      this.props.updatePosition(0);
+      this.props.onPlay();
   }
 
   play() {

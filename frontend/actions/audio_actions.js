@@ -8,7 +8,7 @@ export const ON_VOLUME_UP = "ON_VOLUME_UP";
 export const ON_VOLUME_DOWN = "ON_VOLUME_DOWN";
 export const DURATION = "DURATION";
 export const SELECT_SONG = "SELECT_SONG";
-export const UPDATE_POSITON = "UPDATE_POSITON";
+export const UPDATE_POSITION = "UPDATE_POSITION";
 export const PLAY_FROM_POSITION = "PLAY_FROM_POSITION";
 
 export const selectSong = track => ({

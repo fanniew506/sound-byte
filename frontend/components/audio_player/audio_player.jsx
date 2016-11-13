@@ -7,18 +7,20 @@ import { Link } from 'react-router';
 export default class AudioPlayer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { position: 0, duration: null};
+    this.state = { position: 0, duration: 0};
     this.playAudio = this.playAudio.bind(this);
     this.updatePosition = this.updatePosition.bind(this);
   }
 
   playAudio(playInfo){
+    this.updatePosition(playInfo.position);
     this.setState({position: playInfo.position});
     this.setState({duration: playInfo.duration});
   }
 
   updatePosition(number){
-    this.setState({position: number});
+    this.props.updatePosition(number);
+    this.setState({position: this.props.position});
   }
 
   render() {
@@ -32,21 +34,24 @@ export default class AudioPlayer extends React.Component {
                 onPlay={ this.props.onPlay }
                 onPause={ this.props.onPause }
                 onResume={ this.props.onResume }
-                onStop={ this.props.onStop }
                 onSeek={ this.props.onSeek }
                 duration={ this.props.currentSong ? this.state.duration : 0 }
-                position={ this.state.position }/>
+                position={ this.props.position }/>
               <ProgressBar
                 position={ this.state.position }
                 duration={ this.props.currentSong ? this.state.duration : 0 }
                 updatePosition={ this.updatePosition }
+                playStatus={this.props.playStatus}
+                onPlay={ this.props.onPlay }
               />
               { this.props.currentSong.audio_url &&
                 <Sound
                   url={this.props.currentSong.audio_url}
                   playStatus={this.props.playStatus}
                   volume={ this.props.volume }
+                  playFromPosition = { this.props.playFromPosition }
                   onFinishedPlaying={this.props.onFinishedPlaying}
+                  position={ this.props.position }
                   onPlaying={ this.playAudio }/>
               }
               <div className="player-album-info">

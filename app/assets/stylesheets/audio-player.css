@@ -39,13 +39,13 @@ margin-top: 80px;
  height: auto;
  width: auto;
  float: left;
- padding: 15px;
+ padding: 18px;
  font-size: 12px;
 }
 
 .progress-click {
   float: left;
-  height: 15px;
+  height: 20px;
   /*margin: 20px 20px 0 60px;*/
   /*display: inline;*/
   cursor: pointer;
@@ -60,7 +60,7 @@ margin-top: 80px;
   height: 2px;
   background-color: #ccc;
   float:left;
-  margin-top: 7px;
+  margin-top: 9px;
 }
 
 .audio-progress {
