@@ -9,7 +9,7 @@ class ProgressBar extends React.Component {
   }
 
   handleClick(e){
-    let position = Math.floor(((e.clientX-280)/600)*this.props.duration);
+    let position = Math.floor(((e.pageX - e.currentTarget.offsetLeft)/600)*this.props.duration);
     if (position > this.props.duration) {
       position = this.props.duration;
     }
@@ -50,8 +50,8 @@ class ProgressBar extends React.Component {
 
     return (
       <div className="progress-container group">
+        {this.displayPosition()}
         <div className="progress-click" onClick={ this.handleClick }>
-          {this.displayPosition()}
           <div className='progress-bar'>
             <div className='audio-progress'
                  style={{width: `${600*(position/duration)}px`}}>
@@ -60,8 +60,8 @@ class ProgressBar extends React.Component {
                  style={{left: `${600*(position/duration)}px`}}>
             </div>
           </div>
-          {this.displayDuration()}
         </div>
+        {this.displayDuration()}
       </div>
     );
   }
