@@ -1,6 +1,4 @@
 import React from 'react';
-import Sound from 'react-sound';
-
 
 function control(text, clickHandler) {
   const onClick = (e) => {

@@ -6,15 +6,9 @@ import configureStore from './store/store.js';
 import Root from './components/root';
 import { createTrack, fetchAllTracksForUser, fetchAllComments, allComments } from './actions/track_actions';
 
+window.soundManager.setup({debugMode: false});
 document.addEventListener('DOMContentLoaded', () => {
     let store;
-    window.login  = login;
-    window.logout = logout;
-    window.signup = signup;
-    window.createTrack = createTrack;
-    window.fetchAllTracksForUser = fetchAllTracksForUser;
-    window.fetchAllComments = fetchAllComments;
-    window.allComments = allComments;
     if (window.currentUser) {
       const initialState = {
         session: {
