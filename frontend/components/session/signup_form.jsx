@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import Modal from 'react-modal';
+import Modal from '../modal/modal';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -9,21 +9,11 @@ class SignUpForm extends React.Component {
       username: "",
       password: "",
       errors: [],
-      formType: this.props.formType,
-      windowHeight: window.innerHeight,
-      windowWidth: window.innerWidth,
+      formType: this.props.formType
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateUsername = this.updateUsername.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
-    this.handleResize = this.handleResize.bind(this);
-  }
-
-  handleResize(e) {
-    this.setState({
-    windowHeight: window.innerHeight,
-    windowWidth: window.innerWidth
-    });
   }
 
   componentDidUpdate() {
@@ -32,11 +22,6 @@ class SignUpForm extends React.Component {
 
   componentDidMount() {
     if (this.props.loggedIn) hashHistory.push("/home");
-    window.addEventListener('resize', this.handleResize);
-  }
-
-  componentWillUnmount() {
-      window.removeEventListener('resize', this.handleResize);
   }
 
   handleSubmit(e) {
@@ -44,7 +29,6 @@ class SignUpForm extends React.Component {
     const user = { username: this.state.username, password: this.state.password };
       this.props.signup(user);
   }
-
 
   updateUsername (e) {
     this.setState({
@@ -72,18 +56,11 @@ class SignUpForm extends React.Component {
     }
   }
 
-  modalStyle() {
-    return { width: this.state.windowWidth, height: this.state.windowHeight };
-  }
 
-  handleModalClick() {
-    hashHistory.push("/");
-  }
 
   render() {
     return (
       <div>
-        <div onClick={this.handleModalClick} className="session-modal" style={ this.modalStyle() }></div>
         <div className="session-form-container">
           <form onSubmit={this.handleSubmit} className="session-form">
             <header className="session-form-header">
@@ -107,11 +84,12 @@ class SignUpForm extends React.Component {
            <input className="session-submit" type="submit" value="Submit"/>
            <br/>
              <div>
-               Already Have an Account?
+               <h1>Already Have an Account?</h1>
                <Link to="login"> Login</Link>
              </div>
          </form>
        </div>
+       <Modal/>
       </div>
     );
   }
