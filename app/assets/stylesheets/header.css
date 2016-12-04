@@ -120,18 +120,14 @@ h3.loggedout.or:hover {
    border-radius: 5px;
  }
 
- .header-nav h3 {
+ .header-nav.loggedin h3 {
    float: left;
-   padding: 15px 20px;
+   padding-top: 13px;
    color: #ccc;
    font-weight: 400;
  }
 
- .header-nav .username {
-   padding: 15px 20px 15px 5px;
- }
-
- .header-nav h3:hover {
+ .header-nav.loggedin h3:hover {
    color: #fff;
  }
 
@@ -144,7 +140,9 @@ h3.loggedout.or:hover {
    height: 30px;
    border-radius: 50%;
    float: left;
-   margin-top: 10px;
+   margin-right: 10px;
+   position:relative;
+   top: -5px;
  }
 
  .form-cancel {
