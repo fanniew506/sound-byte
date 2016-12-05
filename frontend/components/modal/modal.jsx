@@ -32,11 +32,12 @@ class Modal extends React.Component {
   }
 
   handleModalClick() {
-    hashHistory.push("/");
+    if(this.props.modalClick) {
+      hashHistory.push(this.props.redirect);
+    }
   }
 
   render () {
-    debugger
     return (
       <div onClick={this.handleModalClick} className="session-modal" style={ this.modalStyle() }></div>
     )

@@ -2,10 +2,11 @@
 .session-form-container {
   z-index: 300;
   position: fixed;
-  top: 30%;
+  top: 25%;
   left: 30%;
-  opacity: 1;
+  opacity: 1; 
 }
+
 
 .session-form {
   width: 400px;
@@ -14,7 +15,6 @@
   text-align: center;
   font-size: 16px;
   padding: 40px;
-  opacity: 1;
 }
 
 .session-modal {

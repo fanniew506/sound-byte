@@ -89,8 +89,8 @@ class SignUpForm extends React.Component {
              </div>
          </form>
        </div>
-       <Modal/>
-      </div>
+       <Modal modalClick="true" redirect="/"/>
+     </div>
     );
   }
 }

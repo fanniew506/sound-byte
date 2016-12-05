@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
                  <h2 onClick={this.demoLogin} className="demo-login">Demo Login</h2>
              </form>
          </div>
-         <Modal/>
+         <Modal modalClick="true" redirect="/"/>
        </div>
     );
   }
