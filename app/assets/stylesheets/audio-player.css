@@ -17,8 +17,8 @@ margin-top: 80px;
 
 .player-controls {
   float: left;
-  margin: 18px 15px 15px 40px;
-  width: 150px;
+  margin: 0 15px 0 80px;
+  width: 100px;
 }
 
 .player-controls i {
@@ -32,6 +32,7 @@ margin-top: 80px;
 
 .fa-play, .fa-pause {
   font-size: 16px;
+  padding: 18px;
 }
 
 /*Progress Bar*/

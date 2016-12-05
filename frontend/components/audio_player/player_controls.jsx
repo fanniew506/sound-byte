@@ -18,14 +18,14 @@ export default class PlayerControls extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
 
   render() {
+    // <li><i className="fa fa-step-backward" aria-hidden="true"></i></li>
+    // <i className="fa fa-step-forward" aria-hidden="true"></i>
     return (
       <ul className="player-controls">
-        <li><i className="fa fa-step-backward" aria-hidden="true"></i></li>
         {this.renderControls()}
-        <i className="fa fa-step-forward" aria-hidden="true"></i>
       </ul>
     );
   }
