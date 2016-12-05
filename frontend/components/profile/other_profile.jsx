@@ -68,8 +68,10 @@ class OtherProfileView extends React.Component {
         <div>
           <div className="update-image-modal">
             <img className="image-preview" src={this.state.imageUrl}></img>
-            <h2 onClick={this.handleProfileSubmit}>Update Profile Picture</h2>
-            <h2 onClick={this.handleProfileCancel}>Cancel</h2>
+            <div className="update-image-nav">
+              <h2 className="cancel-btn" onClick={this.handleProfileCancel}>Cancel</h2>
+              <h2 className="save-btn" onClick={this.handleProfileSubmit}>Save</h2>
+            </div>
           </div>
           <Modal/>
         </div>
