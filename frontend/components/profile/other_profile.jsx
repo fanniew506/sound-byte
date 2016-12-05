@@ -1,17 +1,19 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import TrackPlayerControlsContainer from '../track_view/track_player_controls_container';
-import Modal from 'react-modal';
+import Modal from '../modal/modal';
 
 class OtherProfileView extends React.Component {
   constructor(props) {
     super(props);
     this.showUsersTracks =  this.showUsersTracks.bind(this);
     this.playCurrentTrack =  this.playCurrentTrack.bind(this);
-    this.displayEditProfile = this.displayEditProfile.bind(this);
     this.updateImageFile = this.updateImageFile.bind(this);
     this.handleProfileSubmit = this.handleProfileSubmit.bind(this);
-    this.state = {imageFile: null, imageUrl: "", modalIsOpen: false};
+    this.displayProfilePreview = this.displayProfilePreview.bind(this);
+    this.handleProfileCancel = this.handleProfileCancel.bind(this);
+    this.displayProfilePicture = this.displayProfilePicture.bind(this);
+    this.state = {imageFile: null, imageUrl: ""};
   }
 
   playCurrentTrack(track){
@@ -27,8 +29,17 @@ class OtherProfileView extends React.Component {
     let formData = new FormData();
     formData.append("user[id]", this.props.currentUser.id);
     formData.append("user[image]", this.state.imageFile);
+    this.setState({
+      imageFile: null, imageUrl: ""
+    });
     this.props.updateUser(formData);
-    this.setState({ modalIsOpen: false });
+  }
+
+  handleProfileCancel(e) {
+    e.preventDefault();
+    this.setState({
+      imageFile: null, imageUrl: ""
+    });
   }
 
   updateImageFile(e) {
@@ -36,7 +47,7 @@ class OtherProfileView extends React.Component {
     const file = e.currentTarget.files[0];
     reader.onloadend = () => {
       this.setState({
-        imageFile: file, imageUrl: reader.result, modalIsOpen: true
+        imageFile: file, imageUrl: reader.result
       });
     };
 
@@ -47,22 +58,24 @@ class OtherProfileView extends React.Component {
     }
   }
 
-  displayEditProfile() {
-    Modal.setAppElement('html');
-    if (this.props.currentUser.id === this.props.user.id) {
+  displayProfilePreview(){
+    if (this.state.imageUrl === "") {
       return (
-        <form className="update-profile-pic">
-          <input type="file" onChange={ this.updateImageFile }></input>
-          <h1>EDIT PROFILE PICTURE</h1>
-          <Modal
-            className="update-image-modal"
-            isOpen={this.state.modalIsOpen}>
+        <div></div>
+      );
+    } else {
+      return (
+        <div>
+          <div className="update-image-modal">
             <img className="image-preview" src={this.state.imageUrl}></img>
-            <h2 onClick={this.handleProfileSubmit}>SUBMIT</h2>
-          </Modal>
-        </form>
+            <h2 onClick={this.handleProfileSubmit}>Update Profile Picture</h2>
+            <h2 onClick={this.handleProfileCancel}>Cancel</h2>
+          </div>
+          <Modal/>
+        </div>
       );
     }
+
   }
 
   showUsersTracks() {
@@ -84,27 +97,53 @@ class OtherProfileView extends React.Component {
     return trackList;
   }
 
+  displayProfilePicture(){
+    if (this.props.currentUser.id === this.props.user.id) {
+      return(
+        <div className="default-profile-picture">
+          <form>
+            <label id="label" for="picture-file">
+              <img src={this.props.user.image_url} className="currentuser-profile-picture"></img>
+              <div className="update-profile-pic">
+                <i className="fa fa-camera" aria-hidden="true"></i>
+                <h2>Update Image</h2>
+                <input id="picture-file" type="file" onChange={ this.updateImageFile }></input>
+              </div>
+            </label>
+          </form>
+        </div>
+      )
+    } else {
+      return (
+        <div className="default-profile-picture">
+          <img src={this.props.user.image_url} className="user-profile-picture"></img>
+        </div>
+      )
+    }
+  }
+
+
   render() {
     if (this.props.user) {
       return (
-        <div className='profile-view group'>
-          <header>
-            <div className="header-background">
-            </div>
-            <div className="default-profile-picture">
-              <img src={this.props.user.image_url} className="user-profile-picture"></img>
-            </div>
-            <div className="username-profile">
-              <h4>{ this.props.user.username }</h4>
-            </div>
-          </header>
-          <content className="profile-tracks-content">
-            {this.displayEditProfile()}
-            <h2 className="profile-tracks-header">Uploads</h2>
-            <ul className="profile-tracks-list group">
-              {this.showUsersTracks()}
-            </ul>
-          </content>
+        <div>
+          <div className='profile-view group'>
+            <header>
+              <div className="header-background">
+              </div>
+              { this.displayProfilePicture() }
+              <div className="username-profile">
+                <h4>{ this.props.user.username }</h4>
+              </div>
+            </header>
+            <content className="profile-tracks-content">
+              <h2 className="profile-tracks-header">Uploads</h2>
+              <ul className="profile-tracks-list group">
+              { this.showUsersTracks() }
+              </ul>
+            </content>
+          </div>
+          { this.displayProfilePreview() }
         </div>
       );
     } else {
