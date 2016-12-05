@@ -9,8 +9,8 @@
   background: linear-gradient(315deg, rgb(180, 199, 233) 0%, rgb(79, 111, 185) 100%);
 }
 
-.username-profile h4 {
-  display: inline-block;
+.username-profile h4{
+  display: inline;
   background-color: rgba(0,0,0,.8);
   color: #fff;
   font-size: 24px;
@@ -18,9 +18,6 @@
   font-weight: 100;
   line-height: 37px;
   padding: 4px 7px;
-}
-
-.username-profile {
   position: relative;
   z-index: 3;
   bottom: 150px;
@@ -30,7 +27,6 @@
 .profile-view {
   width: 1200px;
   margin: 0 auto;
-  height: 100%;
 }
 
 .user-profile-picture {
@@ -97,8 +93,11 @@
   z-index: 20;
 }
 
-.update-profile-pic {
-  z-index: 300000;
+.update-image-modal {
+  position: fixed;
+  z-index: 2000;
+  top: 40%;
+  left: 40%;
 }
 
 .image-preview {
