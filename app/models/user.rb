@@ -16,7 +16,7 @@
 
 class User < ActiveRecord::Base
   has_attached_file :image, default_url: "https://s3.amazonaws.com/sound-byte-dev/users/images/000/000/005/original/default_user.jpeg"
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png)$/, message: 'file type is not allowed (only jpeg/png images)'
 
   validates :session_token, :password_digest, presence: true
   validates :username, presence: true, uniqueness: true
