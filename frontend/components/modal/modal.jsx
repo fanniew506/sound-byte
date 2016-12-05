@@ -1,5 +1,5 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
+import { hashHistory } from 'react-router';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class Modal extends React.Component {
     };
 
     this.handleResize = this.handleResize.bind(this);
+    this.handleModalClick = this.handleModalClick.bind(this)
   }
 
   handleResize(e) {
@@ -28,11 +29,14 @@ class Modal extends React.Component {
   }
 
   modalStyle() {
-    return { width: this.state.windowWidth, height: this.state.windowHeight };
+    return {
+      width: this.state.windowWidth,
+      height: this.state.windowHeight
+    };
   }
 
   handleModalClick() {
-    if(this.props.modalClick) {
+    if(this.props.modalClick === "true") {
       hashHistory.push(this.props.redirect);
     }
   }
