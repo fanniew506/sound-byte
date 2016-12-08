@@ -13,7 +13,8 @@ class OtherProfileView extends React.Component {
     this.displayProfilePreview = this.displayProfilePreview.bind(this);
     this.handleProfileCancel = this.handleProfileCancel.bind(this);
     this.displayProfilePicture = this.displayProfilePicture.bind(this);
-    this.state = {imageFile: null, imageUrl: ""};
+    this.state = {imageFile: null, imageUrl: null};
+    window.this = this;
   }
 
   playCurrentTrack(track){
@@ -30,16 +31,16 @@ class OtherProfileView extends React.Component {
     formData.append("user[id]", this.props.currentUser.id);
     formData.append("user[image]", this.state.imageFile);
     this.setState({
-      imageFile: null, imageUrl: ""
+      imageFile: null, imageUrl: null
     });
     this.props.updateUser(formData);
   }
 
-  handleProfileCancel(e) {
-    e.preventDefault();
+  handleProfileCancel() {
     this.setState({
-      imageFile: null, imageUrl: ""
+      imageFile: null, imageUrl: null
     });
+    document.getElementById("picture-file").value = "";
   }
 
   updateImageFile(e) {
@@ -54,12 +55,12 @@ class OtherProfileView extends React.Component {
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      this.setState({ imageUrl: "", imageFile: null });
+      this.setState({ imageUrl: null, imageFile: null });
     }
   }
 
   displayProfilePreview(){
-    if (this.state.imageUrl === "") {
+    if (this.state.imageUrl === null) {
       return (
         <div></div>
       );
