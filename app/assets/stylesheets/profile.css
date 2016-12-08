@@ -105,7 +105,7 @@
   background-color: #fff;
   padding: 40px 25px;
   border-radius: 5px;
-  -webkit-animation: slidein 1s;
+  -webkit-animation: slidein 0.5s;
 }
 
 .update-image-nav {
