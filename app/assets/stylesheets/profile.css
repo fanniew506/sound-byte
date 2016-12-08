@@ -29,13 +29,15 @@
   margin: 0 auto;
 }
 
+.default-profile-picture {
+}
+
 .user-profile-picture, .currentuser-profile-picture {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   position: relative;
-  background-size: cover;
-  position: relative;
+  background-size:200px 0px;
   z-index: 2;
   top: 20px;
   left: 20px;
@@ -103,6 +105,7 @@
   background-color: #fff;
   padding: 40px 25px;
   border-radius: 5px;
+  -webkit-animation: slidein 1s;
 }
 
 .update-image-nav {
