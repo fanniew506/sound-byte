@@ -55,8 +55,6 @@ class SessionForm extends React.Component {
   renderErrors() {
     const errors = this.props.errors;
     if (errors) {
-      this.setState({toggleClass: 'modal-exit'});
-      setTimeout(() => {
         return(
           <ul>
             {this.props.errors.map((error, idx) => (
@@ -64,7 +62,6 @@ class SessionForm extends React.Component {
             ))}
           </ul>
         );
-      }, 1000);
     }
   }
 

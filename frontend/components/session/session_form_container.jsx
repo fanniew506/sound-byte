@@ -6,7 +6,7 @@ import { clearErrors } from '../../actions/error_actions';
 
 const mapStateToProps = ({ session, errors }) => ({
   loggedIn: Boolean(session.currentUser),
-  errors: errors.errors
+  // errors: errors.errors
 });
 
 const mapDispatchToProps = (dispatch, props) => {
