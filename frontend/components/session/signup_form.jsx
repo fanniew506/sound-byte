@@ -61,7 +61,7 @@ class SignUpForm extends React.Component {
   render() {
     return (
       <div>
-        <div className="session-form-container">
+        <div className="session-form-container modal-enter">
           <form onSubmit={this.handleSubmit} className="session-form">
             <header className="session-form-header">
               <Link to='/'><h2 className="form-cancel">X</h2></Link>
