@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from '../modal/modal';
-import ReactTransitionGroup from 'react-addons-transition-group';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class SessionForm extends React.Component {
   constructor(props) {
