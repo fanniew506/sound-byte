@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 import SessionForm from './session_form';
 import { login, signup } from '../../actions/session_actions';
 import { fetchAllTracksForUser } from '../../actions/track_actions';
+import { clearErrors } from '../../actions/error_actions';
 
-const mapStateToProps = ({ session }) => ({
+const mapStateToProps = ({ session, errors }) => ({
   loggedIn: Boolean(session.currentUser),
-  errors: session.errors
+  errors: errors.errors
 });
 
 const mapDispatchToProps = (dispatch, props) => {
@@ -13,6 +14,7 @@ const mapDispatchToProps = (dispatch, props) => {
     login: user => dispatch(login(user)),
     signup: user => dispatch(signup(user)),
     fetchAllTracksForUser: () => dispatch(fetchAllTracksForUser()),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

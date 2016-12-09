@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from '../modal/modal';
+import ReactTransitionGroup from 'react-addons-transition-group';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -21,6 +23,11 @@ class SessionForm extends React.Component {
     if (this.props.loggedIn) hashHistory.push("/home");
   }
 
+
+  componentWillUnmount() {
+
+  }
+
   componentDidMount() {
     if (this.props.loggedIn) hashHistory.push("/home");
   }
@@ -28,12 +35,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = { username: this.state.username, password: this.state.password };
-      this.props.login(user);
   }
 
   demoLogin(){
     const user = { username: "Jennifer", password: "starwars" };
-      this.props.login(user);
+    this.props.login(user);
   }
 
   updateUsername (e) {
@@ -48,25 +54,27 @@ class SessionForm extends React.Component {
     });
   }
 
-
   renderErrors() {
     const errors = this.props.errors;
     if (errors) {
-      return(
-        <ul>
-          {this.props.errors.map((error, idx) => (
-            <li key={`error-${idx}`}>{error}</li>
-          ))}
-        </ul>
-      );
+      this.setState({toggleClass: 'modal-exit'});
+      setTimeout(() => {
+        return(
+          <ul>
+            {this.props.errors.map((error, idx) => (
+              <li key={`error-${idx}`}>{error}</li>
+            ))}
+          </ul>
+        );
+      }, 1000);
     }
   }
 
   render() {
     return (
       <div>
-        <div className="session-form-container">
-          <form onSubmit={this.handleSubmit} className="session-form">
+        <div className="session-form-container modal-enter">
+          <form onSubmit={ this.handleSubmit } className="session-form">
             <header className="session-form-header">
               <Link to='/'><h2 className="form-cancel">X</h2></Link>
               <h2>Log In!</h2>
@@ -93,10 +101,10 @@ class SessionForm extends React.Component {
                  </div>
                  <br/>
                  <h2 onClick={this.demoLogin} className="demo-login">Demo Login</h2>
-             </form>
+            </form>
          </div>
-         <Modal modalClick="true" redirect="/"/>
-       </div>
+        <Modal modalClick="true" redirect="/"/>
+      </div>
     );
   }
 }

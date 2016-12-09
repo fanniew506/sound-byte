@@ -67,7 +67,7 @@ class OtherProfileView extends React.Component {
     } else {
       return (
         <div>
-          <div className="update-image-modal">
+          <div className="update-image-modal modal-enter">
             <img className="image-preview" src={this.state.imageUrl}></img>
             <div className="update-image-nav">
               <h2 className="cancel-btn" onClick={this.handleProfileCancel}>Cancel</h2>
