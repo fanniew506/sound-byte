@@ -1,6 +1,5 @@
 
 export const createTrack = (track, success, error) => {
-	debugger
 	$.ajax({
 		method: 'POST',
 		url: '/api/tracks',

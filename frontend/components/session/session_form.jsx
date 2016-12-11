@@ -8,13 +8,13 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      errors: [],
       formType: this.props.formType
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateUsername = this.updateUsername.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidUpdate() {
@@ -33,6 +33,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = { username: this.state.username, password: this.state.password };
+    this.props.login(user)
   }
 
   demoLogin(){
@@ -53,11 +54,11 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    const errors = this.props.errors;
+    const errors = this.this.props.errors;
     if (errors) {
         return(
           <ul>
-            {this.props.errors.map((error, idx) => (
+            { errors.map((error, idx) => (
               <li key={`error-${idx}`}>{error}</li>
             ))}
           </ul>

@@ -9,7 +9,7 @@ const defaultState = Object.freeze({
 export default (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_ERRORS:
-      return merge({}, defaultState, { errors: action.errors });
+      return ({ errors: action.error });
     case CLEAR_ERRORS:
       return defaultState;
     default:
