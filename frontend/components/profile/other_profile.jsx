@@ -82,13 +82,14 @@ class OtherProfileView extends React.Component {
     if (errors.length > 0) {
       return(
         <div>
-          <div className="update-image-modal modal-enter">
+          <div className="update-image-modal modal-enter image-error">
             <ul>
               { errors.map((error, idx) => (
                 <li key={`error-${idx}`}>{error}</li>
               ))}
             </ul>
-            <h2 className="cancel-btn" onClick={this.handleProfileCancel}>Exit</h2>
+            <br/>
+            <h2 className="cancel-btn exit" onClick={this.handleProfileCancel}>Exit</h2>
           </div>
           <Modal/>
         </div>

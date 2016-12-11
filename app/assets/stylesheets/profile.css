@@ -105,6 +105,8 @@
   background-color: #fff;
   padding: 40px 25px;
   border-radius: 5px;
+  border: 0.5px solid #ccc;
+  text-align: center;
 }
 
 .update-image-nav {
@@ -118,19 +120,26 @@
   color: #fff;
   border-radius: 5%;
   cursor: pointer;
-  margin: 0 auto;
   padding: 5px 10px;
   display: inline-block;
-  text-align: center;
-
 }
 
 .update-image-modal .cancel-btn {
   cursor: pointer;
-  margin: 0 auto;
   padding: 5px 10px;
   display: inline-block;
-  text-align: center;
+  border: 1px solid #ccc;
+  display: inline-block;
+  border-radius: 5%;
+}
+
+.update-image-modal .cancel-btn:hover {
+  color: #f50;
+  border: 1px solid #f50;
+}
+
+.update-image-modal .save-btn:hover {
+  background-color: rgba(255,72,0,.8)
 }
 
 #picture-file {
@@ -187,4 +196,12 @@
   z-index: 1000;
   cursor: pointer;
   display: inline;
+}
+
+/*Error Modal*/
+
+.update-image-modal.image-error {
+  left: 20%;
+  top: 30%;
+  text-align: center;
 }
