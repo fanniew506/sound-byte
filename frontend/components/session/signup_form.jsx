@@ -8,12 +8,12 @@ class SignUpForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      errors: [],
       formType: this.props.formType
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateUsername = this.updateUsername.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidUpdate() {
@@ -48,7 +48,7 @@ class SignUpForm extends React.Component {
     if (errors) {
       return(
         <ul>
-          {this.props.errors.map((error, idx) => (
+          { errors.map((error, idx) => (
             <li key={`error-${idx}`}>{error}</li>
           ))}
         </ul>
