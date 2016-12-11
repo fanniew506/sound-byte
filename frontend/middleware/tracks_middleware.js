@@ -4,10 +4,11 @@ import {
   DELETE_TRACK,
   FETCH_LATEST_TRACKS,
   receiveAllTracks,
-  receiveErrors,
   receiveLatestTracks,
   receiveNewTrack
   } from '../actions/track_actions';
+
+import { receiveErrors } from '../actions/error_actions';
 
 import * as API from '../util/track_api_util';
 

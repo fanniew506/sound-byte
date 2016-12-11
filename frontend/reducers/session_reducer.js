@@ -1,7 +1,6 @@
 import {
   LOGOUT,
-  RECEIVE_CURRENT_USER,
-  RECEIVE_ERRORS } from '../actions/session_actions';
+  RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
 const defaultState = Object.freeze({
@@ -15,8 +14,6 @@ export default (state = defaultState, action) => {
       return merge({}, defaultState);
     case RECEIVE_CURRENT_USER:
       return merge({}, defaultState, { currentUser: action.currentUser.user });
-    case RECEIVE_ERRORS:
-      return merge({}, defaultState, { errors: action.errors });
     default:
       return state;
   }
