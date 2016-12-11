@@ -24,6 +24,10 @@ class SignUpForm extends React.Component {
     if (this.props.loggedIn) hashHistory.push("/home");
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = { username: this.state.username, password: this.state.password };

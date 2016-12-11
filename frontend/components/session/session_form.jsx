@@ -23,7 +23,7 @@ class SessionForm extends React.Component {
 
 
   componentWillUnmount() {
-
+    this.props.clearErrors();
   }
 
   componentDidMount() {
@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    const errors = this.this.props.errors;
+    const errors = this.props.errors;
     if (errors) {
         return(
           <ul>
