@@ -2,7 +2,6 @@ export const CREATE_TRACK = "CREATE_TRACK";
 export const UPDATE_TRACK = "UPDATE_TRACK";
 export const DELETE_TRACK = "DELETE_TRACK";
 export const RECEIVE_CURRENT_USER_TRACKS = "RECEIVE_CURRENT_USER_TRACKS";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const FETCH_ALL_TRACKS_FOR_USER = "FETCH_ALL_TRACKS_FOR_USER";
 export const RECEIVE_ALL_TRACKS = "RECEIVE_ALL_TRACKS";
 export const FETCH_CURRENT_TRACK_VIEW = "FETCH_CURRENT_TRACK_VIEW";
@@ -29,11 +28,6 @@ export const deleteTrack = track => ({
 export const receiveCurrentUserTracks = track => ({
   type: RECEIVE_CURRENT_USER_TRACKS,
   track
-});
-
-export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
-  errors
 });
 
 export const fetchAllTracksForUser = () => ({
