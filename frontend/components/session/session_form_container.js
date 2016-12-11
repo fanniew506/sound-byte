@@ -9,14 +9,12 @@ const mapStateToProps = ({ session, errors }) => ({
   errors: errors.errors
 });
 
-const mapDispatchToProps = (dispatch, props) => {
-  return {
+const mapDispatchToProps = (dispatch) => ({
     login: user => dispatch(login(user)),
     signup: user => dispatch(signup(user)),
     fetchAllTracksForUser: () => dispatch(fetchAllTracksForUser()),
     clearErrors: () => dispatch(clearErrors())
-  };
-};
+});
 
 export default connect(
   mapStateToProps,

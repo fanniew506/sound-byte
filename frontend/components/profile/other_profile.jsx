@@ -13,16 +13,12 @@ class OtherProfileView extends React.Component {
     this.displayProfilePreview = this.displayProfilePreview.bind(this);
     this.handleProfileCancel = this.handleProfileCancel.bind(this);
     this.displayProfilePicture = this.displayProfilePicture.bind(this);
+    this.displayErrors = this.displayErrors.bind(this);
     this.state = {imageFile: null, imageUrl: null};
-    window.this = this;
   }
 
   playCurrentTrack(track){
     this.props.selectSong(track);
-  }
-
-  displayEditTrack() {
-
   }
 
   handleProfileSubmit(e) {
@@ -41,6 +37,7 @@ class OtherProfileView extends React.Component {
       imageFile: null, imageUrl: null
     });
     document.getElementById("picture-file").value = "";
+    this.props.clearErrors();
   }
 
   updateImageFile(e) {
@@ -78,7 +75,29 @@ class OtherProfileView extends React.Component {
         </div>
       );
     }
+  }
 
+  displayErrors() {
+    const errors = this.props.errors;
+    if (errors.length > 0) {
+      return(
+        <div>
+          <div className="update-image-modal modal-enter">
+            <ul>
+              { errors.map((error, idx) => (
+                <li key={`error-${idx}`}>{error}</li>
+              ))}
+            </ul>
+            <h2 className="cancel-btn" onClick={this.handleProfileCancel}>Exit</h2>
+          </div>
+          <Modal/>
+        </div>
+      );
+    } else {
+      return (
+        <div></div>
+      );
+    }
   }
 
   showUsersTracks() {
@@ -147,6 +166,7 @@ class OtherProfileView extends React.Component {
             </content>
           </div>
           { this.displayProfilePreview() }
+          { this.displayErrors() }
         </div>
       );
     } else {

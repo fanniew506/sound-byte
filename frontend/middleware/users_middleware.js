@@ -1,10 +1,11 @@
 import * as API from '../util/user_api_util';
 import { GET_OTHER_PROFILE_VIEW, receiveOtherProfileView, UPDATE_USER } from '../actions/user_actions';
 import { receiveCurrentUser } from '../actions/session_actions';
+import { receiveErrors } from '../actions/error_actions';
 
 export default ({ dispatch }) => next => action => {
   const fetchSuccess = data => dispatch(receiveOtherProfileView(data));
-  // const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
+  const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
   const updateSuccess = data => dispatch(receiveCurrentUser(data));
 
   switch(action.type) {
@@ -12,8 +13,7 @@ export default ({ dispatch }) => next => action => {
       API.getOtherProfileView(action.id, fetchSuccess);
       return next(action);
     case UPDATE_USER:
-    debugger
-      API.updateUser(action.data, updateSuccess);
+      API.updateUser(action.data, updateSuccess, errorCallback);
       return(next(action));
     default:
       return(next(action));
