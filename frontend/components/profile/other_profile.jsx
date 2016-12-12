@@ -15,6 +15,7 @@ class OtherProfileView extends React.Component {
     this.displayProfilePicture = this.displayProfilePicture.bind(this);
     this.displayErrors = this.displayErrors.bind(this);
     this.state = {imageFile: null, imageUrl: null};
+    window.this = this;
   }
 
   playCurrentTrack(track){
@@ -126,7 +127,7 @@ class OtherProfileView extends React.Component {
         <div className="default-profile-picture">
           <form>
             <label id="label" for="picture-file">
-              <img src={this.props.user.image_url} className="currentuser-profile-picture"></img>
+              <img src={this.props.currentUser.image_url} className="currentuser-profile-picture"></img>
               <div className="update-profile-pic">
                 <i className="fa fa-camera" aria-hidden="true"></i>
                 <h2>Update Image</h2>
