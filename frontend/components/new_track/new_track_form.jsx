@@ -9,21 +9,21 @@ class NewTrackForm extends React.Component {
       description: "",
       imageUrl: "",
       imageFile: null,
-      audioFile: null };
+      audioFile: null,
+      submitted: false };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateTitle = this.updateTitle.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
     this.updateAudioFile = this.updateAudioFile.bind(this);
     this.updateImageFile = this.updateImageFile.bind(this);
-
-  }
-
-  componentDidUpdate(){
-    
-  }
+    this.renderUploadStatus = this.renderUploadStatus.bind(this);
+    this.handleCorrectErrors = this.handleCorrectErrors.bind(this);
+    this.handleSuccessRedirect = this.handleSuccessRedirect.bind(this);
+}
 
   handleSubmit(e) {
     e.preventDefault();
+    if (this.props.errors.length > 1) { this.props.clearErrors(); }
     let formData = new FormData();
     formData.append("track[title]", this.state.title);
     formData.append("track[description]", this.state.description);
@@ -33,9 +33,8 @@ class NewTrackForm extends React.Component {
     if (this.state.audioFile) {
       formData.append("track[audio]", this.state.audioFile);
     }
-
+    this.setState({ submitted: true });
     this.props.createTrack(formData);
-    hashHistory.push(`/profile/${this.props.currentUser.id}`);
   }
 
   updateTitle(e) {
@@ -58,7 +57,6 @@ class NewTrackForm extends React.Component {
         imageFile: file, imageUrl: reader.result
       });
     };
-
     if (file) {
       reader.readAsDataURL(file);
     } else {
@@ -81,6 +79,68 @@ class NewTrackForm extends React.Component {
     }
   }
 
+  componentWillUnmount () {
+    this.props.clearErrors();
+  }
+
+
+  handleSuccessRedirect() {
+    hashHistory.push(`/profile/${this.props.currentUser.id}`);
+  }
+
+  handleCorrectErrors() {
+    this.props.clearErrors();
+    this.setState({submitted: false});
+  }
+
+  renderUploadStatus () {
+    const errors = this.props.errors;
+    let innerContent;
+    if (this.state.submitted) {
+      if (this.props.errors.length > 0) {
+        if (this.props.errors[0] === "success") {
+          innerContent = (
+            <div className="modal-enter">
+              <i className="fa fa-check-square" aria-hidden="true"><h1>Success!</h1></i>
+              <br/>
+              <h2 className="cancel-btn exit" onClick={this.handleSuccessRedirect}>Go to Profile</h2>
+            </div>
+          );
+        } else {
+          innerContent = (
+            <div className="modal-enter">
+              <h1>The following error(s) occurred while saving:</h1>
+              <br/>
+              <ul>
+                { this.props.errors.map((error, idx) => (
+                  <li key={`error-${idx}`}>{error}</li>
+                ))}
+              </ul>
+              <br/>
+              <h2 className="cancel-btn exit" onClick={this.handleCorrectErrors}>Exit</h2>
+            </div>
+          );
+        }
+      } else {
+        innerContent = (
+          <div>
+            <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <h1>Saving...</h1>
+          </div>
+        );
+      }
+      return (
+        <div>
+          <div className="upload-modal-content">
+            { innerContent }
+          </div>
+          <div className="upload-modal"></div>
+        </div>
+      );
+    }
+  }
+
+
   render() {
     return (
       <div className="new-track-form-container">
@@ -91,7 +151,7 @@ class NewTrackForm extends React.Component {
              <input type="text"
                placeholder="Track Title" value={this.state.title} onChange={this.updateTitle}/>
            <br/>
-             <textarea placeholder="Enter Track Description" value={this.state.description} onChange={this.updateDescription}></textarea>
+             <textarea placeholder="Enter Track Description (Optional)" value={this.state.description} onChange={this.updateDescription}></textarea>
            <br/>
            <label> Upload Image:
              <input type="file" onChange={this.updateImageFile}/>
@@ -102,10 +162,11 @@ class NewTrackForm extends React.Component {
            </label>
 
            <br/>
-           <input className="submit new-track" type="submit" value="Upload"/>
+             <input className="submit new-track" type="submit" value="Upload"/>
            <br/>
          </form>
-       </div>
+        </div>
+        { this.renderUploadStatus() }
        </div>
     );
   }

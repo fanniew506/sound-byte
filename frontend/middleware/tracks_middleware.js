@@ -16,9 +16,11 @@ export default ({ dispatch }) => next => action => {
   const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
   const fetchSuccess = tracks => dispatch(receiveAllTracks(tracks));
   const latestSuccess = tracks => dispatch(receiveLatestTracks(tracks));
+  const newTrackSuccess = () => dispatch(receiveErrors(["success"]));
+
   switch(action.type) {
     case CREATE_TRACK:
-      API.createTrack(action.track, () => {console.log("success");}, errorCallback);
+      API.createTrack(action.track, newTrackSuccess, errorCallback);
       return next(action);
     case UPDATE_TRACK:
       API.updateTrack(action.track, track => dispatch(receiveNewTrack(track)), errorCallback);

@@ -115,7 +115,7 @@
   padding-top: 20px;
 }
 
-.update-image-modal .save-btn{
+.save-btn{
   background-color: #f50;
   color: #fff;
   border-radius: 5%;
@@ -124,7 +124,7 @@
   display: inline-block;
 }
 
-.update-image-modal .cancel-btn {
+.cancel-btn {
   cursor: pointer;
   padding: 5px 10px;
   display: inline-block;
@@ -133,12 +133,12 @@
   border-radius: 5%;
 }
 
-.update-image-modal .cancel-btn:hover {
+.cancel-btn:hover {
   color: #f50;
   border: 1px solid #f50;
 }
 
-.update-image-modal .save-btn:hover {
+.save-btn:hover {
   background-color: rgba(255,72,0,.8)
 }
 

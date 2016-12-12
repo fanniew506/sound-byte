@@ -20,10 +20,11 @@
 
 class Track < ActiveRecord::Base
   has_attached_file :album_image, default_url: "missing.jpeg"
-  validates_attachment_content_type :album_image, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :album_image, content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png)$/, message: 'file type is not allowed (only jpeg/png images)'
+
   has_attached_file :audio
   validates_attachment_content_type :audio, content_type: ['application/mp3', 'application/x-mp3', 'audio/mpeg', 'audio/mp3']
-  validates :title, presence: true
+  validates :title, :audio, presence: true
 
   belongs_to :user,
     foreign_key: :author_id,
@@ -31,7 +32,7 @@ class Track < ActiveRecord::Base
     class_name: 'User'
 
   has_many :remarks
-  
+
   def album_image_url
     if self.album_image.url === "missing.jpeg"
       return self.user.image_url
