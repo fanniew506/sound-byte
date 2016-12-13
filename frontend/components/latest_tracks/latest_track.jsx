@@ -25,9 +25,9 @@ export default class LatestTracks extends React.Component {
         );
       });
       return (
-        <content className="profile-tracks-content">
-          <h2 className="profile-tracks-header">Latest Uploads</h2>
-          <ul className="profile-tracks-list group">
+        <content className="tracks-index-container">
+          <h2 className="tracks-index-header">Latest Uploads</h2>
+          <ul className="tracks-index-list group">
             {trackDivs}
           </ul>
         </content>

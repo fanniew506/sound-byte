@@ -13,7 +13,6 @@ import {
   fetchLatestTracks } from '../actions/track_actions';
 import { fetchAllComments } from '../actions/remark_actions';
 import {  getOtherProfileView } from '../actions/user_actions';
-import Modal from 'react-modal';
 import OtherProfileViewContainter from './profile/other_profile_container';
 import LatestTracksContainer from './latest_tracks/latest_track_container';
 

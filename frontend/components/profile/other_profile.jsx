@@ -109,7 +109,7 @@ class OtherProfileView extends React.Component {
     tracksArr.reverse();
     let trackList = tracksArr.map((track) => {
       return (
-        <li className="user-tracks group" key={ track.id }>
+        <li className="user-tracks" key={ track.id }>
           <Link to={`/track-view/${track.id}`}>
             <img className="album-cover" src={ track.album_image_url }></img>
             <h3 className="user-profile-track-title">{ track.title }</h3>
@@ -150,8 +150,7 @@ class OtherProfileView extends React.Component {
   render() {
     if (this.props.user) {
       return (
-        <div>
-          <div className='profile-view group'>
+          <div className='profile-view'>
             <header>
               <div className="header-background">
               </div>
@@ -162,14 +161,13 @@ class OtherProfileView extends React.Component {
             </header>
             <content className="profile-tracks-content">
               <h2 className="profile-tracks-header">Uploads</h2>
-              <ul className="profile-tracks-list group">
+              <ul className="profile-tracks-list">
               { this.showUsersTracks() }
               </ul>
             </content>
+            { this.displayProfilePreview() }
+            { this.displayErrors() }
           </div>
-          { this.displayProfilePreview() }
-          { this.displayErrors() }
-        </div>
       );
     } else {
       return <div></div>;

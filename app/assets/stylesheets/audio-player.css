@@ -1,11 +1,14 @@
 .audio-player {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  z-index: 4;
+  z-index: 20;
   background-color: #f2f2f2;
   margin: 0 auto;
   border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
@@ -14,17 +17,6 @@ bottom: 0;
 margin-top: 80px;
 }
 
-
-.player-controls {
-  float: left;
-  margin: 0 15px 0 80px;
-  width: 100px;
-}
-
-.player-controls i {
-  float: left;
-  margin-right: 30px;
-}
 
 .player-controls i:hover {
   cursor: pointer;
@@ -38,14 +30,14 @@ margin-top: 80px;
 /*Progress Bar*/
 .progress-container {
  height: auto;
- width: auto;
- float: left;
  padding: 18px;
  font-size: 12px;
+ margin: 0 5px;
+ display: flex;
+ justify-content: space-around;
 }
 
 .progress-click {
-  float: left;
   height: 20px;
   /*margin: 20px 20px 0 60px;*/
   /*display: inline;*/
@@ -60,7 +52,6 @@ margin-top: 80px;
   width: 600px;
   height: 2px;
   background-color: #ccc;
-  float:left;
   margin-top: 9px;
 }
 
@@ -95,23 +86,20 @@ margin-top: 80px;
 
 /*Album info thumb*/
 .player-album-info  {
-  width: 200px;
-  float: right;
   text-align: center;
-  margin-left: 50px;
-  margin-top: 5px;
+  display: flex;
+  justify-content: space-around;
 }
+.player-album-info > div
 
 .player-album-info img {
   width: 40px;
   height: 40px;
-  float: left;
 }
 
 .audio-title {
   font-size: 14px;
   width: 140px;
-  float: left;
   padding-left: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -123,7 +111,6 @@ margin-top: 80px;
 .audio-name  {
   font-size: 12px;
   width: 140px;
-  float: left;
   padding-left: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -136,7 +123,12 @@ margin-top: 80px;
   color: #333;
 }
 .control-holder {
-  width: 1200px;
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  max-width: 1200px;
+  min-width: 800px;
   margin: 0 auto;
   z-index: 20;
+  align-items: center;
 }

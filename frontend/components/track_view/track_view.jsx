@@ -44,33 +44,31 @@ class TrackView extends React.Component {
       });
       return(
         <div className='track-view'>
-          <header>
-            <div className="track-header-background">
-            </div>
-            <div>
-              <img src={ currentTrack.album_image_url } className="track-profile-picture"></img>
-            </div>
-            <div className="track-play-toggle">
-              <TrackPlayerControlsContainer currentTrackView={this.props.currentTrackView}/>
-            </div>
+          <header className="track-header-background">
             <div className="track-info">
-              <h3 className="name">{ currentTrack.author_name }</h3>
-              <br/>
-              <h2 className="title">{ currentTrack.title }</h2>
+              <div className="track-play-toggle">
+                <TrackPlayerControlsContainer currentTrackView={this.props.currentTrackView}/>
+              </div>
+              <div>
+                <h3 className="name">{ currentTrack.author_name }</h3>
+                <br></br>
+                <h2 className="title">{ currentTrack.title }</h2>
+              </div>
             </div>
+            <div><img src={ currentTrack.album_image_url } className="track-profile-picture"></img></div>
           </header>
-          <div className="track-content">
+          <div className="comment-content">
             <form onSubmit={ this.handleSubmit } className="new-comment-form">
               <img src={this.props.currentUser.image_url}></img>
-                <input className="comment-input"
-                  type="text"
-                  placeholder="Write A Comment"
-                  value={ this.state.comment }
-                  onChange={ this.updateComment }
-                  />
-                <input className="submit-button" type="submit" value=""/>
+              <input className="comment-input"
+                type="text"
+                placeholder="Write A Comment"
+                value={ this.state.comment }
+                onChange={ this.updateComment }
+              />
+              <input className="submit-button" type="submit" value=""/>
             </form>
-            <div className="author-info group">
+            <div className="author-info">
               <div className="author-display">
                 <Link to={`/profile/${currentTrack.author_id}`}>
                   <img src={currentTrack.author_image_url}></img>

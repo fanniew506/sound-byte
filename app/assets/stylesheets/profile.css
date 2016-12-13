@@ -1,12 +1,13 @@
 
 
 .header-background {
-  width: 1200px;
+  width: 100%;
   height: 250px;
   z-index: 1;
   position: absolute;
   margin: 0 auto;
   background: linear-gradient(315deg, rgb(180, 199, 233) 0%, rgb(79, 111, 185) 100%);
+  flex: 1;
 }
 
 .username-profile h4{
@@ -25,8 +26,11 @@
 }
 
 .profile-view {
-  width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
 }
 
 .default-profile-picture {
@@ -45,48 +49,44 @@
 }
 
 .profile-tracks-content {
-  top: 100px;
   position: relative;
-  margin: 0 auto;
-  padding: 10px;
+  top: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
 }
 
 .profile-tracks-header {
   font-size: 18px;
   width: 80%;
-  margin: 0 auto;
-  padding-bottom: 15px;
   border-bottom: 1px solid #ccc;
 }
 
 .profile-tracks-list {
-  width: 1000px;
-  margin: 0 auto;
-  padding: 20px 100px 60px 100px;
   background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
 }
 
 .profile-tracks-list li {
-  width: 40%;
   display: inline-block;
-  padding-left: 20px;
-
+  width: 50%;
+  display: flex;
+  flex: 1;
 }
 
 .album-cover {
-  position: relative;
-  width: 160px;
-  height: 160px;
-  margin: 0 auto;
-  float: left;
+  width: 150px;
+  height: 150px;
   padding: 20px 10px 10px 10px;
 }
 
 .user-profile-track-title{
-  margin: 20px 0;
 }
 .user-tracks {
-  margin: 0 auto;
 }
 
 .user-tracks .fa.fa-play-circle, .user-tracks .fa.fa-pause-circle {

@@ -49,7 +49,7 @@ class ProgressBar extends React.Component {
     let duration = this.props.duration;
 
     return (
-      <div className="progress-container group">
+      <div className="progress-container">
         {this.displayPosition()}
         <div className="progress-click" onClick={ this.handleClick }>
           <div className='progress-bar'>

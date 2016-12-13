@@ -26,7 +26,7 @@ export default class AudioPlayer extends React.Component {
   render() {
     if (this.props.currentSong) {
       return (
-          <div className="audio-player group">
+          <div className="audio-player">
               <div className="control-holder">
               <PlayerControls
                 className="player-controls"
@@ -57,12 +57,15 @@ export default class AudioPlayer extends React.Component {
               <div className="player-album-info">
                 <Link to={`/track-view/${this.props.currentSong.id}`}>
                   <img src={this.props.currentSong.album_image_url}></img>
-                  <h2 className="audio-title">{this.props.currentSong.title}</h2>
                 </Link>
-                    <br/>
-                <Link to={`/profile/${this.props.currentSong.author_id}`}>
-                  <h4 className="audio-name">{this.props.currentSong.author_name}</h4>
-                </Link>
+                <div>
+                  <Link to={`/track-view/${this.props.currentSong.id}`}>
+                    <h2 className="audio-title">{this.props.currentSong.title}</h2>
+                  </Link>
+                  <Link to={`/profile/${this.props.currentSong.author_id}`}>
+                    <h4 className="audio-name">{this.props.currentSong.author_name}</h4>
+                  </Link>
+                </div>
             </div>
             </div>
           </div>
