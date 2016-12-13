@@ -90,7 +90,10 @@ margin-top: 80px;
   display: flex;
   justify-content: space-around;
 }
-.player-album-info > div
+.player-album-info > div {
+  display: flex;
+  flex-direction: column;
+}
 
 .player-album-info img {
   width: 40px;
@@ -99,7 +102,7 @@ margin-top: 80px;
 
 .audio-title {
   font-size: 14px;
-  width: 140px;
+  width: 100px;
   padding-left: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -110,7 +113,7 @@ margin-top: 80px;
 
 .audio-name  {
   font-size: 12px;
-  width: 140px;
+  width: 100px;
   padding-left: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
