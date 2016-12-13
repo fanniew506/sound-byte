@@ -8,6 +8,7 @@ class TrackView extends React.Component {
     this.state = { comment: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateComment = this.updateComment.bind(this);
+    this.renderComments = this.renderComments.bind(this);
   }
 
   handleSubmit(e){
@@ -24,11 +25,10 @@ class TrackView extends React.Component {
     });
   }
 
-  render() {
-    if (this.props.currentTrackView) {
-      const comments = this.props.comments;
-      const currentTrack = this.props.currentTrackView;
-      const commentList = comments.map((comment) => {
+  renderComments() {
+    const comments = this.props.comments;
+    if (comments.length > 0) {
+      let commentsList = comments.map((comment) => {
         return (
           <li key={ comment.id }>
             <div className="thumb">
@@ -42,6 +42,33 @@ class TrackView extends React.Component {
           </li>
         );
       });
+      return (
+        <content className="comments-container">
+          <h2 className="comments-header">
+            <i className="fa fa-comments" aria-hidden="false"></i>
+            <div className="comment-list-title">comments</div>
+          </h2>
+          <ul className="comments-list group">
+            {commentsList}
+          </ul>
+        </content>
+      );
+    } else {
+      return (
+        <div className="empty-comment">
+          <div className="empty-comment-pic"></div>
+          <h1>Seems a little quiet over here</h1>
+          <h2>Be the first to comment on this track</h2>
+        </div>
+      );
+    }
+  }
+
+
+  render() {
+    if (this.props.currentTrackView) {
+      const currentTrack = this.props.currentTrackView;
+
       return(
         <div className='track-view'>
           <header className="track-header-background">
@@ -81,15 +108,7 @@ class TrackView extends React.Component {
                 </p>
               </div>
             </div>
-            <content className="comments-container">
-              <h2 className="comments-header">
-                <i className="fa fa-comments" aria-hidden="false"></i>
-                <div className="comment-list-title">comments</div>
-              </h2>
-                <ul className="comments-list group">
-                  { commentList }
-                </ul>
-            </content>
+                  { this.renderComments() }
           </div>
         </div>
       );

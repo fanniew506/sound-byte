@@ -42,7 +42,7 @@
   margin: 20px;
 }
 
-.track-info  h3 {
+.track-info  .name {
   display: inline-block;
   background-color: rgba(0,0,0,.8);
   color: #ccc;
@@ -52,7 +52,7 @@
   padding: 4px 7px;
   margin: 50px 0 5px 0;
 }
-.track-info  h2{
+.track-info  .title{
   display: inline-block;
   background-color: rgba(0,0,0,.8);
   color: #fff;
@@ -60,6 +60,9 @@
   font-weight: 100;
   line-height: 37px;
   padding: 4px 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 350px;
 }
 
 .audio-player-album-name {
