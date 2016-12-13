@@ -79,6 +79,8 @@
 
 .track-description {
   width: 60%;
+  display: flex;
+  align-items: center;
 }
 
 .comment-author-name {
@@ -92,7 +94,9 @@
   max-width: 800px;
   min-width: inherit;
   flex-direction: column;
-  padding: 20px;
+  padding: 0 20px;
+  margin: 20px 0;
+  border-right: 1px solid #EBEBEB;
 }
 .comments-header {
   margin-left: 280px;
