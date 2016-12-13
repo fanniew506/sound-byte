@@ -48,43 +48,53 @@
   overflow: hidden;
 }
 
+/*User Tracks*/
+
 .profile-tracks-content {
-  position: relative;
-  top: 0;
   display: flex;
-  flex: 1;
   flex-direction: column;
   width: 100%;
+  justify-content: center;
 }
 
 .profile-tracks-header {
-  font-size: 18px;
-  width: 80%;
+  margin: 40px;
+  padding: 20px;
   border-bottom: 1px solid #ccc;
+  display: block;
 }
 
 .profile-tracks-list {
-  background-color: white;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
-  flex: 1;
+  padding: 0 50px;
 }
 
 .profile-tracks-list li {
-  display: inline-block;
-  width: 50%;
+  color: inherit;
   display: flex;
   flex: 1;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+  margin: 20px;
 }
 
 .album-cover {
   width: 150px;
   height: 150px;
   padding: 20px 10px 10px 10px;
+  margin: 20px;
 }
 
 .user-profile-track-title{
+  display: block;
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 .user-tracks {
 }

@@ -112,9 +112,13 @@ class OtherProfileView extends React.Component {
         <li className="user-tracks" key={ track.id }>
           <Link to={`/track-view/${track.id}`}>
             <img className="album-cover" src={ track.album_image_url }></img>
-            <h3 className="user-profile-track-title">{ track.title }</h3>
           </Link>
-          <TrackPlayerControlsContainer currentTrackView={track}/>
+          <span>
+            <Link to={`/track-view/${track.id}`}>
+              <h3 className="user-profile-track-title">{ track.title }</h3>
+            </Link>
+            <TrackPlayerControlsContainer currentTrackView={track}/>
+          </span>
         </li>
       );
     });

@@ -22,9 +22,7 @@ export default class TrackPlayerControls extends React.Component {
   }
 
   render() {
-    return <div>
-      {this.renderControls()}
-    </div>;
+    return this.renderControls();
   }
 
   chooseSong() {
@@ -64,17 +62,13 @@ export default class TrackPlayerControls extends React.Component {
     } else {
       return (
         <ul className="track-play-toggle-controls">
-          <li>
             <i onClick={ this.chooseSong } className="fa fa-play-circle" aria-hidden="true"></i>
-          </li>
         </ul>
       );
     }} else {
       return (
         <ul className="track-play-toggle-controls">
-          <li>
             <i onClick={ this.chooseSong } className="fa fa-play-circle" aria-hidden="true"></i>
-          </li>
         </ul>
       );
     }}

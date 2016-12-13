@@ -35,6 +35,9 @@ ul {
 
 body {
   background-color: #f2f2f2;
-  padding-bottom: 75px;
   color: #333;
+}
+
+.content {
+  padding-bottom: 75px;
 }

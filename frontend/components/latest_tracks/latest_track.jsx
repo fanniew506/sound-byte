@@ -14,20 +14,24 @@ export default class LatestTracks extends React.Component {
       for (let idx in tracks) { tracksArr.push(tracks[idx]); }
       const trackDivs = tracksArr.reverse().map((track) => {
         return(
-          <li className="user-tracks group" key={ track.id }>
+          <li className="user-tracks" key={ track.id }>
             <Link to={`/track-view/${track.id}`}>
               <img className="album-cover" src={ track.album_image_url }></img>
-              <h2 className="index-author-name">{ track.author_name }</h2>
-              <h3 className="index-track-title">{ track.title }</h3>
             </Link>
+            <span>
+              <Link to={`/track-view/${track.id}`}>
+                <h2 className="index-author-name">{ track.author_name }</h2>
+                <h3 className="index-track-title">{ track.title }</h3>
+              </Link>
             <TrackPlayerControlsContainer currentTrackView={track}/>
+            </span>
           </li>
         );
       });
       return (
         <content className="tracks-index-container">
           <h2 className="tracks-index-header">Latest Uploads</h2>
-          <ul className="tracks-index-list group">
+          <ul className="tracks-index-list">
             {trackDivs}
           </ul>
         </content>

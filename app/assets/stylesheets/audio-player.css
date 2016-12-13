@@ -5,10 +5,10 @@
   width: 100%;
   z-index: 20;
   background-color: #f2f2f2;
-  margin: 0 auto;
   border-top: 1px solid #ccc;
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .footer {
@@ -131,7 +131,6 @@ margin-top: 80px;
   flex: 1;
   max-width: 1200px;
   min-width: 800px;
-  margin: 0 auto;
   z-index: 20;
   align-items: center;
 }
