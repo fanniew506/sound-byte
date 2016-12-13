@@ -3,42 +3,86 @@
   width: 100%;
   position: fixed;
   z-index: 100;
+  display: flex;
+  justify-content: center;
 }
 
-.header.logged-out {
-  background: transparent;
-  z-index: 1;
-  border-left: 0;
-  border-right: 0;
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-height: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 1200px;
+  min-width: 600px;
+  flex: 1;
 }
 
-.header-container.logged-out {
+.header.loggedin {
+  height: 50px;
+}
+
+/*.header-container .background-pic {
   background: transparent;
   background-image: url(https://hd.unsplash.com/photo-1420161900862-9a86fa1f5c79);
-  height: 1000px;
-  background-size: contain;
+  width: 800px;
+  background-size: cover;
+  position: fixed;
+}*/
+
+.header-nav {
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  white-space: nowrap;
 }
 
-.header-nav.loggedout {
-    background: transparent;
-    border: none;
+.header-logo {
+ background: linear-gradient(#ff884c, #f50 60%, #f50 );
+ display: flex;
+ justify-content: space-around;
+ text-align: center;
+ vertical-align: middle;
+ padding: 10px;
 }
-.header .group {
+
+.logged-out-logo.this-one {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: white;
+  padding: 10px 5px;
+}
+
+.header-logo.loggedin {
+  background: linear-gradient(#ff884c, #f50 60%, #f50 );
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  vertical-align: middle;
+  height: 50px;
+  padding: 0;
+}
+
+.logged-in-logo {
+  color: #ccc;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: white;
+  vertical-align: center;
+  line-height: 20px;
+  background-color: #333;
   position: absolute;
-  z-index: 4;
+  padding: 15px 20px;
 }
 
 h3.loggedout.or {
-  float: left;
   padding: 10px;
   margin-top: 10px;
-}
-
-h3.loggedout.or:hover {
   color: #ccc;
 }
 
-.login.this {
+.login {
   border: 1px solid #ccc;
   border-radius: 5%;
   color: #fff;
@@ -46,122 +90,82 @@ h3.loggedout.or:hover {
   margin: 10px;
 }
 
-.createaccount.this {
+.login:hover {
+  border: 1px solid white;
+}
+
+.createaccount {
   border-radius: 5%;
   color: #fff;
   background-color: #f50;
   padding: 10px 15px;
   margin: 10px;
 }
-.login:hover {
-    border: 1px solid white;
-}
 
  .body-container {
    position: relative;
-   top: 51px;
+   display: flex;
+   justify-content: center;
  }
 
  .content {
    background-color: #fff;
-   width: 1200px;
-   margin: 0 auto;
+   max-width: 1200px;
+   min-width: 600px;
+   margin-left: 20px;
+   margin-right: 20px;
    height: 100%;
  }
 
- .header {
- background-color: #2F2F2F;
- font-weight: bold;
- width: 1200px;
- margin: 0 auto;
- border-right: 1px solid grey;
- border-left: 1px solid grey;
- display: block;
 
- }
-
- .header-logo {
-  background-color: #2F2F2F;
-  float: left;
-  padding-top: 5px;
-  height: 100%;
- }
-
- .header-nav {
-   background-color: #2F2F2F;
-   float: right;
- }
-
- .header h3 {
+ .header-nav.loggedin {
    color: #ccc;
+   font-weight: 400;
+   display: flex;
+   justify-content: flex-end;
+   text-align: center;
+ }
+
+ .header-nav.loggedin > * {
+   padding: 15px;
+   cursor: pointer;
+   line-height: 30px;
    padding: 10px 20px;
  }
 
- .logged-out-logo.this-one {
-   font-size: 14px;
-   letter-spacing: 1px;
-   color: white;
-   float: left;
-   margin-left: 55px;
-   background-color: #f50;
-   top: 0;
-   position: absolute;
-   height: 23px;
-   padding: 14px 20px;
-   vertical-align: center;
-   margin-top:10px;
- }
-
- .logged-in-logo.this-one {
-   color: #ccc;
-   padding: 10px 0;
-   float: left;
-   margin-left: 80px;
-   border-radius: 5px;
- }
-
- .header-nav.loggedin h3 {
-   float: left;
-   padding-top: 13px;
-   color: #ccc;
-   font-weight: 400;
- }
-
- .header-nav.loggedin h3:hover {
+ .header-nav.loggedin > *:hover {
    color: #fff;
  }
 
- .header-nav button {
-   cursor: pointer;
+ .username {
+   display: flex;
+   justify-content: center;
+   align-items: center;
  }
 
  .profile-thumb {
    width: 30px;
    height: 30px;
    border-radius: 50%;
-   float: left;
    margin-right: 10px;
-   position:relative;
-   top: -5px;
  }
 
  .form-cancel {
-   text-align: right;
- }
-
- .fa.fa-soundcloud{
-   background-color: #f50;
-   color: white;
-   font-size: 51px;
-   z-index: 500;
-   float: left;
    position: absolute;
+   top: 0;
+   right: 0;
+   padding: 20px;
+   display: inline;
+   font-size: 25px;
  }
 
-  .fa.fa-soundcloud.loggedin{
-    top: 0;
-  }
+ .fa.fa-cloud{
+   color: #F3F3F3;
+   font-size: 40px;
+   z-index: 500;
+   padding: 0 10px;
+ }
 
-  .fa.fa-soundcloud.loggedout{
-    top: 10px;
-  }
+ .fa.fa-cloud.loggedin{
+   padding: 5px 20px;
+ }

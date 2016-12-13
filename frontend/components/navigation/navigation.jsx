@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import Modal from 'react-modal';
 import ReactDom from 'react-dom';
 import SessionFormContainer from '../session/session_form_container';
 
@@ -29,10 +28,12 @@ class Navigation extends React.Component {
     if (currentUser === null){
       return(
         <span className="header-container logged-out">
-          <header className="header logged-out group">
+          <header className="header logged-out">
             <div className='header-logo'>
               <Link to='/'>
-              <i className="fa fa-soundcloud loggedout" aria-hidden="true"></i>
+                <i className="fa fa-cloud" aria-hidden="true"></i>
+              </Link>
+              <Link to='/'>
                 <h3 className="logged-out-logo this-one">SOUNDBYTE</h3>
               </Link>
             </div>
@@ -49,11 +50,13 @@ class Navigation extends React.Component {
       return (
       <div>
         <div className="header-container logged-in">
-          <header className="header group">
-            <div className='header-logo'>
+          <header className="header">
+            <div className='header-logo loggedin'>
               <Link to='/home'>
-                  <i className="fa fa-soundcloud loggedin" aria-hidden="true"></i>
-                  <h2 className="logged-in-logo this-one">HOME</h2>
+                <i className="fa fa-cloud loggedin" aria-hidden="true"></i>
+              </Link>
+              <Link to='/home'>
+                <span className="logged-in-logo"><h1>HOME</h1></span>
               </Link>
             </div>
             <nav className='header-nav loggedin'>

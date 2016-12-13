@@ -1,9 +1,8 @@
-body, footer, div, ul, button, li, ol, section, article, nav, img, header, p, h1, h2, h3, h4, a, form, label, input, Link {
+body, footer, div, ul, button, li, ol, section, article, nav, img, header, p, h1, h2, h3, h4, a, form, label, input {
   font: inherit;
   font-size: inherit;
   font-weight: 100;
   text-decoration: none;
-  box-sizing: content-box;
   margin: 0;
   padding: 0;
   border: 0;
