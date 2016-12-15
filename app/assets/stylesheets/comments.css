@@ -1,6 +1,3 @@
-.comments-container {
-
-}
 
 .new-comment-form {
   background-color: #f2f2f2;
@@ -50,7 +47,6 @@
 }
 
 .comments-list li{
-  margin-left: 280px;
   margin-bottom: 10px;
 }
 
@@ -59,7 +55,6 @@
 }
 
 .comments-list h2{
-  margin-left: 300px;
   color: #999;
 }
 
@@ -69,15 +64,32 @@
 }
 
 .author-info {
-  display: flex;
+  float: left;
   justify-content: space-around;
   border-top: 1px solid #EBEBEB;
   padding-top: 20px;
-  width: 100%;
+}
+
+.author-desc-and-comments {
+  display:flex;
+  flex-direction: column;
+}
+
+.author-desc-and-comments > p{
+  margin: 40px;
+}
+
+.comments-container {
+  margin: 0 40px 40px 40px;
+}
+
+
+.comment-sub-content {
+  display: flex;
+  flex-direction: row;
 }
 
 .track-description {
-  width: 60%;
   display: flex;
   align-items: center;
 }
@@ -98,9 +110,7 @@
   border-right: 1px solid #EBEBEB;
 }
 .comments-header {
-  margin-left: 280px;
   border-bottom: 1px solid #EBEBEB;
-
 }
 
 .comment-list-title {
@@ -125,12 +135,13 @@
   color: #999;
   font-weight: 100;
   padding-right: 20%;
+  user-select: none;
 }
 
 .empty-comment-pic {
   background-image: url("https://s3.amazonaws.com/sound-byte-pro/assets/images/comment-box.png");
-  height: 200px;
-  width: 200px;
+  height: 194px;
+  width: 194px;
   color: #999;
 }
 .empty-comment h1 {

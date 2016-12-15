@@ -95,20 +95,22 @@ class TrackView extends React.Component {
               />
               <input className="submit-button" type="submit" value=""/>
             </form>
-            <div className="author-info">
-              <div className="author-display">
-                <Link to={`/profile/${currentTrack.author_id}`}>
-                  <img src={currentTrack.author_image_url}></img>
-                </Link>
-                <h3 className="author-display-name">{currentTrack.author_name}</h3>
+            <div className = "comment-sub-content">
+              <div className="author-info">
+                <div className="author-display">
+                  <Link to={`/profile/${currentTrack.author_id}`}>
+                    <img src={currentTrack.author_image_url}></img>
+                  </Link>
+                  <h3 className="author-display-name">{currentTrack.author_name}</h3>
+                </div>
               </div>
-              <div className="track-description">
+              <div className="author-desc-and-comments">
                 <p>
                   {currentTrack.description}
                 </p>
+                { this.renderComments() }
               </div>
             </div>
-                  { this.renderComments() }
           </div>
         </div>
       );
