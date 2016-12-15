@@ -19,11 +19,11 @@ export default class LatestTracks extends React.Component {
               <img className="album-cover" src={ track.album_image_url }></img>
             </Link>
             <span>
+              <TrackPlayerControlsContainer currentTrackView={track}/>
               <Link to={`/track-view/${track.id}`}>
                 <h2 className="index-author-name">{ track.author_name }</h2>
                 <h3 className="index-track-title">{ track.title }</h3>
               </Link>
-            <TrackPlayerControlsContainer currentTrackView={track}/>
             </span>
           </li>
         );
