@@ -1,7 +1,7 @@
 body, footer, div, ul, button, li, ol, section, article, nav, img, header, p, h1, h2, h3, h4, a, form, label, input {
   font: inherit;
   font-size: inherit;
-  font-weight: 100;
+  font-weight: 400;
   text-decoration: none;
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ body, footer, div, ul, button, li, ol, section, article, nav, img, header, p, h1
   outline: 0;
   background-color: inherit;
   background: transparent;
-  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif
+  font-family: "Tacoma", sans-serif;
 }
 
 img {
@@ -23,12 +23,6 @@ ul {
   list-style: none;
 }
 
-.group:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
 .fa-events-icons-ready {
   height: auto;
 }
@@ -36,8 +30,4 @@ ul {
 body {
   background-color: #f2f2f2;
   color: #333;
-}
-
-.content {
-  padding-bottom: 75px;
 }

@@ -23,14 +23,6 @@
   height: 50px;
 }
 
-/*.header-container .background-pic {
-  background: transparent;
-  background-image: url(https://hd.unsplash.com/photo-1420161900862-9a86fa1f5c79);
-  width: 800px;
-  background-size: cover;
-  position: fixed;
-}*/
-
 .header-nav {
   border: none;
   display: flex;
@@ -112,12 +104,13 @@ h3.loggedout.or {
    background-color: #fff;
    max-width: 1200px;
    min-width: 600px;
-   margin-left: 20px;
-   margin-right: 20px;
+   /*margin-left: 20px;
+   margin-right: 20px;*/
    display: flex;
    flex: 1;
    position: relative;
    top: 50px;
+   margin:  0 20px 75px 20px;
  }
 
 
@@ -171,4 +164,8 @@ h3.loggedout.or {
 
  .fa.fa-cloud.loggedin{
    padding: 5px 20px;
+ }
+
+ .background-picture {
+   background-image: url("https://s3.amazonaws.com/sound-byte-pro/assets/images/headphones.jpeg");
  }
