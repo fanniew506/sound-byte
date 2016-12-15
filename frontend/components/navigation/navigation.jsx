@@ -27,23 +27,26 @@ class Navigation extends React.Component {
     const currentUser = this.props.currentUser;
     if (currentUser === null){
       return(
-        <span className="header-container logged-out">
-          <header className="header logged-out">
-            <div className='header-logo'>
-              <Link to='/'>
-                <i className="fa fa-cloud" aria-hidden="true"></i>
-              </Link>
-              <Link to='/'>
-                <h3 className="logged-out-logo this-one">SOUNDBYTE</h3>
-              </Link>
-            </div>
-            <nav className='header-nav loggedout'>
-              <Link to="/login"><h3 className="login this">Log In</h3></Link>
-              <h3 className="loggedout or">OR</h3>
-              <Link to="/signup"><h3 className="createaccount this">Create Account</h3></Link>
-            </nav>
-          </header>
-        </span>
+        <div>
+          <span className="header-container logged-out">
+            <header className="header logged-out">
+              <div className='header-logo'>
+                <Link to='/'>
+                  <i className="fa fa-cloud" aria-hidden="true"></i>
+                </Link>
+                <Link to='/'>
+                  <h3 className="logged-out-logo this-one">SOUNDBYTE</h3>
+                </Link>
+              </div>
+              <nav className='header-nav loggedout'>
+                <Link to="/login"><h3 className="login this">Log In</h3></Link>
+                <h3 className="loggedout or">OR</h3>
+                <Link to="/signup"><h3 className="createaccount this">Create Account</h3></Link>
+              </nav>
+            </header>
+          </span>
+          <div className="background-picture"></div>
+        </div>
         );
 
       } else {
