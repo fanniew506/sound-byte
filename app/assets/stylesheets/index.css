@@ -4,6 +4,7 @@
   max-width: 900px;
   min-width: inherit;
   flex: 1;
+  margin: 20px 0;
 }
 
 .tracks-index-header {
