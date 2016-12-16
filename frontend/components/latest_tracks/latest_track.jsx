@@ -30,10 +30,13 @@ export default class LatestTracks extends React.Component {
       });
       return (
         <content className="tracks-index-container">
-          <h2 className="tracks-index-header">Latest Uploads</h2>
           <ul className="tracks-index-list">
+            <h2 className="tracks-index-header">Latest Uploads</h2>
             {trackDivs}
           </ul>
+          <div className="sidebar">
+
+          </div>
         </content>
       );
     } else {

@@ -14,7 +14,7 @@
 
 node_modules/
 bundle.js
-bundle.map.js
+bundle.js.map
 .byebug_history
 
 # Ignore application configuration

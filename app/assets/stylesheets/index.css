@@ -1,24 +1,29 @@
 .tracks-index-container {
   display: flex;
-  flex-direction: column;
-  max-width: 800px;
+  flex-direction: row;
+  max-width: 900px;
   min-width: inherit;
-  padding: 0 20px;
   flex: 1;
 }
 
 .tracks-index-header {
-  margin: 20px;
+  margin: 20px 40px;
   padding: 20px;
-  border-bottom: 1px solid #ccc;
-  width: 100%;
+  border-bottom: 1px solid #eee;
 }
 
 .tracks-index-list {
   display: flex;
   flex-direction: column;
   flex: 1;
+  border-right: 1px solid #eee;
 }
+
+.sidebar {
+  min-width: 20px;
+}
+
+
 
 .user-tracks {
   color: inherit;
@@ -27,8 +32,7 @@
   flex-direction: row;
   justify-content:flex-start;
   vertical-align: top;
-  padding-left: 40px;
-  width: 100%;
+  margin: 0 40px;
 }
 
 .user-tracks span {

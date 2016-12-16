@@ -165,10 +165,12 @@ class OtherProfileView extends React.Component {
               </div>
             </header>
             <content className="tracks-index-container">
-              <h2 className="tracks-index-header">Uploads</h2>
               <ul className="tracks-index-list">
-              { this.showUsersTracks() }
+                <h2 className="tracks-index-header">Uploads</h2>
+                { this.showUsersTracks() }
               </ul>
+              <div className="sidebar">
+              </div>
             </content>
             { this.displayProfilePreview() }
             { this.displayErrors() }
