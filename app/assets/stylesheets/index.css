@@ -1,25 +1,26 @@
 .tracks-index-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  justify-content: center;
+  max-width: 800px;
+  min-width: inherit;
   padding: 0 20px;
-  position: relative;
+  flex: 1;
 }
 
 .tracks-index-header {
   margin: 20px;
   padding: 20px;
   border-bottom: 1px solid #ccc;
-  display: block;
+  width: 100%;
 }
 
 .tracks-index-list {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
-.user-tracks{
+.user-tracks {
   color: inherit;
   display: flex;
   flex: 1;
@@ -27,19 +28,26 @@
   justify-content:flex-start;
   vertical-align: top;
   padding-left: 40px;
+  width: 100%;
 }
 
-.user-tracks > span {
+.user-tracks span {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding-top: 40px;
+  display: inline;
+  flex: 1;
 }
 
 .user-tracks i {
   margin: 0 15px 0 0;
 }
 
+.track-play-toggle-controls {
+  display: inline;
+  float: left;
+}
 
 .index-author-name {
   color: #666;

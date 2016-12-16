@@ -71,8 +71,9 @@
 }
 
 .author-desc-and-comments {
-  display:flex;
+  display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .author-desc-and-comments > p{

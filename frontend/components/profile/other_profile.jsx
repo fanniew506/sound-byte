@@ -114,10 +114,11 @@ class OtherProfileView extends React.Component {
             <img className="album-cover" src={ track.album_image_url }></img>
           </Link>
           <span>
-            <Link to={`/track-view/${track.id}`}>
-              <h3 className="user-profile-track-title">{ track.title }</h3>
-            </Link>
             <TrackPlayerControlsContainer currentTrackView={track}/>
+            <Link to={`/track-view/${track.id}`}>
+              <h2 className="index-author-name">{ track.author_name }</h2>
+              <h3 className="index-track-title">{ track.title }</h3>
+            </Link>
           </span>
         </li>
       );
@@ -163,9 +164,9 @@ class OtherProfileView extends React.Component {
                 <h4>{ this.props.user.username }</h4>
               </div>
             </header>
-            <content className="profile-tracks-content">
-              <h2 className="profile-tracks-header">Uploads</h2>
-              <ul className="profile-tracks-list">
+            <content className="tracks-index-container">
+              <h2 className="tracks-index-header">Uploads</h2>
+              <ul className="tracks-index-list">
               { this.showUsersTracks() }
               </ul>
             </content>
