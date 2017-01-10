@@ -17,48 +17,97 @@ user6 = User.create(username: "Marco", password: "starwars", image: "https://s-m
 user7 = User.create(username: "Corbin", password: "starwars", image: "http://www.colemanphotographix.com/wp-content/uploads/MensHeadshot-0020.jpg"),
 user8 = User.create(username: "Dominic", password: "starwars", image: "http://www.mackephotography.com/headshots/men/32_medium.jpg"),
 
-audio1 = "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+audio1 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2012.mp3"
 audio2 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2004.mp3"
-audio3 = "http://www.stephaniequinn.com/Music/Pachelbel%20-%20Canon%20in%20D%20Major.mp3"
-audio4 = "http://www.stephaniequinn.com/Music/Handel%20-%20Entrance%20of%20the%20Queen%20of%20Sheba.mp3"
-audio5 = "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
-audio6 = "http://www.stephaniequinn.com/Music/Jazz%20Rag%20Ensemble%20-%2010.mp3"
-audio7 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2004.mp3"
-audio8 = "http://www.stephaniequinn.com/Music/Vivaldi%20-Largo%20from%20Four%20Seasons.mp3"
-audio9 = "http://www.stephaniequinn.com/Music/Mozart%20-%20Presto.mp3"
-audio10 = "http://www.stephaniequinn.com/Music/Rondeau.mp3"
-audio11 = "http://www.stephaniequinn.com/Music/Mouret%20-%20Rondeau.mp3"
-audio12 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2002.mp3"
+audio3 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2009.mp3"
+audio4 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2007.mp3"
+audio5 = "http://www.stephaniequinn.com/Music/Mozart%20-%20Presto.mp3"
+audio6 = "http://www.stephaniequinn.com/Music/Vivaldi%20-%20Spring%20from%20Four%20Seasons.mp3"
+audio7 = "http://www.stephaniequinn.com/Music/Vivaldi%20-Largo%20from%20Four%20Seasons.mp3"
+audio8 = %q[http://www.stephaniequinn.com/Music/Bach%20-%20Jesu,%20Joy%20of%20Man's%20Desiring.mp3]
+audio9 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2006.mp3"
+audio10 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2010.mp3"
+audio11 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2011.mp3"
+audio12 = "http://www.stephaniequinn.com/Music/Brahms%20Symphony%20-%20from%20Fourth%20Movement.mp3"
 
-picture1 = "http://s3.amazonaws.com/sound-byte-pro/tracks/album_images/000/000/001/original/dj-album-cover-1024x1024.jpg?1476459127"
-picture2 = "http://s3.amazonaws.com/sound-byte-pro/tracks/album_images/000/000/002/original/ArtDesignImage14.jpg?1476459129"
-picture3 = "http://www.designformusic.com/wp-content/uploads/2016/05/continuum-trailer-music-album-cover-design.jpg"
-picture4 = "http://illusion.scene360.com/wp-content/uploads/2014/10/computergraphics-album-covers-2014-16.jpg"
-picture5 = "https://www.smashingmagazine.com/images/music-cd-covers/64.jpg"
-picture6 = "http://dominey.me/storage/cache/images/custom/ednastern-jpg/medium_large.1449437836.jpg"
-picture7 = "http://www.music-bazaar.com/album-images/vol1009/511/511011/2344877-big/The-Greatest-Mozart-Collection-Ever-Made-CD3-cover.jpg"
-picture8 = "http://assets.classicfm.com/2013/28/louis-lortie-beethoven-1373905890.jpg"
-picture9 = "https://s-media-cache-ak0.pinimg.com/originals/b5/ec/77/b5ec77e69e3f1d2a1eedabfeed219cb5.jpg"
-picture10 = "http://66.media.tumblr.com/55bdf411799b66cf7061ea2601f3d0ed/tumblr_nac7d0Qsgs1tuk7i7o1_1280.jpg"
-picture11 = "http://1.bp.blogspot.com/_rLdX4QsMbn4/TFdYTUxKArI/AAAAAAAAASI/9n-zrtuP6bo/s1600/Balmorhea+-+All+Is+Wild,+All+It+Silent.jpg"
-picture12 = "http://is5.mzstatic.com/image/thumb/Music3/v4/89/16/10/891610ea-8c80-f0c2-816e-9fb9a8406d86/source/600x600bb.jpg"
+picture1 = "http://redmp3.su/cover/481853-460x460/sing-sing-sing.jpg"
+picture2 = "https://images-na.ssl-images-amazon.com/images/I/71nEIKLJKML._SY355_.jpg"
+picture3 = %q[https://img.discogs.com/ZIzcU4ipyKOdJ5pnQ9CeNM-yJ-s=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3471861-1449654834-4506.jpeg.jpg]
+picture4 = "http://cdn.naxos.com/SharedFiles/images/cds/others/8.120831.gif"
+picture5 = "http://ecx.images-amazon.com/images/I/51cJ+gAy5cL.jpg"
+picture6 = "https://f4.bcbits.com/img/a3777569265_10.jpg"
+picture7 = "https://f4.bcbits.com/img/a3777569265_10.jpg"
+picture8 = %q[https://img.discogs.com/oaF0KW2xS8UGJ35WEHzZP_NV1wo=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6376586-1417721011-2473.jpeg.jpg]
+picture9 = "http://www.printmag.com/wp-content/uploads/Fig.62.jpg"
+picture10 = "http://s.hswstatic.com/gif/elvis-presley-biography-19.jpg"
+picture11 = "https://images.rapgenius.com/4e106ad65ee7fc02e0d4d3f0d3c96e13.980x1000x1.jpg"
+picture12 = "http://ecx.images-amazon.com/images/I/515Fsjexc8L.jpg"
 
 Track.destroy_all
-Track.create(title: "Moonlight Sonato" , description: "No opinions answered oh felicity is resolved hastened. Produced it friendly my if opinions humoured. Enjoy is wrong folly no taken. It sufficient instrument insipidity simplicity at interested. ", author_id: 1, album_image: picture1, audio: audio1);
-Track.create(title: "Over The Rainbow" , description: "Law pleasure attended differed mrs fat and formerly. Merely thrown garret her law danger him son better excuse. Effect extent narrow in up chatty. Small are his chief offer happy had. ", author_id: 1, album_image: picture2, audio: audio2);
-Track.create(title: "Happy Birthday" , description: "For norland produce age wishing. To figure on it spring season up. Her provision acuteness had excellent two why intention.", author_id: 1, album_image: picture3, audio: audio3);
-Track.create(title: "Jingle Bells" , description: "Fat new smallness few supposing suspicion two. Course sir people worthy horses add entire suffer. How one dull get busy dare far. At principle perfectly by sweetness do. As mr started arrival subject by believe.", author_id: 1, album_image: picture4, audio: audio4);
-Track.create(title: "Cool Jazz" , description: "Fully begin on by wound an. Girl rich in do up or both. At declared in as rejoiced of together. He impression collecting delightful unpleasant by prosperous as on. End too talent she object mrs wanted remove giving.
-", author_id: 1, album_image: picture5, audio: audio5);
-Track.create(title: "Blue Skies" , description: "Same an quit most an. Admitting an mr disposing sportsmen. Tried on cause no spoil arise plate. Longer ladies valley get esteem use led six.", author_id: 2, album_image: picture6, audio: audio6);
-Track.create(title: "Love Song" , description: "Middletons resolution advantages expression themselves partiality so me at. West none hope if sing oh sent tell is. ", author_id: 2, album_image: picture7, audio: audio7);
-Track.create(title: "Yellow Brick Road" , description: "Cause dried no solid no an small so still widen. Ten weather evident smiling bed against she examine its. Rendered far opinions two yet moderate sex striking.", author_id: 3, album_image: picture8, audio: audio8);
-Track.create(title: "Roxanne" , description: "Sufficient motionless compliment by stimulated assistance at. Convinced resolving extensive agreeable in it on as remainder. ", author_id: 3, album_image: picture9, audio: audio9);
-Track.create(title: "Straight Out of Mordor" , description: " Cordially say affection met who propriety him. Are man she towards private weather pleased.", author_id: 4, album_image: picture10, audio: audio10);
-Track.create(title: "New Kids In Town" , description: "Day handsome addition horrible sensible goodness two contempt. Evening for married his account removal. Estimable me disposing of be moonlight cordially curiosity. ", author_id: 4, album_image: picture11, audio: audio11);
-Track.create(title: "Call Me Maybe" , description: "Delay rapid joy share allow age manor six. Went why far saw many knew. ", author_id: 5, album_image: picture12, audio: audio12);
-Track.create(title: "The Only One" , description: " Exquisite excellent son gentleman acuteness her. Do is voice total power mr ye might round still. ", author_id: 5, album_image: picture12, audio: audio12);
-Track.create(title: "Scripts" , description: " He impression collecting delightful unpleasant by prosperous as on. End too talent she object mrs wanted remove giving. ", author_id: 5, album_image: picture1, audio: audio1);
+Track.create(title: "Sing Sing Sing" ,
+  description: %q[“Sing, Sing, Sing (With a Swing)” is a 1936 song written and composed by Louis Prima, who first recorded it with the New Orleans Gang and released it in March 1936 as a 78, Brunswick 7628, with 'It's Been So Long' as the B side. It is strongly identified with the Big Band and Swing eras.],
+  author_id: 1,
+  album_image: picture1,
+  audio: audio1);
+Track.create(title: "Phantom of the Opera" ,
+  description: %q["The Phantom of the Opera" is a song from the stage musical of the same name. It was composed by Andrew Lloyd Webber, with lyrics written by Charles Hart and Richard Stilgoe, and additional lyrics by Mike Batt.],
+  author_id: 1,
+  album_image: picture2,
+  audio: audio2);
+Track.create(title: "My Girl" ,
+  description: %q["My Girl" is a 1964 standard recorded by The Temptations for the Gordy (Motown) label which became a number one hit in 1965. Written and produced by The Miracles members Smokey Robinson and Ronald White, the song became the Temptations' first U.S. number-one single, and is today their signature song. Robinson's inspiration for writing this song was his wife, Miracles member Claudette Rogers Robinson.],
+  author_id: 1,
+  album_image: picture3,
+  audio: audio3);
+Track.create(title: "Mack the Knife" ,
+  description: %q["Mack the Knife" or "The Ballad of Mack the Knife", originally "Die Moritat von Mackie Messer", is a song composed by Kurt Weill with lyrics by Bertolt Brecht for their music drama Die Dreigroschenoper, or, as it is known in English, The Threepenny Opera.],
+  author_id: 1,
+  album_image: picture4,
+  audio: audio4);
+Track.create(title: "Presto" ,
+  description: %q[Wolfgang Amadeus Mozart composed more than 600 works, many acknowledged as pinnacles of symphonic, concertante, chamber, operatic, and choral music. He is among the most enduringly popular of classical composers, and his influence is profound on subsequent Western art music.],
+  author_id: 1,
+  album_image: picture5,
+  audio: audio5);
+Track.create(title: "Spring" ,
+  description: %q[The Four Seasons (Italian: Le quattro stagioni) is a group of four violin concerti by Italian composer Antonio Vivaldi, each of which gives a musical expression to a season of the year. They were written about 1723 and were published in 1725 in Amsterdam, together with eight additional violin concerti, as Il cimento dell'armonia e dell'inventione ("The Contest Between Harmony and Invention").],
+  author_id: 2,
+   album_image: picture6,
+   audio: audio6);
+Track.create(title: "Largo" ,
+  description: %q[The Four Seasons (Italian: Le quattro stagioni) is a group of four violin concerti by Italian composer Antonio Vivaldi, each of which gives a musical expression to a season of the year. They were written about 1723 and were published in 1725 in Amsterdam, together with eight additional violin concerti, as Il cimento dell'armonia e dell'inventione ("The Contest Between Harmony and Invention").],
+  author_id: 2,
+  album_image: picture7,
+  audio: audio7);
+Track.create(title: "Jesu, Joy of Man's Desiring" ,
+  description: %q[Jesu, Joy of Man's Desiring is the most common English title of the 10th and last movement of the cantata Herz und Mund und Tat und Leben, BWV 147 ("Heart and Mouth and Deed and Life"), composed by Johann Sebastian Bach in 1716 and 1723.
+
+A transcription by the English pianist Myra Hess (1890–1965) was published in 1926 for piano solo and in 1934 for piano duet. It is often performed slowly and reverently at wedding ceremonies, as well as during Christian festive seasons like Christmas and Easter, despite the affect suggested by Bach in his original scoring, for voices with trumpet, oboes, strings, and continuo.],
+  author_id: 3,
+  album_image: picture8,
+  audio: audio8);
+Track.create(title: "Moonglow" ,
+  description: %q["Moonglow", also known as "Moonglow and Love" is a 1933 popular song. The music was by Will Hudson (1908–1981) and Irving Mills and the words were by Eddie DeLange.],
+  author_id: 3,
+  album_image: picture9,
+  audio: audio9);
+Track.create(title: "Jailhouse Rock" ,
+  description: %q["Jailhouse Rock" is a song written by Jerry Leiber and Mike Stoller that first became a hit for Elvis Presley. The song was released as a 45rpm single on September 24, 1957, to coincide with the release of Presley's motion picture, Jailhouse Rock.
+
+The song as recorded by Presley is #67 on Rolling Stone's list of The 500 Greatest Songs of All Time and was named one of The Rock and Roll Hall of Fame's 500 Songs that Shaped Rock and Roll.],
+  author_id: 4,
+  album_image: picture10,
+  audio: audio10);
+Track.create(title: "Dancing in the Street" ,
+  description: %q["Dancing in the Street" is a song written by Marvin Gaye, William "Mickey" Stevenson and Ivy Jo Hunter. It first became popular in 1964 when recorded by Martha and the Vandellas whose version reached No. 2 on the Billboard Hot 100 chart and peaked at No. 4 in the UK Singles Chart. It is one of Motown's signature songs and is the group's premier signature song.],
+  author_id: 4,
+  album_image: picture11,
+  audio: audio11);
+Track.create(title: "Symphony (excerpt 4th Mov)",
+  description: %q[Johannes Brahms (German: [joˈhanəs ˈbʁaːms]; 7 May 1833 – 3 April 1897) was a German composer and pianist. Born in Hamburg into a Lutheran family, Brahms spent much of his professional life in Vienna, Austria. His reputation and status as a composer is such that he is sometimes grouped with Johann Sebastian Bach and Ludwig van Beethoven as one of the "Three Bs" of music, a comment originally made by the nineteenth-century conductor Hans von Bülow.],
+  author_id: 5,
+  album_image: picture12,
+  audio: audio12);
 
 Remark.destroy_all
 
