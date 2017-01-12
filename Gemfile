@@ -26,7 +26,7 @@ gem 'bcrypt'
 
 gem 'rails_12factor', group: :production
 
-gem "paperclip", '5.0.0.beta1'
+gem "paperclip"
 gem 'figaro'
 gem 'aws-sdk', '~> 2.3.0'
 # Use Unicorn as the app server
