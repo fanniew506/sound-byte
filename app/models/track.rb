@@ -23,7 +23,8 @@ class Track < ActiveRecord::Base
   validates_attachment_content_type :album_image, content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png)$/, message: 'file type is not allowed (only jpeg/png images)'
 
   has_attached_file :audio
-  validates_attachment_content_type :audio, content_type: ['application/mp3', 'application/x-mp3', 'audio/mpeg', 'audio/mp3']
+  validates_attachment_content_type :audio, content_type: [ 'audio/mpeg', ['audio/mpeg'], 'audio/x-mpeg', 'audio/mp3', 'audio/x-mp3', 'audio/mpeg3', 'audio/x-mpeg3', 'audio/mpg', 'audio/x-mpg', 'audio/x-mpegaudio']
+  validates_attachment_size :audio, :less_than => 20.megabytes
   validates :title, :audio, presence: true
 
   belongs_to :user,
