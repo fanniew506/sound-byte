@@ -17,31 +17,31 @@ user6 = User.create(username: "Marco", password: "starwars", image: "https://s-m
 user7 = User.create(username: "Corbin", password: "starwars", image: "http://www.colemanphotographix.com/wp-content/uploads/MensHeadshot-0020.jpg")
 user8 = User.create(username: "Dominic", password: "starwars", image: "http://www.mackephotography.com/headshots/men/32_medium.jpg")
 
-audio1 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2012.mp3"
-audio2 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2004.mp3"
-audio3 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2009.mp3"
-audio4 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2007.mp3"
-audio5 = "http://www.stephaniequinn.com/Music/Mozart%20-%20Presto.mp3"
-audio6 = "http://www.stephaniequinn.com/Music/Vivaldi%20-%20Spring%20from%20Four%20Seasons.mp3"
-audio7 = "http://www.stephaniequinn.com/Music/Vivaldi%20-Largo%20from%20Four%20Seasons.mp3"
-audio8 = %Q[http://www.stephaniequinn.com/Music/Bach%20-%20Jesu,%20Joy%20of%20Man's%20Desiring.mp3]
-audio9 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2006.mp3"
-audio10 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2010.mp3"
-audio11 = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2011.mp3"
-audio12 = "http://www.stephaniequinn.com/Music/Brahms%20Symphony%20-%20from%20Fourth%20Movement.mp3"
+audio1 = %Q[http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2012.mp3]
+audio2 = %Q[http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2004.mp3]
+audio3 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio3.mp3')
+audio4 = %Q[http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2007.mp3]
+audio5 = %Q[http://www.stephaniequinn.com/Music/Mozart%20-%20Presto.mp3]
+audio6 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio6.mp3')
+audio7 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio7.mp3')
+audio8 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio8.mp3')
+audio9 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio9.mp3')
+audio10 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio10.mp3')
+audio11 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio11.mp3')
+audio12 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio12.mp3')
 
-picture1 = "http://redmp3.su/cover/481853-460x460/sing-sing-sing.jpg"
-picture2 = "http://images-na.ssl-images-amazon.com/images/I/71nEIKLJKML._SY355_.jpg"
+picture1 = %Q[http://redmp3.su/cover/481853-460x460/sing-sing-sing.jpg]
+picture2 = %Q[http://http2.mlstatic.com/S_14783-MLB196107287_6871-O.jpg]
 picture3 = %Q[http://img.discogs.com/ZIzcU4ipyKOdJ5pnQ9CeNM-yJ-s=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3471861-1449654834-4506.jpeg.jpg]
-picture4 = "http://www.dresscircle.com/1609-large_default/kurt-weill-mack-the-knife-songs-of-kurt-weill-1929-1956-cd.jpg"
-picture5 = "http://covers.box.sk/newsimg/dvdmov/max1140300399-front-cover.jpg"
-picture6 = "http://www.antoniovivaldi.net/wp-content/uploads/sites/3/2015/11/The-Four-Seasons.jpg"
-picture7 = "http://www.antoniovivaldi.net/wp-content/uploads/sites/3/2015/11/The-Four-Seasons.jpg"
-picture8 = %Q[http://img.discogs.com/oaF0KW2xS8UGJ35WEHzZP_NV1wo=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6376586-1417721011-2473.jpeg.jpg]
-picture9 = "http://www.printmag.com/wp-content/uploads/Fig.62.jpg"
-picture10 = "http://s.hswstatic.com/gif/elvis-presley-biography-19.jpg"
-picture11 = "http://images.rapgenius.com/4e106ad65ee7fc02e0d4d3f0d3c96e13.980x1000x1.jpg"
-picture12 = "http://i43.tower.com/images/mm106014588/brahms-4-symphonies-herbert-von-karajan-cd-cover-art.jpg"
+picture4 = %Q[http://www.dresscircle.com/1609-large_default/kurt-weill-mack-the-knife-songs-of-kurt-weill-1929-1956-cd.jpg]
+picture5 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/mozart_cover.jpg')
+picture6 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/vivaldi_cover.jpg')
+picture7 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/vivaldi_cover.jpg')
+picture8 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/bach_cover.jpg')
+picture9 = %Q[http://www.printmag.com/wp-content/uploads/Fig.62.jpg]
+picture10 = %Q[http://s.hswstatic.com/gif/elvis-presley-biography-19.jpg]
+picture11 = %Q[http://images.rapgenius.com/4e106ad65ee7fc02e0d4d3f0d3c96e13.980x1000x1.jpg]
+picture12 = %Q[http://i43.tower.com/images/mm106014588/brahms-4-symphonies-herbert-von-karajan-cd-cover-art.jpg]
 
 Track.destroy_all
 Track.create(title: "Sing Sing Sing",
@@ -64,7 +64,7 @@ Track.create(title: "Mack the Knife" ,
   author_id: 1,
   album_image: picture4,
   audio: audio4);
-Track.create(title: "Presto" ,
+Track.create(title: "Presto",
   description: %Q[Wolfgang Amadeus Mozart composed more than 600 works, many acknowledged as pinnacles of symphonic, concertante, chamber, operatic, and choral music. He is among the most enduringly popular of classical composers, and his influence is profound on subsequent Western art music.],
   author_id: 1,
   album_image: picture5,
