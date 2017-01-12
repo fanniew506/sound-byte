@@ -39,6 +39,7 @@ module SoundCloud
         :s3_region => ENV["s3_region"]
       }
     }
+
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
