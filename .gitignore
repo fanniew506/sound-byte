@@ -21,3 +21,5 @@ bundle.js.map
 /config/application.yml
 
 .DS_Store
+
+seeds/
