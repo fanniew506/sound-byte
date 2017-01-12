@@ -19,25 +19,25 @@ user8 = User.create(username: "Dominic", password: "starwars", image: "http://ww
 
 audio1 = %Q[http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2012.mp3]
 audio2 = %Q[http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2004.mp3]
-audio3 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio3.mp3')
+audio3 = File.open('../app/assets/images/seeds/audio3.mp3')
 audio4 = %Q[http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2007.mp3]
 audio5 = %Q[http://www.stephaniequinn.com/Music/Mozart%20-%20Presto.mp3]
-audio6 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio6.mp3')
-audio7 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio7.mp3')
-audio8 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio8.mp3')
-audio9 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio9.mp3')
-audio10 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio10.mp3')
-audio11 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio11.mp3')
-audio12 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/audio12.mp3')
+audio6 = File.open('../app/assets/images/seeds/audio6.mp3')
+audio7 = File.open('../app/assets/images/seeds/audio7.mp3')
+audio8 = File.open('../app/assets/images/seeds/audio8.mp3')
+audio9 = File.open('../app/assets/images/seeds/audio9.mp3')
+audio10 = File.open('../app/assets/images/seeds/audio10.mp3')
+audio11 = File.open('../app/assets/images/seeds/audio11.mp3')
+audio12 = File.open('../app/assets/images/seeds/audio12.mp3')
 
 picture1 = %Q[http://redmp3.su/cover/481853-460x460/sing-sing-sing.jpg]
 picture2 = %Q[http://http2.mlstatic.com/S_14783-MLB196107287_6871-O.jpg]
 picture3 = %Q[http://img.discogs.com/ZIzcU4ipyKOdJ5pnQ9CeNM-yJ-s=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3471861-1449654834-4506.jpeg.jpg]
 picture4 = %Q[http://www.dresscircle.com/1609-large_default/kurt-weill-mack-the-knife-songs-of-kurt-weill-1929-1956-cd.jpg]
-picture5 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/mozart_cover.jpg')
-picture6 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/vivaldi_cover.jpg')
-picture7 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/vivaldi_cover.jpg')
-picture8 = File.open('/Users/fanniewang/desktop/projects/sound-byte/app/assets/images/seeds/bach_cover.jpg')
+picture5 = File.open('../app/assets/images/seeds/mozart_cover.jpg')
+picture6 = File.open('../app/assets/images/seeds/vivaldi_cover.jpg')
+picture7 = File.open('../app/assets/images/seeds/vivaldi_cover.jpg')
+picture8 = File.open('../app/assets/images/seeds/bach_cover.jpg')
 picture9 = %Q[http://www.printmag.com/wp-content/uploads/Fig.62.jpg]
 picture10 = %Q[http://s.hswstatic.com/gif/elvis-presley-biography-19.jpg]
 picture11 = %Q[http://images.rapgenius.com/4e106ad65ee7fc02e0d4d3f0d3c96e13.980x1000x1.jpg]
